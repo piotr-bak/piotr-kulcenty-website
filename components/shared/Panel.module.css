@@ -1,0 +1,17 @@
+.panel {
+    background-color: hsla(0 0% 0% / 0);
+    display: flex;
+    justify-content: space-between;
+    height: 47px;
+}
+
+.navbarStyle {
+    align-items: flex-start;
+}
+
+.footerStyle {
+    padding-top: 0px;
+    padding-bottom: 77px;
+    height: 47px;
+    align-items: flex-end;
+}
