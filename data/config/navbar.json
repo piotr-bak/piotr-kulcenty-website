@@ -1,0 +1,18 @@
+[
+  {
+    "label": "Home",
+    "destination": "/"
+  },
+  {
+    "label": "Brand - Piotr Kulcenty Violins",
+    "destination": "/"
+  },
+  {
+    "label": "About",
+    "destination": "/"
+  },
+  {
+    "label": "Navigation menu",
+    "role": "hamburger"
+  }
+]

@@ -2,13 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./NavElement.module.css";
-
-export interface NavElementProps {
-    key: string;
-    imgSrc?: string;
-    label: string;
-    destination?: string;
-}
+import { NavElementProps } from "@/types";
 
 export const NavElement = (props: NavElementProps) => {
     const { imgSrc, label, destination } = props;

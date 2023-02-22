@@ -1,10 +1,6 @@
 import React, { useState } from "react";
-import { NavElementProps } from "./NavElement";
 import styles from "./Toggle.module.css";
-
-export interface ToggleProps extends NavElementProps {
-    role?: "hamburger" | "scroller" | undefined;
-}
+import { ToggleProps } from "@/types";
 
 export const Toggle = (props: ToggleProps) => {
     const { label, role } = props;
