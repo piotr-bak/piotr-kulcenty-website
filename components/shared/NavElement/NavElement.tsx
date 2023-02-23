@@ -22,18 +22,13 @@ export const NavElement = (props: NavElementProps) => {
             />
         </Link>
     ) : (
-        <Link
-            className={styles.wrap}
-            href={destination ? destination : ""}
-            passHref>
-            <button
-                type='button'
+        <div className={styles.wrap} title={label} aria-label={label}>
+            <Link
                 className={`${styles.button} ${cormorant.className}`}
-                title={label}
-                aria-label={label}>
+                href={destination ? destination : ""}>
                 {label}
-            </button>
-        </Link>
+            </Link>
+        </div>
     );
     return <>{element}</>;
 };

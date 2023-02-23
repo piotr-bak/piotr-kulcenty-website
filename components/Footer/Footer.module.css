@@ -1,7 +1,7 @@
-.navbar {
+.footer {
     width: 100vw;
-    padding-top: 77px;
-    padding-bottom: 0px;
     background-color: transparent;
+    left: 0;
+    bottom: 0;
     position: fixed;
 }

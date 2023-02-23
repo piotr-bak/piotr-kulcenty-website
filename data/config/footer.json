@@ -1,0 +1,14 @@
+[
+  {
+    "label": "Work",
+    "destination": "/"
+  },
+  {
+    "label": "Contact",
+    "destination": "/"
+  },
+  {
+    "label": "Go up",
+    "role": "scroller"
+  }
+]

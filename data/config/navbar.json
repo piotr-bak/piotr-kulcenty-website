@@ -6,7 +6,7 @@
   },
   {
     "label": "About",
-    "destination": "/"
+    "destination": "/about"
   },
   {
     "label": "Navigation menu",

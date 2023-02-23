@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "../public/brand.svg";
+import logo from "/public/brand.svg";
 import styles from "./Logo.module.css";
 
 //Logo musi być wrzucone na stronę galerii (a nie do navbara) - position:sticky
