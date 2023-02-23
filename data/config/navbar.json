@@ -1,10 +1,7 @@
 [
   {
+    "imgSrc": "logo.svg",
     "label": "Home",
-    "destination": "/"
-  },
-  {
-    "label": "Brand - Piotr Kulcenty Violins",
     "destination": "/"
   },
   {

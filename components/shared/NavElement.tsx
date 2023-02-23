@@ -9,13 +9,19 @@ export const NavElement = (props: NavElementProps) => {
 
     const element = imgSrc ? (
         <Link href={destination ? destination : ""} passHref>
-            <Image className={styles.image} src={imgSrc} alt={label} />
+            <Image
+                className={styles.image}
+                src={imgSrc}
+                width={38}
+                height={48}
+                alt={label}
+            />
         </Link>
     ) : (
         <Link href={destination ? destination : ""} passHref>
             <button
                 type='button'
-                className={styles.button}
+                className={`${styles.button}`}
                 title={label}
                 aria-label={label}>
                 {label}
