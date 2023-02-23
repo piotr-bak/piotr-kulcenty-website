@@ -1,15 +1,15 @@
-import { Logo } from "./Logo";
-import { Panel } from "./shared/Panel";
-import { NavElement } from "./shared/NavElement";
-import { Toggle } from "./shared/Toggle";
+import { Logo } from "../Logo/Logo";
+import { Panel } from "../shared/Panel/Panel";
+import { NavElement } from "../shared/NavElement/NavElement";
+import { Toggle } from "../shared/Toggle/Toggle";
 import { ToggleProps } from "@/types";
 import styles from "./Navbar.module.css";
-import config from "../data/config/navbar.json";
+import config from "../../data/config/navbar.json";
 
 export const Navbar = () => {
     const elements = JSON.parse(JSON.stringify(config));
     return (
-        <div className={styles.navbar}>
+        <nav className={styles.navbar}>
             <Logo />
             <Panel
                 items={elements.map((el: ToggleProps) => {
@@ -21,6 +21,6 @@ export const Navbar = () => {
                 })}
                 layout='navbarStyle'
             />
-        </div>
+        </nav>
     );
 };

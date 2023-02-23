@@ -2,13 +2,17 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./NavElement.module.css";
+import { cormorant } from "@/lib/fonts";
 import { NavElementProps } from "@/types";
 
 export const NavElement = (props: NavElementProps) => {
     const { imgSrc, label, destination } = props;
 
     const element = imgSrc ? (
-        <Link href={destination ? destination : ""} passHref>
+        <Link
+            className={styles.wrap}
+            href={destination ? destination : ""}
+            passHref>
             <Image
                 className={styles.image}
                 src={imgSrc}
@@ -18,10 +22,13 @@ export const NavElement = (props: NavElementProps) => {
             />
         </Link>
     ) : (
-        <Link href={destination ? destination : ""} passHref>
+        <Link
+            className={styles.wrap}
+            href={destination ? destination : ""}
+            passHref>
             <button
                 type='button'
-                className={`${styles.button}`}
+                className={`${styles.button} ${cormorant.className}`}
                 title={label}
                 aria-label={label}>
                 {label}
