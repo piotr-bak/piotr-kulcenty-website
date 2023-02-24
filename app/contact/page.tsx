@@ -1,5 +1,8 @@
-import "../styles/globals.css";
-
-export default function Page() {
-    return <h1>Piotr Kulcenty - Contact</h1>;
+import "../../styles/globals.css";
+export default function Contact() {
+    return (
+        <>
+            <h3>Contact</h3>
+        </>
+    );
 }

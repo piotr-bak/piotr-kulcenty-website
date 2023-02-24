@@ -1,10 +1,11 @@
 "use client";
+import { Brand } from "@/components/shared/Brand/Brand";
 import "../styles/globals.css";
 
 export default function Page() {
-    return <h1></h1>;
+    return (
+        <>
+            <Brand />
+        </>
+    );
 }
-
-export const metadata = {
-    title: "Piotr Kulcenty - Violin maker based in London",
-};

@@ -9,7 +9,7 @@ import config from "../../data/config/footer.json";
 export const Footer = () => {
     const elements = JSON.parse(JSON.stringify(config));
     return (
-        <footer className={styles.footer}>
+        <div className={styles.footer}>
             <Panel
                 items={elements.map((el: ToggleProps) => {
                     let uuid = crypto["randomUUID"]();
@@ -20,6 +20,6 @@ export const Footer = () => {
                 })}
                 layout='footerStyle'
             />
-        </footer>
+        </div>
     );
 };

@@ -1,11 +1,11 @@
 [
   {
     "label": "Work",
-    "destination": "/"
+    "destination": "/work"
   },
   {
     "label": "Contact",
-    "destination": "/"
+    "destination": "/contact"
   },
   {
     "label": "Go up",
