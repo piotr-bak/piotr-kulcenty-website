@@ -1,9 +1,9 @@
 "use client";
-import { ThemeContextProvider } from "../context/themeContext";
+import { ThemeContextProvider } from "@/context/ThemeContext";
 import { Navbar } from "@/components/Navbar/Navbar";
 import { Brand } from "@/components/shared/Brand/Brand";
 import { Footer } from "@/components/Footer/Footer";
-import { Container } from "@/components/shared/Container/Container";
+import { Wrapper } from "@/components/shared/Container/Wrapper";
 import styles from "./layout.module.css";
 
 export default function RootLayout({
@@ -22,18 +22,15 @@ export default function RootLayout({
             </head>
             <body className={`${styles.body}`}>
                 <ThemeContextProvider>
-                    <Container>
+                    <Wrapper>
                         <header>
                             <Navbar />
                         </header>
-                        <main className={styles.layout}>
-                            <Brand />
-                            {children}
-                        </main>
+                        <main className={styles.layout}>{children}</main>
                         <footer>
                             <Footer />
                         </footer>
-                    </Container>
+                    </Wrapper>
                 </ThemeContextProvider>
             </body>
         </html>

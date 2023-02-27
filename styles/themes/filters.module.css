@@ -1,3 +1,9 @@
-/* tutaj wrzucić filtry które zmieniają kolor SVG tak jak potrzeba - 
-klasy też podział na .dark i .light
-*/
+.dark {
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(326deg) brightness(96%)
+        contrast(104%);
+}
+
+.light {
+    filter: invert(93%) sepia(7%) saturate(524%) hue-rotate(320deg)
+        brightness(107%) contrast(87%);
+}
