@@ -1,9 +1,9 @@
 import React from "react";
-import { useThemeContext } from "@/app/Context/themeContext";
+import { useThemeContext } from "@/context/themeContext";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./NavElement.module.css";
-import themes from "@/styles/themes/typography.module.css";
+import typography from "@/styles/themes/typography.module.css";
 import { cormorant } from "@/lib/fonts";
 import { NavElementProps } from "@/types";
 
@@ -16,7 +16,7 @@ export const NavElement = (props: NavElementProps) => {
             href={destination ? destination : ""}
             passHref>
             <Image
-                className={`${themes[theme]} ${styles.image}`}
+                className={`${typography[theme]} ${styles.image}`}
                 src={imgSrc}
                 width={38}
                 height={48}
@@ -26,7 +26,7 @@ export const NavElement = (props: NavElementProps) => {
     ) : (
         <div className={styles.wrap} title={label} aria-label={label}>
             <Link
-                className={`${styles.button} ${cormorant.className} ${themes[theme]}`}
+                className={`${styles.button} ${cormorant.className} ${typography[theme]}`}
                 href={destination ? destination : ""}>
                 {label}
             </Link>

@@ -1,3 +1,10 @@
 /* tutaj wrzucić kolory tła - 
 klasy też podział na .dark i .light
 */
+.dark {
+    background-color: hsl(0, 0%, 0%);
+}
+
+.light {
+    background-color: hsl(30, 20%, 92%);
+}

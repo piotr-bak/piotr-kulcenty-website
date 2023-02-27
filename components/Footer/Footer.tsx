@@ -4,9 +4,10 @@ import { NavElement } from "../shared/NavElement/NavElement";
 import { Toggle } from "../shared/Toggle/Toggle";
 import { ToggleProps } from "@/types";
 import styles from "./Footer.module.css";
-import config from "../../data/config/footer.json";
+import config from "../../config/footer.json";
 
 export const Footer = () => {
+    //quick config sanitization
     const elements = JSON.parse(JSON.stringify(config));
     return (
         <div className={styles.footer}>

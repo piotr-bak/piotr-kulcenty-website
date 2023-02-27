@@ -1,10 +1,10 @@
 {
   "darkTheme": [
     "/",
-    "work"
+    "/work"
   ],
   "lightTheme": [
-    "about",
-    "contact"
+    "/about",
+    "/contact"
   ]
 }

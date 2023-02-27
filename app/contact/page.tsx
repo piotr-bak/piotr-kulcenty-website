@@ -1,4 +1,9 @@
-import "../../styles/globals.css";
+"use client";
+import { useContext, useEffect } from "react";
+import { ThemeContex } from "../../context/themeContext";
+import { usePathname } from "next/navigation";
+import { useTheme } from "@/lib/hooks";
+
 export default function Contact() {
     return (
         <>

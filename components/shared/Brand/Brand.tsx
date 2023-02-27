@@ -1,4 +1,4 @@
-import { useThemeContext } from "@/app/Context/themeContext";
+import { useThemeContext } from "@/context/themeContext";
 import Image from "next/image";
 import brandImg from "/public/brand.svg";
 import styles from "./Brand.module.css";
