@@ -1,12 +1,9 @@
 "use client";
-import { useContext, useEffect } from "react";
-import { ThemeContex } from "../../context/ThemeContext";
-import { usePathname } from "next/navigation";
-import { useTheme } from "@/lib/hooks";
-export default function Work() {
+import { Container } from "@/components/shared/Container/Container";
+export default function Page() {
     return (
-        <>
-            <h3>Work</h3>
-        </>
+        <Container>
+            <p>Work</p>
+        </Container>
     );
 }

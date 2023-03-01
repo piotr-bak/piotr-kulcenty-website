@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { useTheme } from "@/lib/hooks";
 import { ProviderProps } from "@/types";
 import background from "styles/themes/backgrounds.module.css";
+import typography from "styles/themes/typography.module.css";
 import styles from "./Wrapper.module.css";
 
 export const Wrapper = ({ children }: ProviderProps) => {
@@ -13,7 +14,8 @@ export const Wrapper = ({ children }: ProviderProps) => {
         setTheme(theme);
     }, [theme, setTheme]);
     return (
-        <div className={`${background[theme]} ${styles.container}`}>
+        <div
+            className={`${background[theme]} ${typography[theme]} ${styles.container}`}>
             {children}
         </div>
     );
