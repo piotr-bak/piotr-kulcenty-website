@@ -1,7 +1,7 @@
 "use client";
 import { ThemeContextProvider } from "@/context/ThemeContext";
 import { Navbar } from "@/components/Navbar/Navbar";
-import { Brand } from "@/components/shared/Brand/Brand";
+import { Brand } from "@/components/Brand/Brand";
 import { Footer } from "@/components/Footer/Footer";
 import { Wrapper } from "@/components/shared/Wrapper/Wrapper";
 import "@/styles/global.css";

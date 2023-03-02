@@ -1,0 +1,46 @@
+{
+  "lg": [
+    {
+      "name": "desktop-landscape",
+      "width": "916",
+      "height": "648"
+    },
+    {
+      "name": "desktop-portrait",
+      "width": "648",
+      "height": "843"
+    },
+    {
+      "name": "mobile-landscape",
+      "width": "312",
+      "height": "224"
+    },
+    {
+      "name": "mobile-portrait",
+      "width": "220",
+      "height": "293"
+    }
+  ],
+  "sm": [
+    {
+      "name": "desktop-landscape",
+      "width": "525",
+      "height": "372"
+    },
+    {
+      "name": "desktop-portrait",
+      "width": "379",
+      "height": "492"
+    },
+    {
+      "name": "mobile-landscape",
+      "width": "150",
+      "height": "110"
+    },
+    {
+      "name": "mobile-portrait",
+      "width": "150",
+      "height": "200"
+    }
+  ]
+}
