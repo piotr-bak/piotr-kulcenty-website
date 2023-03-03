@@ -1,12 +1,16 @@
-import { GalleryItem } from "../GalleryItem/GalleryItem";
 import { GalleryItemProps } from "@/types";
+import { GalleryItem } from "../GalleryItem/GalleryItem";
 
-export const GalleryGroup = (elements: Array<GalleryItemProps>) => {
+type GalleryGroupProps = {
+    items: Array<GalleryItemProps>;
+};
+
+export const GalleryGroup = ({ items }: GalleryGroupProps) => {
     return (
         <div>
-            {elements.map((el) => {
+            {items.map((item) => {
                 let uuid = crypto["randomUUID"]();
-                return <GalleryItem key={uuid} {...el} />;
+                return <GalleryItem key={uuid} {...item} />;
             })}
         </div>
     );
