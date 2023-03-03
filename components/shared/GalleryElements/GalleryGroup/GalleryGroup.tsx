@@ -1,9 +1,5 @@
-import { GalleryItemProps } from "@/types";
+import { GalleryGroupProps } from "@/types/interfaces";
 import { GalleryItem } from "../GalleryItem/GalleryItem";
-
-type GalleryGroupProps = {
-    items: Array<GalleryItemProps>;
-};
 
 export const GalleryGroup = ({ items }: GalleryGroupProps) => {
     return (

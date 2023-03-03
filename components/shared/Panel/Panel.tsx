@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
+import { PanelProps } from "@/types/interfaces";
 import styles from "./Panel.module.css";
-import { PanelProps } from "@/types";
 
 export const Panel = ({ items, layout }: PanelProps) => {
     const layoutVariant =

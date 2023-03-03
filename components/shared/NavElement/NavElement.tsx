@@ -1,12 +1,12 @@
 import React from "react";
 import { useThemeContext } from "@/context/ThemeContext";
+import { NavElementProps } from "@/types/interfaces";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./NavElement.module.css";
 import typography from "@/styles/themes/typography.module.css";
 import filter from "@/styles/themes/filters.module.css";
 import { cormorant } from "@/lib/fonts";
-import { NavElementProps } from "@/types";
 
 export const NavElement = (props: NavElementProps) => {
     const { imgSrc, label, destination } = props;

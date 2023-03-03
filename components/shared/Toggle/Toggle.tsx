@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import { MobileNavProps } from "@/types/interfaces";
 import styles from "./Toggle.module.css";
-import { ToggleProps } from "@/types";
 
-export const Toggle = (props: ToggleProps) => {
+export const Toggle = (props: MobileNavProps) => {
     const { label, role } = props;
     const [toggled, setToggled] = useState(false);
     const handleClick = () => {

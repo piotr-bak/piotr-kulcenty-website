@@ -1,7 +1,7 @@
 "use client";
 import { Container } from "@/components/shared/Container/Container";
 import { GalleryContainer } from "@/components/shared/GalleryElements/GalleryContainer/GalleryContainer";
-import configFile from "@/data/gallery/home.json";
+import configFile from "@/data/gallery/about.json";
 
 export default function Page() {
     if (!Array.isArray(configFile)) {

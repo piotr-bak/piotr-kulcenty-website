@@ -1,20 +1,15 @@
+import { GalleryItemProps } from "@/types/interfaces";
 import Image from "next/image";
-import { GalleryItemProps } from "@/types";
 
-export const GalleryItem = ({
-    src,
-    alt,
-    size,
-    orientation,
-    description,
-}: GalleryItemProps) => {
+export const GalleryItem = (props: GalleryItemProps) => {
+    const { src, alt, size, orientation, description } = props;
     return (
         <div>
             <Image
                 className={``}
-                src={""}
-                width={0}
-                height={0}
+                src={src}
+                height={648}
+                width={916}
                 alt={description || "Violin made by Piotr Kulcenty"}
             />
             <figcaption>
