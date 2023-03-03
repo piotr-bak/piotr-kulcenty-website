@@ -5,6 +5,7 @@ import { useTheme } from "@/lib/hooks";
 import { ProviderProps } from "@/types";
 import background from "styles/themes/backgrounds.module.css";
 import typography from "styles/themes/typography.module.css";
+import scrollbar from "styles/themes/scrollbar.module.css";
 import styles from "./Wrapper.module.css";
 
 export const Wrapper = ({ children }: ProviderProps) => {
@@ -15,7 +16,7 @@ export const Wrapper = ({ children }: ProviderProps) => {
     }, [theme, setTheme]);
     return (
         <div
-            className={`${background[theme]} ${typography[theme]} ${styles.container}`}>
+            className={`${background[theme]} ${typography[theme]} ${scrollbar[theme]} ${styles.wrapper}`}>
             {children}
         </div>
     );

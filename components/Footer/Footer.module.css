@@ -1,7 +1,8 @@
 .footer {
-    width: 100vw;
     background-color: transparent;
     left: 0;
     bottom: 0;
     position: fixed;
+    /*-12px so it does not cover the scrollbar area*/
+    width: calc(100vw - 12px);
 }

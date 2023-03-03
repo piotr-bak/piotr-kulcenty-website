@@ -26,7 +26,7 @@ export default function RootLayout({
                         <header>
                             <Navbar />
                         </header>
-                        <main className={styles.layout}>
+                        <main className={`${styles.layout}`}>
                             <Brand />
                             {children}
                         </main>
