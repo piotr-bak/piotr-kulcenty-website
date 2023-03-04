@@ -1,8 +1,6 @@
 .container {
-    margin-left: 234px;
-    margin-right: 234px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50vw;
+    margin-left: 12vw;
+    margin-right: 12vw;
+    width: 76vw;
+    position: relative;
 }

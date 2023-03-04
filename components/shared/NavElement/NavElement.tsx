@@ -22,6 +22,7 @@ export const NavElement = (props: NavElementProps) => {
                 width={38}
                 height={48}
                 alt={label}
+                priority
             />
         </Link>
     ) : (

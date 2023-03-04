@@ -7,11 +7,7 @@ export const GalleryContainer = ({ configData }: GalleryContainerProps) => {
         <div className={styles.container}>
             {configData.map((group) => {
                 let uuid = crypto["randomUUID"]();
-                return (
-                    <div key={uuid}>
-                        <GalleryGroup items={group} />
-                    </div>
-                );
+                return <GalleryGroup key={uuid} items={group} />;
             })}
         </div>
     );

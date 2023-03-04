@@ -2,23 +2,32 @@
   [
     {
       "src": "/gallery/home/placeholder1.webp",
-      "alt": "",
-      "size": "",
-      "orientation": "",
+      "width": "919",
+      "height": "690",
+      "orientation": "landscape",
       "description": ""
     },
     {
       "src": "/gallery/home/placeholder2.webp",
-      "alt": "",
-      "size": "",
-      "orientation": "",
+      "width": "596",
+      "height": "795",
+      "orientation": "portrait",
       "description": ""
     },
     {
       "src": "/gallery/home/placeholder3.webp",
-      "alt": "",
-      "size": "",
-      "orientation": "",
+      "width": "596",
+      "height": "795",
+      "orientation": "portrait",
+      "description": ""
+    }
+  ],
+  [
+    {
+      "src": "/gallery/home/placeholder4.webp",
+      "width": "3557",
+      "height": "2668",
+      "orientation": "portrait",
       "description": ""
     }
   ]

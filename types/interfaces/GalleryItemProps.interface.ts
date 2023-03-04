@@ -1,7 +1,7 @@
 export interface GalleryItemProps {
     src: string;
-    alt: string;
-    size: "lg" | "md";
+    width: number;
+    height: number;
     orientation: "portrait" | "landscape";
     description?: string;
 }

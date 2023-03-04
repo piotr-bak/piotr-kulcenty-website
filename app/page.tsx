@@ -11,7 +11,6 @@ export default function Page() {
     return (
         <div>
             <Container>
-                <h1>Home</h1>
                 <GalleryContainer configData={galleryItems} />
             </Container>
         </div>

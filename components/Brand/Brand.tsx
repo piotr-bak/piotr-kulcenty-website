@@ -16,7 +16,7 @@ export const Brand = () => {
                 height={48}
                 width={250}
                 alt='Piotr Kulcenty Violins'
-                priority={true}
+                priority
             />
         </div>
     );
