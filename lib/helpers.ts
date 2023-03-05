@@ -1,20 +1,17 @@
 import { ConfigFile } from "@/types";
+import { UnparsedGalleryItemProps, GalleryItemProps } from "@/types/interfaces";
 
-export const parseConfig = (configFile: ConfigFile) => {
-    configFile = JSON.parse(JSON.stringify(configFile));
-    for (const fragment of configFile) {
-        if (Array.isArray(fragment)) {
-            fragment.forEach((element) => {
-                if (element.width) {
-                    element.width = +element.width;
-                }
-                if (element.height) {
-                    element.height = +element.height;
-                }
-            });
-        }
-    }
-    return configFile;
+const parseGalleryItem = (item: UnparsedGalleryItemProps): GalleryItemProps => {
+    return {
+        ...item,
+        width: parseInt(item.width, 10),
+        height: parseInt(item.height, 10),
+    };
+};
+
+export const parseConfig = (configFile: ConfigFile): GalleryItemProps[][] => {
+    const result = configFile.map((fragment) => fragment.map(parseGalleryItem));
+    return result;
 };
 
 export const getImageOrientation = (height: number, width: number) => {

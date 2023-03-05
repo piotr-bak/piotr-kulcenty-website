@@ -4,21 +4,18 @@
       "src": "/gallery/home/01_2021_Stradivari_Bridge.webp",
       "width": "1779",
       "height": "1334",
-      "orientation": "landscape",
       "description": ""
     },
     {
       "src": "/gallery/home/02_2021_Stradivari_Corner.webp",
       "width": "1045",
       "height": "1393",
-      "orientation": "portrait",
       "description": ""
     },
     {
       "src": "/gallery/home/03_2021_Stradivari_Front.webp",
       "width": "1393",
       "height": "1858",
-      "orientation": "portrait",
       "description": ""
     }
   ],
@@ -27,21 +24,18 @@
       "src": "/gallery/home/10_2022_Unvarnished_Scroll.webp",
       "width": "1420",
       "height": "1893",
-      "orientation": "portrait",
       "description": ""
     },
     {
       "src": "/gallery/home/11_2022_Unvarnished_Fhole.webp",
       "width": "1536",
       "height": "2040",
-      "orientation": "portrait",
       "description": ""
     },
     {
       "src": "/gallery/home/12_2022_Unvarnished_Back_side.webp",
       "width": "1227",
       "height": "1636",
-      "orientation": "portrait",
       "description": ""
     }
   ],
@@ -50,21 +44,18 @@
       "src": "/gallery/home/20_2022_Guarneri_Del_Gesu_Front.webp",
       "width": "1399",
       "height": "1872",
-      "orientation": "portrait",
       "description": ""
     },
     {
       "src": "/gallery/home/21_2022_Guarneri_Del_Gesu_Scroll_Front.webp",
-      "width": "0974",
+      "width": "974",
       "height": "1299",
-      "orientation": "portrait",
       "description": ""
     },
     {
       "src": "/gallery/home/22_2022_Guarneri_Del_Gesu_Back_Corner.webp",
       "width": "1399",
       "height": "1872",
-      "orientation": "portrait",
       "description": ""
     }
   ]
