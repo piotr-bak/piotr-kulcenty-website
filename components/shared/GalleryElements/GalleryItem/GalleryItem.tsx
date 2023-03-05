@@ -4,10 +4,10 @@ import Image from "next/image";
 import style from "./GalleryItem.module.css";
 
 export const GalleryItem = (props: GalleryItemProps) => {
-    const { src, width, height, description } = props;
+    const { src, width, height, description, mode } = props;
     const orientation = getImageOrientation(height, width);
     return (
-        <div className={style.item}>
+        <div className={`${style.item} ${style[mode]}`}>
             <Image
                 className={`${style[orientation]}`}
                 src={src}
