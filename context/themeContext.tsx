@@ -1,6 +1,7 @@
 "use client";
 import { createContext, useContext, useState } from "react";
-import { ContextProps, ProviderProps, ThemeKey } from "@/types";
+import { ContextProps } from "@/types/interfaces";
+import { ProviderProps, ThemeKey } from "@/types";
 
 export const ThemeContex = createContext<ContextProps>({
     theme: "dark",
