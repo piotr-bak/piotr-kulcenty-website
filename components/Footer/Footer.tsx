@@ -1,4 +1,4 @@
-export {};
+import { v4 as uuidv4 } from "uuid";
 import { Panel } from "../shared/Panel/Panel";
 import { NavElement } from "../shared/NavElement/NavElement";
 import { Toggle } from "../shared/Toggle/Toggle";
@@ -13,7 +13,7 @@ export const Footer = () => {
         <div className={styles.footer}>
             <Panel
                 items={elements.map((el: MobileNavProps) => {
-                    let uuid = crypto["randomUUID"]();
+                    let uuid = uuidv4();
                     if ("role" in el) {
                         return <Toggle key={uuid} {...el} />;
                     }
