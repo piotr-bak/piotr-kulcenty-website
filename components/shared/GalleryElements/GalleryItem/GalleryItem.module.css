@@ -1,5 +1,7 @@
 .item {
     text-align: center;
+    align-self: center;
+    justify-self: center;
 }
 
 .full:first-child {
