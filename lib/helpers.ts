@@ -9,10 +9,17 @@ const parseGalleryItem = (item: UnparsedGalleryItemProps): GalleryItemProps => {
     };
 };
 
-export const parseConfig = (
-    configFile: ConfigFile
-): NestedArray<GalleryItemProps> => {
-    const result = configFile.map((fragment) => fragment.map(parseGalleryItem));
+// export const parseConfig = (
+//     configFile: ConfigFile
+// ): NestedArray<GalleryItemProps> => {
+//     const result = configFile.map((fragment) => fragment.map(parseGalleryItem));
+//     return result;
+// };
+
+export const parseConfig = (configFile: any) => {
+    const result = configFile.map((fragment: any) =>
+        fragment.map(parseGalleryItem)
+    );
     return result;
 };
 

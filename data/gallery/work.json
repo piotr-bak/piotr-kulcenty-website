@@ -1,70 +1,121 @@
 [
   [
     {
-      "src": "",
-      "alt": "",
-      "size": "",
-      "orientation": "",
+      "src": "/gallery/work/00_Violin_2021_Stradivari_Front.webp",
+      "width": "1393",
+      "height": "1858",
       "description": ""
     },
     {
-      "src": "",
-      "alt": "",
-      "size": "",
-      "orientation": "",
+      "src": "/gallery/work/01_2021_Stradivari_Corner.webp",
+      "width": "1857",
+      "height": "1393",
       "description": ""
     },
     {
-      "src": "",
-      "alt": "",
-      "size": "",
-      "orientation": "",
+      "src": "/gallery/work/02_2021_Stradivari_Scroll.webp",
+      "width": "1036",
+      "height": "1381",
       "description": ""
     }
   ],
   [
     {
-      "src": "",
-      "alt": "",
-      "size": "",
-      "orientation": "",
+      "src": "/gallery/work/10_2021_Stradivari_Button.webp",
+      "width": "1857",
+      "height": "1393",
       "description": ""
     },
     {
-      "src": "",
-      "alt": "",
-      "size": "",
-      "orientation": "",
+      "src": "/gallery/work/11_2021_Stradivari_Back.webp",
+      "width": "1456",
+      "height": "1942",
       "description": ""
     },
     {
-      "src": "",
-      "alt": "",
-      "size": "",
-      "orientation": "",
+      "src": "/gallery/work/12_2021_Stradivari_Back_side.webp",
+      "width": "1860",
+      "height": "1395",
       "description": ""
     }
   ],
   [
     {
-      "src": "",
-      "alt": "",
-      "size": "",
-      "orientation": "",
+      "src": "/gallery/work/20_2022_Guarneri_Del_Gesu_Front.webp",
+      "width": "1399",
+      "height": "1872",
       "description": ""
     },
     {
-      "src": "",
-      "alt": "",
-      "size": "",
-      "orientation": "",
+      "src": "/gallery/work/21_2022_Guarneri_Del_Gesu_Side.webp",
+      "width": "1120",
+      "height": "840",
       "description": ""
     },
     {
-      "src": "",
-      "alt": "",
-      "size": "",
-      "orientation": "",
+      "src": "/gallery/work/22_2022_Guarneri_Del_Gesu_Scroll.webp",
+      "width": "934",
+      "height": "1246",
+      "description": ""
+    }
+  ],
+  [
+    {
+      "src": "/gallery/work/30_2022_Guarneri_Del_Gesu_Back.webp",
+      "width": "1399",
+      "height": "1872",
+      "description": ""
+    },
+    {
+      "src": "/gallery/work/31_2022_Guarneri_Del_Gesu_Bridge_Profile.webp",
+      "width": "1079",
+      "height": "809",
+      "description": ""
+    },
+    {
+      "src": "/gallery/work/32_2022_Guarneri_Del_Gesu_F-hole.webp",
+      "width": "1299",
+      "height": "1739",
+      "description": ""
+    }
+  ],
+  [
+    {
+      "src": "/gallery/work/40_2022_Unvarnished_Back.webp",
+      "width": "1382",
+      "height": "1836",
+      "description": ""
+    },
+    {
+      "src": "/gallery/work/41_2022_Unvarnished_Front_side.webp",
+      "width": "1382",
+      "height": "1836",
+      "description": ""
+    },
+    {
+      "src": "/gallery/work/42_2022_Unvarnished_Back_side.webp",
+      "width": "1104",
+      "height": "1472",
+      "description": ""
+    }
+  ],
+  [
+    {
+      "src": "/gallery/work/50_2022_Unvarnished_Back_corner.webp",
+      "width": "1377",
+      "height": "1836",
+      "description": ""
+    },
+    {
+      "src": "/gallery/work/51_2022_Unvarnished_F-hole.webp",
+      "width": "1536",
+      "height": "2040",
+      "description": ""
+    },
+    {
+      "src": "/gallery/work/52_2022_Unvarnished_Scroll.webp",
+      "width": "1420",
+      "height": "1893",
       "description": ""
     }
   ]
