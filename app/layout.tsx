@@ -1,5 +1,5 @@
 "use client";
-import { ThemeContextProvider } from "@/context/ThemeContext";
+import { ThemeContextProvider } from "@/app/contexts/ThemeContext";
 import { Navbar } from "@/components/Navbar/Navbar";
 import { Brand } from "@/components/Brand/Brand";
 import { Footer } from "@/components/Footer/Footer";

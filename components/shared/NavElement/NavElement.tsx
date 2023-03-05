@@ -1,5 +1,5 @@
 import React from "react";
-import { useThemeContext } from "@/context/ThemeContext";
+import { useThemeContext } from "@/app/contexts/ThemeContext";
 import { NavElementProps } from "@/types/interfaces";
 import Image from "next/image";
 import Link from "next/link";
