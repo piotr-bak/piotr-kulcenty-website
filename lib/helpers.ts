@@ -1,4 +1,4 @@
-import { ConfigFile, NestedArray } from "@/types";
+//import { ConfigFile, NestedArray } from "@/types";
 import { UnparsedGalleryItemProps, GalleryItemProps } from "@/types/interfaces";
 
 const parseGalleryItem = (item: UnparsedGalleryItemProps): GalleryItemProps => {
