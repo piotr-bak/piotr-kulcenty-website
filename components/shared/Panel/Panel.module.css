@@ -2,7 +2,7 @@
     background-color: transparent;
     display: flex;
     justify-content: space-between;
-    height: 47px;
+    height: 4.3vh;
     width: 100vw;
 }
 
@@ -12,7 +12,7 @@
 
 .footerStyle {
     padding-top: 0px;
-    padding-bottom: 77px;
-    height: 47px;
+    padding-bottom: 7.7vh;
+    height: 4.3vh;
     align-items: flex-end;
 }

@@ -2,9 +2,14 @@
     border: 0px;
     background-color: transparent;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 1.25rem;
+    font-weight: 500;
     text-decoration: none;
     z-index: 10;
+}
+
+.button:hover {
+    text-decoration: underline;
 }
 
 .image {

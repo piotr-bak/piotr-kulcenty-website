@@ -1,4 +1,4 @@
-import { ConfigFile } from "@/types";
+import { ConfigFile, NestedArray } from "@/types";
 import { UnparsedGalleryItemProps, GalleryItemProps } from "@/types/interfaces";
 
 const parseGalleryItem = (item: UnparsedGalleryItemProps): GalleryItemProps => {
@@ -9,7 +9,9 @@ const parseGalleryItem = (item: UnparsedGalleryItemProps): GalleryItemProps => {
     };
 };
 
-export const parseConfig = (configFile: ConfigFile): GalleryItemProps[][] => {
+export const parseConfig = (
+    configFile: ConfigFile
+): NestedArray<GalleryItemProps> => {
     const result = configFile.map((fragment) => fragment.map(parseGalleryItem));
     return result;
 };

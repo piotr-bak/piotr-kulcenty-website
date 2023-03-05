@@ -1,0 +1,40 @@
+.wrap {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 68.6vh;
+    padding-top: 8vh;
+}
+
+.content {
+    width: 47vw;
+    height: 30vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+}
+
+.description {
+    font-size: 1.56rem;
+    font-weight: 400;
+}
+
+.linkarea {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 2em;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.linkarea a {
+    position: relative;
+}
+
+.linkarea a:hover {
+    text-decoration: underline;
+}
