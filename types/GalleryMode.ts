@@ -1,1 +1,1 @@
-export type GalleryMode = "full" | "compact";
+export type GalleryMode = "full" | "compact" | "mixed";

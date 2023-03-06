@@ -11,7 +11,7 @@ import style from "./style.module.css";
 
 export default function Page() {
     const galleryItems = parseConfig(configFile);
-    const mode: GalleryMode = "compact";
+    const mode: GalleryMode = "mixed";
     return (
         <Container>
             <div className={`${style.wrap} ${cormorant.className}`}>

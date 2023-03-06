@@ -21,7 +21,7 @@ export const GalleryItem = (props: GalleryItemProps) => {
                 height={height}
                 quality='85'
                 priority={priority}
-                sizes='320 640 768 1200'
+                sizes='320 480 640 768 1200'
                 alt={description || "Violin made by Piotr Kulcenty"}
                 onClick={handleClick}
             />
