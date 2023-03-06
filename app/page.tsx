@@ -1,6 +1,6 @@
 "use client";
 import { Container } from "@/components/shared/Container/Container";
-import { GalleryContainer } from "@/components/shared/GalleryElements/GalleryContainer/GalleryContainer";
+import { GalleryContainer } from "@/components/shared/Gallery/GalleryContainer/GalleryContainer";
 import { GalleryMode } from "@/types";
 import { parseConfig } from "@/lib/helpers";
 import configFile from "@/data/gallery/home.json";

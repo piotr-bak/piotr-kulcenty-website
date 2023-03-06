@@ -1,4 +1,4 @@
-import { GalleryMode } from "../GalleryMode";
+import { GalleryMode } from "../../GalleryMode";
 export interface UnparsedGalleryItemProps {
     src: string;
     width: string;

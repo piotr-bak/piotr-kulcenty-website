@@ -1,8 +1,9 @@
 "use client";
-import { ThemeContextProvider } from "@/contexts/ThemeContext";
+import { ModalImgContextProvider, ThemeContextProvider } from "@/contexts";
 import { Navbar } from "@/components/Navbar/Navbar";
 import { Brand } from "@/components/Brand/Brand";
 import { Footer } from "@/components/Footer/Footer";
+import { Modal } from "@/components/Modal/Modal";
 import { Wrapper } from "@/components/shared/Wrapper/Wrapper";
 import "@/styles/global.css";
 import styles from "./layout.module.css";
@@ -22,18 +23,21 @@ export default function RootLayout({
             </head>
             <body className={`${styles.body}`}>
                 <ThemeContextProvider>
-                    <Wrapper>
-                        <header>
-                            <Navbar />
-                        </header>
-                        <main className={`${styles.layout}`}>
-                            <Brand />
-                            {children}
-                        </main>
-                        <footer>
-                            <Footer />
-                        </footer>
-                    </Wrapper>
+                    <ModalImgContextProvider>
+                        <Wrapper>
+                            <header>
+                                <Navbar />
+                            </header>
+                            <main className={`${styles.layout}`}>
+                                <Brand />
+                                {children}
+                            </main>
+                            <footer>
+                                <Footer />
+                            </footer>
+                            <Modal />
+                        </Wrapper>
+                    </ModalImgContextProvider>
                 </ThemeContextProvider>
             </body>
         </html>
