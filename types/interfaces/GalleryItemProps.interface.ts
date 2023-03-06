@@ -6,4 +6,5 @@ export interface GalleryItemProps {
     height: number;
     description?: string;
     mode: GalleryMode;
+    priority: boolean;
 }

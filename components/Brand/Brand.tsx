@@ -1,4 +1,4 @@
-import { useThemeContext } from "@/app/contexts/ThemeContext";
+import { useThemeContext } from "@/contexts/ThemeContext";
 import Image from "next/image";
 import brandImg from "/public/brand.svg";
 import styles from "./Brand.module.css";
@@ -9,7 +9,7 @@ import filter from "@/styles/themes/filters.module.css";
 export const Brand = () => {
     const { theme } = useThemeContext();
     return (
-        <div className={`${styles.wrap}`}>
+        <figure className={`${styles.wrap}`}>
             <Image
                 className={`${filter[theme]} ${styles.logo}`}
                 src={brandImg}
@@ -18,6 +18,6 @@ export const Brand = () => {
                 alt='Piotr Kulcenty Violins'
                 priority
             />
-        </div>
+        </figure>
     );
 };

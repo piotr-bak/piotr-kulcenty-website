@@ -5,4 +5,5 @@ export interface UnparsedGalleryItemProps {
     height: string;
     description?: string;
     mode: GalleryMode;
+    priority: boolean;
 }

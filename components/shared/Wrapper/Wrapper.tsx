@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useThemeContext } from "@/app/contexts/ThemeContext";
+import { useThemeContext } from "@/contexts/ThemeContext";
 import { usePathname } from "next/navigation";
 import { useTheme } from "@/lib/hooks";
 import { ProviderProps } from "@/types";

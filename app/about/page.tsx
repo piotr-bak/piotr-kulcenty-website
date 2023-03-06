@@ -1,23 +1,30 @@
 "use client";
+import { GalleryMode } from "@/types";
 import Image from "next/image";
 import { Container } from "@/components/shared/Container/Container";
+import { GalleryContainer } from "@/components/shared/GalleryElements/GalleryContainer/GalleryContainer";
+import { parseConfig } from "@/lib/helpers";
+import configFile from "@/data/gallery/about.json";
 import { cormorant } from "@/lib/fonts";
 import photo from "@/public/portrait.webp";
 import style from "./style.module.css";
 
 export default function Page() {
+    const galleryItems = parseConfig(configFile);
+    const mode: GalleryMode = "compact";
     return (
         <Container>
             <div className={`${style.wrap} ${cormorant.className}`}>
-                <div className={`${style.content}`}>
-                    <div className={style.columnL}>
+                <section className={`${style.content}`}>
+                    <figure className={style.columnL}>
                         <Image
                             className={style.image}
                             src={photo}
+                            priority
                             alt="Piotr Kulcenty's portrait"
                         />
-                    </div>
-                    <div className={style.columnR}>
+                    </figure>
+                    <article className={style.columnR}>
                         <p>
                             Piotr Kulcenty is a violin maker and restorer
                             currently based in London, UK.
@@ -57,9 +64,12 @@ export default function Page() {
                             exploring different styles and varnishing
                             techniques.
                         </p>
-                    </div>
-                </div>
+                    </article>
+                </section>
             </div>
+            <section className={style.gallery}>
+                <GalleryContainer configData={galleryItems} mode={mode} />
+            </section>
         </Container>
     );
 }

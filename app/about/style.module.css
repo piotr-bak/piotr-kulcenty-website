@@ -3,8 +3,9 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    height: 74.3vh;
+    min-height: 74.3vh;
     padding-top: 7vh;
+    margin-bottom: 14vh;
 }
 
 .content {

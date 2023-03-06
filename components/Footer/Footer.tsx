@@ -10,7 +10,7 @@ export const Footer = () => {
     //quick config sanitization
     const elements: Array<MobileNavProps> = JSON.parse(JSON.stringify(config));
     return (
-        <div className={styles.footer}>
+        <footer className={styles.footer}>
             <Panel
                 items={elements.map((el: MobileNavProps) => {
                     let uuid = uuidv4();
@@ -21,6 +21,6 @@ export const Footer = () => {
                 })}
                 layout='footerStyle'
             />
-        </div>
+        </footer>
     );
 };

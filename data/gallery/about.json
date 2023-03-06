@@ -1,10 +1,41 @@
 [
   [
     {
-      "src": "",
-      "alt": "",
-      "size": "",
-      "orientation": "",
+      "src": "/gallery/about/00_Violin_making.webp",
+      "width": "1657",
+      "height": "1241",
+      "description": ""
+    },
+    {
+      "src": "/gallery/about/01_Violin_antiquing.webp",
+      "width": "1280",
+      "height": "1706",
+      "description": ""
+    },
+    {
+      "src": "/gallery/about/02_Violin_2022_Bridge.webp",
+      "width": "1390",
+      "height": "1043",
+      "description": ""
+    }
+  ],
+  [
+    {
+      "src": "/gallery/about/03_Violin_scraping.webp",
+      "width": "1191",
+      "height": "893",
+      "description": ""
+    },
+    {
+      "src": "/gallery/about/04_Violin_2021_Label.webp",
+      "width": "2000",
+      "height": "1500",
+      "description": ""
+    },
+    {
+      "src": "/gallery/about/05_f-hole_closeup.webp",
+      "width": "1414",
+      "height": "1060",
       "description": ""
     }
   ]

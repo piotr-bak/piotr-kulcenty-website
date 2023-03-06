@@ -1,6 +1,6 @@
 .container {
     margin-left: 12vw;
     margin-right: 12vw;
-    width: 76vw;
+    min-width: 76vw;
     position: relative;
 }
