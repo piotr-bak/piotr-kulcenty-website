@@ -5,7 +5,7 @@ import Image from "next/image";
 import style from "./GalleryItem.module.css";
 
 export const GalleryItem = (props: GalleryItemProps) => {
-    const { src, width, height, description, mode, priority } = props;
+    const { src, width, height, description, mode } = props;
     const orientation = getImageOrientation(height, width);
     const { setImgSrc } = useModalImgContext();
     const handleClick = () => {
@@ -20,7 +20,6 @@ export const GalleryItem = (props: GalleryItemProps) => {
                 width={width}
                 height={height}
                 quality='85'
-                priority={priority}
                 sizes='320 480 640 768 1200'
                 alt={description || "Violin made by Piotr Kulcenty"}
                 onClick={handleClick}

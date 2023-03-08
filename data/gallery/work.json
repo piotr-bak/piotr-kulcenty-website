@@ -1,5 +1,4 @@
 [
-  [
     {
       "src": "/gallery/work/00_Violin_2021_Stradivari_Front.webp",
       "width": "1393",
@@ -35,9 +34,7 @@
       "width": "1860",
       "height": "1395",
       "description": ""
-    }
-  ],
-  [
+    },
     {
       "src": "/gallery/work/20_2022_Guarneri_Del_Gesu_Front.webp",
       "width": "1399",
@@ -73,9 +70,7 @@
       "width": "1299",
       "height": "1739",
       "description": ""
-    }
-  ],
-  [
+    },
     {
       "src": "/gallery/work/40_2022_Unvarnished_Back.webp",
       "width": "1382",
@@ -112,5 +107,4 @@
       "height": "1893",
       "description": ""
     }
-  ]
 ]

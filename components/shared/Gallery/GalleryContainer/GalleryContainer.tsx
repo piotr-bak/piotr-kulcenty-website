@@ -1,29 +1,31 @@
 import { v4 as uuidv4 } from "uuid";
 import { GalleryContainerProps } from "@/types/interfaces";
-import { GalleryGroup } from "../GalleryGroup/GalleryGroup";
+import { GalleryItem } from "../GalleryItem/GalleryItem";
+import { sliceIntoGroups } from "@/lib/helpers";
 import styles from "./GalleryContainer.module.css";
 
 export const GalleryContainer = ({
     configData,
     mode,
 }: GalleryContainerProps) => {
+    const groups = sliceIntoGroups(configData, mode);
     return (
         <div className={styles.container}>
-            {configData.map((group, index) => {
-                let uuid = uuidv4();
-
-                //below checks whether the group is either 1st or 2nd of its kind
-                //- images from the first and second group need to have "priority"
-                //  attribute set to true - otherwise Next.js img optimization
-                //  causes some of visible images to load a bit *too* lazy
-                let priorityGroup = index < 2;
+            {groups.map((group) => {
+                let groupId = uuidv4();
                 return (
-                    <GalleryGroup
-                        key={uuid}
-                        items={group}
-                        mode={mode}
-                        priorityGroup={priorityGroup}
-                    />
+                    <div key={groupId} className={`${styles[mode]}`}>
+                        {group.map((item) => {
+                            let itemId = uuidv4();
+                            return (
+                                <GalleryItem
+                                    key={itemId}
+                                    {...item}
+                                    mode={mode}
+                                />
+                            );
+                        })}
+                    </div>
                 );
             })}
         </div>

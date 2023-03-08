@@ -6,9 +6,5 @@
   {
     "label": "Contact",
     "destination": "/contact"
-  },
-  {
-    "label": "Go up",
-    "role": "scroller"
   }
 ]

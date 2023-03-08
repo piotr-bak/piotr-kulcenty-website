@@ -1,9 +1,11 @@
 import React from "react";
-import { MobileNavProps } from "@/types/interfaces";
+import Image from "next/image";
+import { ToggleProps } from "@/types";
+import FASolidBarsIcon from "@/public/bars-solid.svg";
 import styles from "./Toggle.module.css";
 
-export const Toggle = (props: MobileNavProps) => {
-    const { label, role } = props;
+export const Toggle = (props: ToggleProps) => {
+    const role = props;
     //const [toggled, setToggled] = useState(false);
     const handleClick = () => {
         //setToggled((toggled) => !toggled);
@@ -15,7 +17,13 @@ export const Toggle = (props: MobileNavProps) => {
             title={label}
             aria-label={label}
             onClick={handleClick}>
-            {role}
+            <Image
+                className={styles.hamburger}
+                src={FASolidBarsIcon}
+                alt='Open mobile menu'
+                priority
+            />
+            button
         </button>
     );
 };

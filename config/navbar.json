@@ -7,9 +7,5 @@
   {
     "label": "About",
     "destination": "/about"
-  },
-  {
-    "label": "Navigation menu",
-    "role": "hamburger"
   }
 ]

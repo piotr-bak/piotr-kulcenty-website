@@ -1,25 +1,40 @@
-//import { ConfigFile, NestedArray } from "@/types";
-import { UnparsedGalleryItemProps, GalleryItemProps } from "@/types/interfaces";
+import { GalleryMode } from "@/types";
+import { GalleryItemProps } from "@/types/interfaces";
+import galleryConfig from "@/config/gallery.json";
 
-const parseGalleryItem = (item: UnparsedGalleryItemProps): GalleryItemProps => {
-    return {
-        ...item,
-        width: parseInt(item.width, 10),
-        height: parseInt(item.height, 10),
-    };
+const sanitizeConfig = (configFile: any) => {
+    configFile = JSON.parse(JSON.stringify(configFile));
+    return configFile;
 };
 
-// export const parseConfig = (
-//     configFile: ConfigFile
-// ): NestedArray<GalleryItemProps> => {
-//     const result = configFile.map((fragment) => fragment.map(parseGalleryItem));
-//     return result;
-// };
-
 export const parseConfig = (configFile: any) => {
-    const result = configFile.map((fragment: any) =>
-        fragment.map(parseGalleryItem)
-    );
+    sanitizeConfig(configFile);
+    const result = configFile.map((entry: any) => {
+        if (entry.width) {
+            entry.width = parseInt(entry.width, 10);
+        }
+        if (entry.height) {
+            entry.height = parseInt(entry.height, 10);
+        }
+        return entry;
+    });
+    return result;
+};
+
+export const sliceIntoGroups = (
+    array: Array<GalleryItemProps>,
+    mode: GalleryMode
+) => {
+    const fullSize: number = parseInt(galleryConfig.groupSizes.full);
+    const compactSize: number = parseInt(galleryConfig.groupSizes.compact);
+    const groupSize: number = mode === "full" ? fullSize : compactSize;
+
+    const result = [];
+
+    for (let i = 0; i < array.length; i += groupSize) {
+        result.push(array.slice(i, i + groupSize));
+    }
+
     return result;
 };
 
