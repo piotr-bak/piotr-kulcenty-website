@@ -1,22 +1,22 @@
 import { v4 as uuidv4 } from "uuid";
-import { Panel } from "../shared/Panel/Panel";
-import { NavElement } from "../shared/NavElement/NavElement";
+import { Panel } from "../Panel/Panel";
+import { NavElement } from "../NavElement/NavElement";
 import { NavElementProps } from "@/types/interfaces";
-import styles from "./Navbar.module.css";
-import config from "../../config/navbar.json";
+import styles from "./Footer.module.css";
+import config from "../../../config/footer.json";
 
-export const Navbar = () => {
+export const Footer = () => {
     //quick config sanitization
     const elements: Array<NavElementProps> = JSON.parse(JSON.stringify(config));
     return (
-        <nav className={styles.navbar}>
+        <footer className={styles.footer}>
             <Panel
                 items={elements.map((el: NavElementProps) => {
                     let uuid = uuidv4();
                     return <NavElement key={uuid} {...el} />;
                 })}
-                layout='navbarStyle'
+                layout='footerStyle'
             />
-        </nav>
+        </footer>
     );
 };

@@ -2,7 +2,7 @@
 import { GalleryMode } from "@/types";
 import Image from "next/image";
 import { Container } from "@/components/shared/Container/Container";
-import { GalleryContainer } from "@/components/shared/Gallery/GalleryContainer/GalleryContainer";
+import { GalleryContainer } from "@/components/Gallery/GalleryContainer/GalleryContainer";
 import { parseConfig } from "@/lib/helpers";
 import configFile from "@/data/gallery/about.json";
 import { cormorant } from "@/lib/fonts";

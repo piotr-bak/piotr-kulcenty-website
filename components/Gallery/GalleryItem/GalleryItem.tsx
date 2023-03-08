@@ -2,7 +2,7 @@ import { useModalImgContext } from "@/contexts/ModalImgContext";
 import { GalleryItemProps } from "@/types/interfaces";
 import { getImageOrientation } from "@/lib/helpers";
 import Image from "next/image";
-import style from "./GalleryItem.module.css";
+import styles from "./GalleryItem.module.css";
 
 export const GalleryItem = (props: GalleryItemProps) => {
     const { src, width, height, description, mode } = props;
@@ -13,9 +13,9 @@ export const GalleryItem = (props: GalleryItemProps) => {
         console.log("Image source that goes to Context", src);
     };
     return (
-        <figure className={`${style.item} ${style[mode]}`}>
+        <figure className={`${styles.item} ${styles[mode]}`}>
             <Image
-                className={`${style[orientation]}`}
+                className={`${styles[orientation]}`}
                 src={src}
                 width={width}
                 height={height}

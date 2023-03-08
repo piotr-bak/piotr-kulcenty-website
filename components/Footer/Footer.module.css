@@ -1,9 +1,0 @@
-.footer {
-    background-color: transparent;
-    left: 0;
-    bottom: 0;
-    position: fixed;
-    /*-12px so it does not cover the scrollbar area - important as the scrollbar
-    gets visible on hover*/
-    width: calc(100vw - 12px);
-}

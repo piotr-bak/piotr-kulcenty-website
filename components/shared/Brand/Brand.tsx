@@ -9,15 +9,17 @@ import filter from "@/styles/themes/filters.module.css";
 export const Brand = () => {
     const { theme } = useThemeContext();
     return (
-        <figure className={`${styles.wrap}`}>
-            <Image
-                className={`${filter[theme]} ${styles.logo}`}
-                src={brandImg}
-                height={48}
-                width={250}
-                alt='Piotr Kulcenty Violins'
-                priority
-            />
-        </figure>
+        <h1>
+            <figure className={`${styles.wrap}`}>
+                <Image
+                    className={`${filter[theme]} ${styles.logo}`}
+                    src={brandImg}
+                    height={48}
+                    width={250}
+                    alt='Piotr Kulcenty Violins'
+                    priority
+                />
+            </figure>
+        </h1>
     );
 };

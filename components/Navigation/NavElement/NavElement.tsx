@@ -20,7 +20,7 @@ export const NavElement = (props: NavElementProps) => {
                 className={`${filter[theme]} ${styles.image}`}
                 src={imgSrc}
                 width={38}
-                height={48}
+                height={43}
                 alt={label}
                 priority
             />

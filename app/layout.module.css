@@ -1,8 +1,9 @@
 .layout {
-    padding-top: 7.7vh;
+    padding-top: 6.89vh;
 }
 
 .body {
     margin: 0;
     background-color: hsl(0, 0%, 0%);
+    display: flex;
 }

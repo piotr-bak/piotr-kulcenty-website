@@ -1,9 +1,9 @@
 "use client";
 import { ModalImgContextProvider, ThemeContextProvider } from "@/contexts";
-import { Navbar } from "@/components/Navbar/Navbar";
-import { Brand } from "@/components/Brand/Brand";
-import { Footer } from "@/components/Footer/Footer";
-import { Modal } from "@/components/Modal/Modal";
+import { Navbar } from "@/components/Navigation/Navbar/Navbar";
+import { Brand } from "@/components/shared/Brand/Brand";
+import { Footer } from "@/components/Navigation/Footer/Footer";
+import { Modal } from "@/components/Gallery/Modal/Modal";
 import { Wrapper } from "@/components/shared/Wrapper/Wrapper";
 import "@/styles/global.css";
 import styles from "./layout.module.css";

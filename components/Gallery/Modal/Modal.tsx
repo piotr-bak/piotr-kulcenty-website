@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useModalImgContext } from "@/contexts";
-import spinner from "../../public/spinner.svg";
+import spinner from "../../../public/spinner.svg";
 import Image from "next/image";
 import style from "./Modal.module.css";
 
