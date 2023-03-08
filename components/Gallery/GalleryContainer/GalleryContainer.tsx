@@ -10,7 +10,7 @@ export const GalleryContainer = ({
 }: GalleryContainerProps) => {
     const groups = sliceIntoGroups(configData, mode);
     return (
-        <div className={styles.container}>
+        <div>
             {groups.map((group) => {
                 let groupId = uuidv4();
                 return (
