@@ -1,9 +1,10 @@
-import config from "@/config/route-themes.json";
+import config from "@/config/route-config.json";
+import { GalleryConfigTypes } from "@/types/interfaces";
+import { ThemeKey } from "@/types";
 
 export const useTheme = (pathname: string | null) => {
-    //quick config sanitization
-    const bindings = JSON.parse(JSON.stringify(config));
-    const isDark: boolean = bindings.darkTheme.includes(pathname);
-
-    return isDark ? "dark" : "light";
+    const entry = config.find(
+        (item: GalleryConfigTypes) => item.route === pathname
+    );
+    return entry ? (entry.theme as ThemeKey) : "dark";
 };

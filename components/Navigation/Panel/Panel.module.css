@@ -3,8 +3,8 @@
     display: flex;
     justify-content: space-between;
     height: 4.3vh;
-    width: 100%;
-    padding: 0 4vw;
+    width: 100vw;
+    padding: 0px 4.1vw;
 }
 
 .navbarStyle {
@@ -13,7 +13,7 @@
 
 .footerStyle {
     padding-top: 0px;
-    padding-bottom: 6.6vh;
+    padding-bottom: 7vh;
     height: 4.3vh;
     align-items: flex-end;
 }

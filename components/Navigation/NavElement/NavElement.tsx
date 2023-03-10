@@ -12,10 +12,7 @@ export const NavElement = (props: NavElementProps) => {
     const { imgSrc, label, destination } = props;
     const { theme } = useThemeContext();
     const element = imgSrc ? (
-        <Link
-            className={styles.wrap}
-            href={destination ? destination : ""}
-            passHref>
+        <Link href={destination ? destination : ""} passHref>
             <Image
                 className={`${filter[theme]} ${styles.image}`}
                 src={imgSrc}

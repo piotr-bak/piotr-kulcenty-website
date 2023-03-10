@@ -9,7 +9,7 @@ export const Footer = () => {
     //quick config sanitization
     const elements: Array<NavElementProps> = JSON.parse(JSON.stringify(config));
     return (
-        <footer className={styles.footer}>
+        <footer className={styles.footer} role='navigation'>
             <Panel
                 items={elements.map((el: NavElementProps) => {
                     let uuid = uuidv4();

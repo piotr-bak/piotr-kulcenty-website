@@ -1,1 +1,1 @@
-export type ThemeKey = "dark" | "light";
+export type ThemeKey = "dark" | "beige" | "gray";

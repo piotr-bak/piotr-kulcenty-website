@@ -1,7 +1,13 @@
 .navbar {
-    padding-top: 6.5vh;
+    padding-top: 3vh;
     padding-bottom: 0px;
     background-color: transparent;
     position: fixed;
     width: 100vw;
+}
+
+@media screen and (min-width: 992px) {
+    .navbar {
+        padding-top: 7.2vh;
+    }
 }

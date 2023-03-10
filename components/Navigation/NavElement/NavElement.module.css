@@ -5,7 +5,6 @@
     font-size: 1.15rem;
     font-weight: 500;
     text-decoration: none;
-    z-index: 10;
     display: none;
 }
 
@@ -17,15 +16,6 @@
     display: flex;
     cursor: pointer;
     align-self: flex-end;
-    margin-top: 0.25em;
-}
-
-.wrap {
-    width: 234px;
-    display: flex;
-    justify-content: center;
-    cursor: default;
-    z-index: 10;
 }
 
 @media screen and (min-width: 992px) {

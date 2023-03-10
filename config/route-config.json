@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Home",
+    "route": "/",
+    "theme": "dark"
+  },
+  {
+    "name": "Work",
+    "route": "/work",
+    "theme": "dark"
+  },
+  {
+    "name": "About",
+    "route": "/about",
+    "theme": "beige"
+  },
+  {
+    "name": "Contact",
+    "route": "/contact",
+    "theme": "gray"
+  }
+]

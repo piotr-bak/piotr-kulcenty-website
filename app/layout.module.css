@@ -1,5 +1,6 @@
 .layout {
-    padding-top: 6.89vh;
+    padding-top: 7.5vh;
+    min-width: 360px;
 }
 
 .body {

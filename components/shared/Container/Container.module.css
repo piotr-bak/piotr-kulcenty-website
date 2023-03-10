@@ -1,7 +1,7 @@
 .container {
-    margin-left: 16vw;
-    margin-right: 16vw;
-    min-width: 64vw;
+    margin-left: 12vw;
+    margin-right: 12vw;
+    min-width: 76vw;
     display: flex;
     flex-direction: column;
     justify-content: center;

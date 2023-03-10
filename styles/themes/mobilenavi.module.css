@@ -1,0 +1,10 @@
+.beige,
+.gray {
+    background-color: hsla(0, 0%, 100%, 0.95);
+    color: hsl(0 0% 0%);
+}
+
+.dark {
+    background-color: hsl(0 0% 0% /0.95);
+    color: hsl(30 20% 92%);
+}

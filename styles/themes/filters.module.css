@@ -3,7 +3,8 @@
         contrast(104%);
 }
 
-.light {
+.beige,
+.gray {
     filter: invert(93%) sepia(7%) saturate(524%) hue-rotate(320deg)
         brightness(107%) contrast(87%);
 }
