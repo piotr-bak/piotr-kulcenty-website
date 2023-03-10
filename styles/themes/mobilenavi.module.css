@@ -1,10 +1,21 @@
-.beige,
+.beige {
+    background-color: hsl(30 20% 92%);
+    color: hsl(0 0% 0%);
+}
 .gray {
-    background-color: hsla(0, 0%, 100%, 0.95);
+    background-color: hsl(0 0% 89%);
     color: hsl(0 0% 0%);
 }
 
 .dark {
-    background-color: hsl(0 0% 0% /0.95);
-    color: hsl(30 20% 92%);
+    background-color: hsl(0 0% 0%);
+    color: hsl(0 0% 89%);
+}
+
+@media screen and (min-width: 992px) {
+    .beige,
+    .gray,
+    .dark {
+        background-color: transparent;
+    }
 }

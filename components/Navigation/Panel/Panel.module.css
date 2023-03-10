@@ -1,10 +1,8 @@
 .panel {
-    background-color: transparent;
     display: flex;
     justify-content: space-between;
-    height: 4.3vh;
+    height: 6.3vh;
     width: 100vw;
-    padding: 0px 4.1vw;
 }
 
 .navbarStyle {
@@ -16,4 +14,10 @@
     padding-bottom: 7vh;
     height: 4.3vh;
     align-items: flex-end;
+}
+
+@media screen and (min-width: 992px) {
+    .panel {
+        height: 4.3vh;
+    }
 }

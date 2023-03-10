@@ -1,4 +1,4 @@
-export interface HamburgerMenuProps {
+export interface MobileNavProps {
     toggled: boolean;
     handleClick: () => void;
 }

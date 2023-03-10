@@ -1,15 +1,10 @@
-import React, { useState } from "react";
 import { useThemeContext } from "@/contexts";
-import { HamburgerMenu } from "../HamburgerMenu/HamburgerMenu";
 import styles from "./HamburgerButton.module.css";
 import colors from "@/styles/themes/mobilenavi.module.css";
+import { MobileNavProps } from "@/types/interfaces";
 
-export const HamburgerButton = () => {
+export const HamburgerButton = ({ toggled, handleClick }: MobileNavProps) => {
     const { theme } = useThemeContext();
-    const [toggled, setToggled] = useState(false);
-    const handleClick = () => {
-        setToggled((toggled) => !toggled);
-    };
     return (
         <div
             className={`${styles.general} ${styles.hamburger} ${
@@ -19,7 +14,6 @@ export const HamburgerButton = () => {
             <span className={`${colors[theme]}`}></span>
             <span className={`${colors[theme]}`}></span>
             <span className={`${colors[theme]}`}></span>
-            <HamburgerMenu toggled={toggled} handleClick={handleClick} />
         </div>
     );
 };

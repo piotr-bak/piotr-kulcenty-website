@@ -1,13 +1,13 @@
 import { v4 as uuidv4 } from "uuid";
 import Link from "next/link";
-import { HamburgerMenuProps } from "@/types/interfaces";
+import { useThemeContext } from "@/contexts";
+import { MobileNavProps } from "@/types/interfaces";
 import { cormorant } from "@/lib/fonts";
 import config from "@/config/route-config.json";
 import style from "./HamburgerMenu.module.css";
 import colors from "styles/themes/mobilenavi.module.css";
-import { useThemeContext } from "@/contexts";
 
-export const HamburgerMenu = ({ toggled, handleClick }: HamburgerMenuProps) => {
+export const HamburgerMenu = ({ toggled, handleClick }: MobileNavProps) => {
     const { theme } = useThemeContext();
     return (
         <div
