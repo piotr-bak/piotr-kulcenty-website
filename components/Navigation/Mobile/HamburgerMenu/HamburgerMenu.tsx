@@ -17,11 +17,14 @@ export const HamburgerMenu = ({ toggled, handleClick }: MobileNavProps) => {
             <ul>
                 {config.map((entry) => {
                     let uuid = uuidv4();
-                    return (
-                        <li key={uuid} onClick={handleClick}>
-                            <Link href={entry.route}>{entry.name}</Link>
-                        </li>
-                    );
+                    if (entry.route !== "/") {
+                        return (
+                            <li key={uuid} onClick={handleClick}>
+                                <Link href={entry.route}>{entry.name}</Link>
+                            </li>
+                        );
+                    }
+                    return null;
                 })}
             </ul>
         </div>

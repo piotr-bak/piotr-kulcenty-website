@@ -17,12 +17,15 @@
     display: flex;
     cursor: pointer;
     align-self: flex-end;
-    height: 4.3vh;
+    height: min(23px, 4.3vh);
     margin-left: 4.1vw;
 }
 
 @media screen and (min-width: 992px) {
     .button {
         display: flex;
+    }
+    .image {
+        height: 43px;
     }
 }

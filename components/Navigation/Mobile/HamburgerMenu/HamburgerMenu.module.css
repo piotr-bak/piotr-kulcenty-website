@@ -1,7 +1,7 @@
 .menu {
     position: fixed;
-    padding: 3vh 0;
-    margin-top: 4.3vh;
+    padding: 10vh 0;
+    margin-top: min(23px, 4.3vh);
     width: 100%;
     row-gap: 2em;
     transition: all 0.3s ease;
@@ -9,22 +9,24 @@
     pointer-events: none;
     z-index: 20;
     display: none;
+    z-index: 20;
 }
 
 .menu li {
     height: 48px;
     margin-top: 0.5rem;
     margin-bottom: 1.5rem;
+    padding: 6vh 0;
     left: 0;
     font-size: clamp(1.5rem, 2vw, 2rem);
-    text-transform: uppercase;
+    text-transform: capitalize;
     display: flex; /* Use flexbox to center the text */
     justify-content: center;
     align-items: center;
 }
 
 .hamburger {
-    z-index: 2; /* Set z-index to be higher than the menu */
+    z-index: 20; /* Set z-index to be higher than the menu */
 }
 
 .inactive {
@@ -36,4 +38,10 @@
     display: block;
     opacity: 1; /* Show the menu when active */
     pointer-events: auto; /* Enable mouse clicks on the menu when active */
+}
+
+@media screen and (min-width: 992px) {
+    .menu {
+        display: none;
+    }
 }

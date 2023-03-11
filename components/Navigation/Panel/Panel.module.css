@@ -1,7 +1,8 @@
 .panel {
     display: flex;
     justify-content: space-between;
-    height: 6.3vh;
+    padding-top: 3.2vh;
+    padding-bottom: 2vh;
     width: 100vw;
 }
 
@@ -19,5 +20,8 @@
 @media screen and (min-width: 992px) {
     .panel {
         height: 4.3vh;
+        padding-top: 0;
+        padding-bottom: 0;
+        background-color: transparent;
     }
 }

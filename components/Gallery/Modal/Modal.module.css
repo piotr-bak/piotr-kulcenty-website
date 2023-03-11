@@ -14,6 +14,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
+    z-index: 50;
 }
 
 .backdrop {
@@ -33,13 +34,15 @@
     object-fit: cover;
     position: fixed;
     text-align: center;
+    max-width: 90vw;
 }
 
 .image {
     padding: 2.5%;
     object-fit: contain;
+    text-align: center;
     overflow: hidden;
-    z-index: 9999;
+    z-index: 100;
 }
 
 .loader {
@@ -52,4 +55,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (min-width: 992px) {
+    .figure {
+        max-width: 62vw;
+        max-height: 90vh;
+    }
 }

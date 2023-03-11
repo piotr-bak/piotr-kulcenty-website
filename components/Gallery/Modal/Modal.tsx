@@ -12,7 +12,7 @@ export const Modal = () => {
 
     const handleClick = () => {
         setImgSrc("");
-        setShow((show) => !show);
+        setShow((show) => false);
     };
 
     useEffect(() => {
@@ -32,7 +32,7 @@ export const Modal = () => {
     return (
         <div className={style.wrapper}>
             <div className={`${style.backdrop}`}></div>
-            <div className={style.modal}>
+            <div className={style.modal} onClick={handleClick}>
                 {isLoading && (
                     <div className={style.loader}>
                         <Image src={spinner} alt='Loading image...' />

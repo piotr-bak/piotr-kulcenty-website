@@ -1,14 +1,14 @@
 .navbar {
-    padding-top: 3.2vh;
-    padding-bottom: 0px;
     position: fixed;
-    width: 100vw;
-    z-index: 30;
+    width: calc(100vw - 12px);
+    z-index: 20;
+    min-height: min(23px, 4.3vh);
 }
 
 @media screen and (min-width: 992px) {
     .navbar {
         padding-top: 7.2vh;
+        padding-bottom: 0;
         background-color: transparent;
     }
 }

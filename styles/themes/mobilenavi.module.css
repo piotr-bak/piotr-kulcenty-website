@@ -1,14 +1,14 @@
 .beige {
-    background-color: hsl(30 20% 92%);
+    background-color: hsl(30 20% 92% /0.95);
     color: hsl(0 0% 0%);
 }
 .gray {
-    background-color: hsl(0 0% 89%);
+    background-color: hsl(0 0% 89% /0.95);
     color: hsl(0 0% 0%);
 }
 
 .dark {
-    background-color: hsl(0 0% 0%);
+    background-color: hsl(0 0% 0% /0.9);
     color: hsl(0 0% 89%);
 }
 
