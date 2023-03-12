@@ -42,7 +42,6 @@
     grid-row: 3 / span 1;
     grid-column: 1 / span 1;
     text-align: center;
-    margin-bottom: -3vh;
 }
 
 @media screen and (min-width: 768px) {
@@ -246,16 +245,16 @@
     max-width: 90vw;
     height: auto;
     width: auto;
-    margin-bottom: 6vh;
     aspect-ratio: 4/3;
+    margin-bottom: 6vh;
 }
 
 .mixed .portrait {
     max-width: 67.5vw;
     height: auto;
     height: auto;
-    margin-bottom: 6vh;
     aspect-ratio: 3/4;
+    margin-bottom: 6vh;
 }
 
 /*---Children items----------------------------------------------------------*/
@@ -275,7 +274,6 @@
     grid-row: 3 / span 1;
     grid-column: 1 / span 1;
     text-align: center;
-    margin-bottom: -3vh;
 }
 
 @media screen and (min-width: 768px) {
@@ -283,8 +281,8 @@
         max-width: 32vw;
         height: auto;
         width: auto;
-        margin-bottom: auto;
         align-self: center;
+        margin-bottom: 0;
     }
 
     .mixed .portrait {
@@ -292,7 +290,9 @@
         height: auto;
         height: auto;
         align-self: center;
+        margin-bottom: 0;
     }
+
     .mixed:first-child {
         grid-row: 1 / span 1;
         grid-column: 1 / span 1;

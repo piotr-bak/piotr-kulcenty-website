@@ -67,9 +67,9 @@ export default function Page() {
                     </article>
                 </section>
             </div>
-            <section className={style.gallery}>
+            <div className={style.gallery}>
                 <GalleryContainer configData={galleryItems} mode={mode} />
-            </section>
+            </div>
         </Container>
     );
 }

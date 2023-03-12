@@ -119,3 +119,7 @@ meter {
 :where(dialog:modal) {
     all: revert;
 }
+
+body {
+    min-width: 360px;
+}

@@ -1,11 +1,9 @@
 .wrap {
     display: flex;
-    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     min-height: 74.3vh;
     padding-top: 7vh;
-    margin-bottom: 14vh;
 }
 
 .content {
@@ -36,13 +34,17 @@
 .columnR {
     font-size: clamp(1.2rem, 1.6vw, 1.6rem);
     max-width: 55ch;
-    max-height: 67vh;
+    min-height: 67vh;
 }
 
 .content .columnR p::after {
     content: "\a";
     white-space: pre;
     display: block;
+}
+
+.gallery {
+    margin-top: 8vh;
 }
 
 @media screen and (min-width: 1366px) {

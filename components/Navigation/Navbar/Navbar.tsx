@@ -26,8 +26,8 @@ export const Navbar = () => {
                 })}
                 layout='navbarStyle'>
                 <HamburgerButton toggled={toggled} handleClick={handleClick} />
-                <HamburgerMenu toggled={toggled} handleClick={handleClick} />
             </Panel>
+            <HamburgerMenu toggled={toggled} handleClick={handleClick} />
         </nav>
     );
 };
