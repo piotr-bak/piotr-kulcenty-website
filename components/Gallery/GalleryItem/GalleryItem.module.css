@@ -14,6 +14,7 @@
     height: auto;
     width: auto;
     margin-bottom: 6vh;
+    aspect-ratio: 4/3;
 }
 
 .full .portrait {
@@ -21,6 +22,7 @@
     height: auto;
     height: auto;
     margin-bottom: 6vh;
+    aspect-ratio: 3/4;
 }
 
 /*---Children items----------------------------------------------------------*/
@@ -94,12 +96,14 @@
     max-width: 40vw;
     height: auto;
     width: auto;
+    aspect-ratio: 4/3;
 }
 
 .compact .portrait {
     max-width: 40vw;
     height: auto;
     height: auto;
+    aspect-ratio: 3/4;
 }
 
 /*---Children items----------------------------------------------------------*/
@@ -243,6 +247,7 @@
     height: auto;
     width: auto;
     margin-bottom: 6vh;
+    aspect-ratio: 4/3;
 }
 
 .mixed .portrait {
@@ -250,6 +255,7 @@
     height: auto;
     height: auto;
     margin-bottom: 6vh;
+    aspect-ratio: 3/4;
 }
 
 /*---Children items----------------------------------------------------------*/
@@ -277,47 +283,56 @@
         max-width: 32vw;
         height: auto;
         width: auto;
+        margin-bottom: auto;
+        align-self: center;
     }
 
     .mixed .portrait {
         max-width: 32vw;
         height: auto;
         height: auto;
+        align-self: center;
     }
     .mixed:first-child {
         grid-row: 1 / span 1;
         grid-column: 1 / span 1;
         justify-self: end;
+        align-self: center;
     }
 
     .mixed:nth-child(2) {
         grid-row: 1 / span 1;
         grid-column: 2 / span 1;
         justify-self: start;
+        align-self: center;
     }
 
     .mixed:nth-child(3) {
         grid-row: 2 / span 1;
         grid-column: 1 / span 1;
         justify-self: end;
+        align-self: center;
     }
 
     .mixed:nth-child(4) {
         grid-row: 2 / span 1;
         grid-column: 2 / span 1;
         justify-self: start;
+        align-self: center;
     }
 
     .mixed:nth-child(5) {
         grid-row: 3 / span 1;
         grid-column: 1 / span 1;
         justify-self: end;
+        align-self: center;
     }
 
     .mixed:nth-child(6) {
         grid-row: 3 / span 1;
         grid-column: 2 / span 1;
         justify-self: start;
+        align-self: center;
     }
 }
 

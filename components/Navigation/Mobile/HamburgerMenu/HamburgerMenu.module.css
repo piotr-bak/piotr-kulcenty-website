@@ -1,7 +1,12 @@
 .menu {
     position: fixed;
     padding: 10vh 0;
-    margin-top: min(23px, 4.3vh);
+    margin-top: calc(4.1vh + ((100vh - 600px) / 100 * 0.6));
+    /*above is to handle corner case when user opens mobile menu and
+    horizontally resizes the page. In that case, background of the <HamburgerMenu/>
+    may overlap with the background of <Panel/> inside the <Navbar/> resulting in a
+    a dark lining; not very aesthetic. For more, see a note at the end of file.*/
+
     width: 100%;
     row-gap: 2em;
     transition: all 0.3s ease;
@@ -45,3 +50,15 @@
         display: none;
     }
 }
+
+/*
+Menu margin formula goes as follows:
+
+(base-value + ((100vh - reference-value) / 100 * correction-factor));
+
+Base-value is the original margin-top value;
+Reference-value is the height of the viewport at which I measured the correction value, which in that case is 600px.
+Correction-factor is the factor by which the correction value changes for every
+1vh change in the viewport height. Here, the correction value decreases by
+approx. 0.6 for every 1vh increase in viewport height.
+*/

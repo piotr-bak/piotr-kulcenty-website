@@ -10,5 +10,6 @@
         padding-top: 7.2vh;
         padding-bottom: 0;
         background-color: transparent;
+        pointer-events: none;
     }
 }

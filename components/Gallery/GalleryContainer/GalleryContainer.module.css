@@ -72,7 +72,7 @@
         grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(3, 1fr);
         column-gap: 5vw;
-        row-gap: 15vh;
+        row-gap: 4vh;
         margin-top: 8vh;
         margin-bottom: 10vh;
     }
