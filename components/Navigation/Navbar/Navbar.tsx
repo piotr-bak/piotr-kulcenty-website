@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import { Panel } from "../Panel/Panel";
 import { NavElement } from "../NavElement/NavElement";
@@ -12,10 +12,6 @@ import { useThemeContext } from "@/contexts";
 
 export const Navbar = () => {
     const { theme } = useThemeContext();
-    const [toggled, setToggled] = useState(false);
-    const handleClick = () => {
-        setToggled((toggled) => !toggled);
-    };
     const elements: Array<NavElementProps> = JSON.parse(JSON.stringify(config));
     return (
         <nav className={`${styles.navbar} ${mobile[theme]}`} role='navigation'>
@@ -25,9 +21,9 @@ export const Navbar = () => {
                     return <NavElement key={uuid} {...el} />;
                 })}
                 layout='navbarStyle'>
-                <HamburgerButton toggled={toggled} handleClick={handleClick} />
+                <HamburgerButton />
             </Panel>
-            <HamburgerMenu toggled={toggled} handleClick={handleClick} />
+            <HamburgerMenu />
         </nav>
     );
 };

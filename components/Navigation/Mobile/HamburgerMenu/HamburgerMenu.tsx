@@ -1,14 +1,18 @@
 import { v4 as uuidv4 } from "uuid";
 import Link from "next/link";
+import { useHamburgerMenuContext } from "@/contexts/HamburgerMenuContext";
 import { useThemeContext } from "@/contexts";
-import { MobileNavProps } from "@/types/interfaces";
 import { cormorant } from "@/lib/fonts";
 import config from "@/config/route-config.json";
 import style from "./HamburgerMenu.module.css";
 import colors from "styles/themes/mobilenavi.module.css";
 
-export const HamburgerMenu = ({ toggled, handleClick }: MobileNavProps) => {
+export const HamburgerMenu = () => {
     const { theme } = useThemeContext();
+    const { toggled, setToggled } = useHamburgerMenuContext();
+    const handleClick = () => {
+        setToggled(false);
+    };
     return (
         <div
             className={`${style.menu} ${cormorant.className} ${colors[theme]} ${

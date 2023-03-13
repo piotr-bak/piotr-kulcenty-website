@@ -1,5 +1,5 @@
 import React from "react";
-import { useThemeContext } from "@/contexts/ThemeContext";
+import { useHamburgerMenuContext, useThemeContext } from "@/contexts";
 import { NavElementProps } from "@/types/interfaces";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,6 +11,10 @@ import { cormorant } from "@/lib/fonts";
 export const NavElement = (props: NavElementProps) => {
     const { imgSrc, label, destination } = props;
     const { theme } = useThemeContext();
+    const { setToggled } = useHamburgerMenuContext();
+    const handleMobileMenuClick = () => {
+        setToggled(false);
+    };
     const element = imgSrc ? (
         <Link href={destination ? destination : ""} passHref>
             <Image
@@ -20,6 +24,7 @@ export const NavElement = (props: NavElementProps) => {
                 height={43}
                 alt={label}
                 priority
+                onClick={handleMobileMenuClick}
             />
         </Link>
     ) : (

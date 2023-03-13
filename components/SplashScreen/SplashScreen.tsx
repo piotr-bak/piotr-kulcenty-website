@@ -33,14 +33,9 @@ export const SplashScreen = () => {
             ${isAnimationCompleted ? styles.hidden : null}`}
             onAnimationEnd={onAnimationEnd}>
             <div className={styles.overlay}>
+                <Image className={styles.logo} src={logo} alt='Logo' priority />
                 <Image
-                    className={styles.image}
-                    src={logo}
-                    alt='Logo'
-                    priority
-                />
-                <Image
-                    className={styles.image}
+                    className={styles.brand}
                     src={brand}
                     alt='Piotr Kulcenty Branding'
                     priority

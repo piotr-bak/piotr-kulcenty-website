@@ -12,7 +12,7 @@
 
 @media (orientation: landscape) and (min-width: 560px) {
     .full {
-        margin-top: 7vh;
+        margin-top: 8vh;
     }
 }
 
@@ -40,6 +40,13 @@
     }
 }
 
+@media (orientation: landscape) and (min-width: 1000px) {
+    .full {
+        row-gap: 12vh;
+        margin-bottom: 12vh;
+    }
+}
+
 @media (orientation: portrait) and (min-width: 600px) {
     .full {
         margin-top: 6vh;
@@ -59,6 +66,33 @@
         grid-template-columns: 1fr;
         column-gap: 7vw;
         row-gap: 0;
+        margin-top: 2.5vh;
+        margin-bottom: 10vh;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 1300px) and (aspect-ratio: 683/512) {
+    .full {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        column-gap: 7vw;
+        row-gap: 10vh;
+        margin-top: 12vh;
+        margin-bottom: 10vh;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .full {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        column-gap: 7vw;
+        row-gap: 10vh;
+        margin-top: 2.3vh;
         margin-top: 3.5vh;
         margin-bottom: 10vh;
     }

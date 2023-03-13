@@ -21,6 +21,12 @@
     height: max(23px, 3.9vh);
     margin-left: 4.1vw;
     pointer-events: all;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 @media (orientation: landscape) {
@@ -55,5 +61,11 @@
 @media screen and (min-width: 1400px) {
     .image {
         height: 4.3vh;
+    }
+}
+
+@media screen and (min-width: 1921px) {
+    .button {
+        font-size: clamp(1.2rem, 1.8vh, 1.8rem);
     }
 }

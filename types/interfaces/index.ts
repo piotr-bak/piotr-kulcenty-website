@@ -6,4 +6,3 @@ export * from "./gallery-interfaces/GalleryConfigTypes.interface";
 export * from "./gallery-interfaces/GalleryContainerProps.interface";
 export * from "./gallery-interfaces/GalleryItemProps.interface";
 export * from "./gallery-interfaces/UnparsedGalleryItemProps.interface";
-export * from "./nav-interfaces/MobileNavProps.interface";

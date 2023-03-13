@@ -1,5 +1,6 @@
 "use client";
 import {
+    HamburgerMenuContextProvider,
     ModalImgContextProvider,
     SplashScreenContextProvider,
     ThemeContextProvider,
@@ -29,19 +30,21 @@ export default function RootLayout({
                 <ThemeContextProvider>
                     <SplashScreenContextProvider>
                         <ModalImgContextProvider>
-                            <Wrapper>
-                                <header>
-                                    <Navbar />
-                                </header>
-                                <main className={`${styles.layout}`}>
-                                    <Brand />
-                                    {children}
-                                </main>
-                                <footer>
-                                    <Footer />
-                                </footer>
-                                <Modal />
-                            </Wrapper>
+                            <HamburgerMenuContextProvider>
+                                <Wrapper>
+                                    <header>
+                                        <Navbar />
+                                    </header>
+                                    <main className={`${styles.layout}`}>
+                                        <Brand />
+                                        {children}
+                                    </main>
+                                    <footer>
+                                        <Footer />
+                                    </footer>
+                                    <Modal />
+                                </Wrapper>
+                            </HamburgerMenuContextProvider>
                         </ModalImgContextProvider>
                     </SplashScreenContextProvider>
                 </ThemeContextProvider>
