@@ -1,5 +1,9 @@
 "use client";
-import { ModalImgContextProvider, ThemeContextProvider } from "@/contexts";
+import {
+    ModalImgContextProvider,
+    SplashScreenContextProvider,
+    ThemeContextProvider,
+} from "@/contexts";
 import { Navbar } from "@/components/Navigation/Navbar/Navbar";
 import { Brand } from "@/components/shared/Brand/Brand";
 import { Footer } from "@/components/Navigation/Footer/Footer";
@@ -23,21 +27,23 @@ export default function RootLayout({
             </head>
             <body className={`${styles.body}`}>
                 <ThemeContextProvider>
-                    <ModalImgContextProvider>
-                        <Wrapper>
-                            <header>
-                                <Navbar />
-                            </header>
-                            <main className={`${styles.layout}`}>
-                                <Brand />
-                                {children}
-                            </main>
-                            <footer>
-                                <Footer />
-                            </footer>
-                            <Modal />
-                        </Wrapper>
-                    </ModalImgContextProvider>
+                    <SplashScreenContextProvider>
+                        <ModalImgContextProvider>
+                            <Wrapper>
+                                <header>
+                                    <Navbar />
+                                </header>
+                                <main className={`${styles.layout}`}>
+                                    <Brand />
+                                    {children}
+                                </main>
+                                <footer>
+                                    <Footer />
+                                </footer>
+                                <Modal />
+                            </Wrapper>
+                        </ModalImgContextProvider>
+                    </SplashScreenContextProvider>
                 </ThemeContextProvider>
             </body>
         </html>

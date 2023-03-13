@@ -10,7 +10,7 @@
 /* Item full-mode styling ---------------------------------------------------*/
 /*---Layout------------------------------------------------------------------*/
 .full .landscape {
-    max-width: 90vw;
+    max-width: 70vw;
     height: auto;
     width: auto;
     margin-bottom: 6vh;
@@ -18,11 +18,118 @@
 }
 
 .full .portrait {
-    max-width: 67.5vw;
+    max-width: 52.5vw;
     height: auto;
     height: auto;
     margin-bottom: 6vh;
     aspect-ratio: 3/4;
+}
+
+@media (orientation: landscape) and (min-width: 560px) {
+    .full .landscape {
+        max-width: 45vw;
+    }
+    .full .portrait {
+        max-width: 33vw;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 600px) {
+    .full .landscape {
+        max-width: 54vw;
+        height: auto;
+        width: auto;
+    }
+
+    .full .portrait {
+        max-width: 36vw;
+        height: auto;
+        height: auto;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 730px) {
+    .full .landscape {
+        max-width: 60vw;
+        height: auto;
+        width: auto;
+    }
+
+    .full .portrait {
+        max-width: 40vw;
+        height: auto;
+        height: auto;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 800px) and (aspect-ratio: 812/375) {
+    .full .landscape {
+        max-width: 39vw;
+        height: auto;
+        width: auto;
+    }
+
+    .full .portrait {
+        max-width: 25.3vw;
+        height: auto;
+        height: auto;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 800px) and (aspect-ratio: 4/3) {
+    .full .landscape {
+        max-width: 54vw;
+        height: auto;
+        width: auto;
+    }
+
+    .full .portrait {
+        max-width: 36vw;
+        height: auto;
+        height: auto;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 1024px) {
+    .full .landscape {
+        max-width: 54vw;
+        height: auto;
+        width: auto;
+    }
+
+    .full .portrait {
+        max-width: 36vw;
+        height: auto;
+        height: auto;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 1200px) {
+    .full .landscape {
+        max-width: 43vw;
+        height: auto;
+        width: auto;
+    }
+
+    .full .portrait {
+        max-width: 27vw;
+        height: auto;
+        height: auto;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 1368px) {
+    .full .landscape {
+        max-width: 43vw;
+        height: auto;
+        width: auto;
+    }
+
+    .full .portrait {
+        max-width: 27vw;
+        height: auto;
+        height: auto;
+    }
 }
 
 /*---Children items----------------------------------------------------------*/
@@ -44,33 +151,26 @@
     text-align: center;
 }
 
-@media screen and (min-width: 768px) {
-    .full .landscape {
-        max-width: 60vw;
-        height: auto;
-        width: auto;
+@media (orientation: landscape) and (min-width: 730px) {
+    .full:first-child {
+        grid-row: 1 / span 1;
+        grid-column: 1 / span 2;
+        justify-self: center;
     }
 
-    .full .portrait {
-        max-width: 40vw;
-        height: auto;
-        height: auto;
+    .full:nth-child(2) {
+        grid-row: 2 / span 1;
+        grid-column: 1 / span 1;
+    }
+
+    .full:nth-child(3) {
+        grid-row: 2 / span 1;
+        grid-column: 2 / span 1;
+        margin-bottom: 0;
     }
 }
 
-@media screen and (min-width: 1200px) {
-    .full .landscape {
-        max-width: 43vw;
-        height: auto;
-        width: auto;
-    }
-
-    .full .portrait {
-        max-width: 27vw;
-        height: auto;
-        height: auto;
-    }
-
+@media (orientation: portrait) and (min-width: 1024px) {
     .full:first-child {
         grid-row: 1 / span 1;
         grid-column: 1 / span 2;
@@ -92,17 +192,58 @@
 /* Item compact-mode styling ------------------------------------------------*/
 /*---Layout------------------------------------------------------------------*/
 .compact .landscape {
-    max-width: 40vw;
+    max-width: 41vw;
     height: auto;
     width: auto;
     aspect-ratio: 4/3;
 }
 
 .compact .portrait {
-    max-width: 40vw;
+    max-width: 41vw;
     height: auto;
     height: auto;
     aspect-ratio: 3/4;
+}
+
+@media (orientation: landscape) and (min-width: 560px) {
+    .compact .portrait {
+        max-width: 28vw;
+    }
+    .compact .landscape {
+        max-width: 28vw;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 768px) {
+    .compact .landscape {
+        max-width: 32vw;
+        height: auto;
+        width: auto;
+    }
+
+    .compact .portrait {
+        max-width: 32vw;
+        height: auto;
+        height: auto;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 800px) and (aspect-ratio: 812/375) {
+    .compact .portrait {
+        max-width: 22vw;
+    }
+    .compact .landscape {
+        max-width: 22vw;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 1024px) {
+    .compact .portrait {
+        max-width: 36vw;
+    }
+    .compact .landscape {
+        max-width: 36vw;
+    }
 }
 
 /*---Children items----------------------------------------------------------*/
@@ -140,20 +281,6 @@
     grid-row: 3 / span 1;
     grid-column: 2 / span 1;
     justify-self: start;
-}
-
-@media screen and (min-width: 768px) {
-    .compact .landscape {
-        max-width: 32vw;
-        height: auto;
-        width: auto;
-    }
-
-    .compact .portrait {
-        max-width: 32vw;
-        height: auto;
-        height: auto;
-    }
 }
 
 @media screen and (min-width: 1200px) {

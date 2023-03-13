@@ -3,17 +3,25 @@ import Image from "next/image";
 import logo from "@/public/logo.svg";
 import brand from "@/public/brand.svg";
 import styles from "./SplashScreen.module.css";
+import { useSplashScreenContext } from "@/contexts";
 
 export const SplashScreen = () => {
+    const { alreadyShowed, setAlreadyShowed } = useSplashScreenContext();
     const [show, setShow] = useState(true);
     const [isAnimationCompleted, setIsAnimationCompleted] = useState(false);
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setShow(false);
-        }, 1000);
-        return () => clearTimeout(timer);
-    }, []);
+        const timer = setTimeout(
+            () => {
+                setShow(false);
+            },
+            alreadyShowed ? 125 : 500
+        );
+        return () => {
+            clearTimeout(timer);
+            setAlreadyShowed(true);
+        };
+    });
 
     const onAnimationEnd = () => setIsAnimationCompleted(true);
 

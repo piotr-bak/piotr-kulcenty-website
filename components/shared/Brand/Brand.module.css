@@ -3,7 +3,7 @@
     justify-content: center;
     width: 60vw;
     top: 3vh;
-    margin-top: 43px;
+    margin-top: 23px;
     margin-left: 20vw;
     right: 20vw;
     cursor: pointer;
@@ -15,9 +15,15 @@
     width: auto;
 }
 
-@media screen and (min-width: 992px) {
+@media (orientation: landscape) and (min-width: 800px) and (aspect-ratio: 812/375) {
     .wrap {
-        top: 7vh;
+        margin-top: 33px;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 1200px) {
+    .wrap {
+        top: 9vh;
         margin-top: 0;
         padding-top: 0;
     }
