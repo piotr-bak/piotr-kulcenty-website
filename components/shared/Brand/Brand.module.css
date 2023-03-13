@@ -11,6 +11,7 @@
 
 .logo {
     height: 4.3vh;
+    min-height: 32px;
     width: auto;
 }
 

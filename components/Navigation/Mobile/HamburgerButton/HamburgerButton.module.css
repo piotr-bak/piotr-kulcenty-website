@@ -13,6 +13,24 @@
     cursor: pointer;
 }
 
+@media (orientation: landscape) {
+    .hamburger {
+        margin-right: 0.5vw;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 800px) {
+    .hamburger {
+        margin-right: 1.25vw;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .hamburger {
+        margin-right: 4.1vw;
+    }
+}
+
 .hamburger {
     display: inline-block;
     position: fixed;

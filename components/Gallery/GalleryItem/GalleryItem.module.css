@@ -188,7 +188,7 @@
     }
 }
 
-@media screen and (min-width: 1366px) {
+@media screen and (min-width: 1200px) {
     .compact .landscape {
         max-width: 21vw;
         height: auto;

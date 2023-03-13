@@ -23,7 +23,7 @@ export default function Page() {
                             <a href='mailto:piotr.kulcenty@gmail.com'>email</a>
                         </div>
                         <a
-                            href='https://www.linkedin.com/in/piotr-kulcenty-a5106825b/'
+                            href='https://www.linkedin.com/in/piotrkulcenty/'
                             target='_blank'
                             rel='noopener noreferrer'>
                             linkedin
