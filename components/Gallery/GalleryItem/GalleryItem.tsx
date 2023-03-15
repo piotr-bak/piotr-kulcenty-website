@@ -2,7 +2,7 @@ import { useModalImgContext } from "@/contexts/ModalImgContext";
 import { GalleryItemProps } from "@/types/interfaces";
 import { getImageOrientation } from "@/lib/helpers";
 import Image from "next/image";
-import config from "@/config/gallery.json";
+//import config from "@/config/gallery.json";
 import styles from "./GalleryItem.module.css";
 
 export const GalleryItem = (props: GalleryItemProps) => {
@@ -12,7 +12,7 @@ export const GalleryItem = (props: GalleryItemProps) => {
     const handleClick = () => {
         setImgSrc(src);
     };
-    const placeholder = config.placeholder;
+    //const placeholder = config.placeholder;
     return (
         <figure className={`${styles.item} ${styles[mode]}`}>
             <Image
@@ -21,12 +21,12 @@ export const GalleryItem = (props: GalleryItemProps) => {
                 width={width}
                 height={height}
                 quality='85'
-                sizes='320 480 640 768 1200'
+                sizes='320 375 414 600 768 800 1024 1200'
                 alt={description || "Violin made by Piotr Kulcenty"}
                 onClick={handleClick}
                 priority={priority}
-                placeholder='blur'
-                blurDataURL={placeholder}
+                // placeholder='blur'
+                // blurDataURL={placeholder}
             />
             <figcaption>
                 <p>{description}</p>
