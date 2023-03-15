@@ -8,3 +8,16 @@
     background-color: hsl(0, 0%, 0%);
     display: flex;
 }
+
+/*The below is intended for loading.tsx for each route*/
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 76vh;
+}
+
+.spinner {
+    width: 100px;
+    height: 100px;
+}

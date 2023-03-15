@@ -1,10 +1,5 @@
-.active {
-    display: block;
-    opacity: 1;
-}
-
 .fading {
-    animation: fadeout 2s;
+    animation: fadeout 1.5s forwards;
     pointer-events: none;
     opacity: 0;
 }
@@ -24,15 +19,6 @@
     pointer-events: none;
 }
 
-@keyframes fadeout {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
-
 .overlay {
     position: absolute;
     top: 50%;
@@ -45,13 +31,25 @@
 }
 
 .logo {
-    min-height: 43px;
     height: 7vh;
+    min-height: 43px;
     width: auto;
 }
 
 .brand {
-    min-height: 33px;
     height: 5vh;
+    min-height: 33px;
     width: auto;
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }

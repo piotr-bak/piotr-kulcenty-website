@@ -24,7 +24,9 @@ export const HamburgerMenu = () => {
                     if (entry.route !== "/") {
                         return (
                             <li key={uuid} onClick={handleClick}>
-                                <Link href={entry.route}>{entry.name}</Link>
+                                <Link href={entry.route} scroll={true}>
+                                    {entry.name}
+                                </Link>
                             </li>
                         );
                     }

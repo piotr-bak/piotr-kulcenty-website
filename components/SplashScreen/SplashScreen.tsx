@@ -11,17 +11,15 @@ export const SplashScreen = () => {
     const [isAnimationCompleted, setIsAnimationCompleted] = useState(false);
 
     useEffect(() => {
-        const timer = setTimeout(
-            () => {
+        if (alreadyShowed) {
+            setShow(false);
+        } else {
+            setTimeout(() => {
                 setShow(false);
-            },
-            alreadyShowed ? 125 : 500
-        );
-        return () => {
-            clearTimeout(timer);
-            setAlreadyShowed(true);
-        };
-    });
+                setAlreadyShowed(true);
+            }, 1000);
+        }
+    }, [alreadyShowed]);
 
     const onAnimationEnd = () => setIsAnimationCompleted(true);
 
@@ -29,7 +27,7 @@ export const SplashScreen = () => {
         <div
             className={`
             ${styles.splash} 
-            ${show ? styles.active : styles.fading} 
+            ${show ? styles.fading : styles.hidden} 
             ${isAnimationCompleted ? styles.hidden : null}`}
             onAnimationEnd={onAnimationEnd}>
             <div className={styles.overlay}>

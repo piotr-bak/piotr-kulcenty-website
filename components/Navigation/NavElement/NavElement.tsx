@@ -16,7 +16,7 @@ export const NavElement = (props: NavElementProps) => {
         setToggled(false);
     };
     const element = imgSrc ? (
-        <Link href={destination ? destination : ""} passHref>
+        <Link href={destination ? destination : ""} scroll={true} passHref>
             <Image
                 className={`${filter[theme]} ${styles.image}`}
                 src={imgSrc}
@@ -28,13 +28,15 @@ export const NavElement = (props: NavElementProps) => {
             />
         </Link>
     ) : (
-        <div className={styles.wrap} title={label} aria-label={label}>
-            <Link
-                className={`${styles.button} ${cormorant.className} ${typography[theme]}`}
-                href={destination ? destination : ""}>
+        <Link
+            className={`${styles.button} ${cormorant.className} ${typography[theme]}`}
+            scroll={true}
+            href={destination ? destination : ""}
+            passHref>
+            <div className={styles.wrap} title={label} aria-label={label}>
                 {label}
-            </Link>
-        </div>
+            </div>
+        </Link>
     );
     return <>{element}</>;
 };

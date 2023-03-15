@@ -9,9 +9,11 @@ export const GalleryContainer = ({
     mode,
 }: GalleryContainerProps) => {
     const groups = sliceIntoGroups(configData, mode);
+    let groupCount: number = 0;
     return (
         <div>
             {groups.map((group) => {
+                ++groupCount;
                 let groupId = uuidv4();
                 return (
                     <div key={groupId} className={`${styles[mode]}`}>
@@ -22,6 +24,7 @@ export const GalleryContainer = ({
                                     key={itemId}
                                     {...item}
                                     mode={mode}
+                                    priority={groupCount === 1 ? true : false}
                                 />
                             );
                         })}

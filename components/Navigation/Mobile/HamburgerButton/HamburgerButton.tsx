@@ -8,7 +8,7 @@ export const HamburgerButton = () => {
     const { toggled, setToggled } = useHamburgerMenuContext();
 
     const handleClick = () => {
-        setToggled(true);
+        setToggled(!toggled);
     };
     return (
         <div

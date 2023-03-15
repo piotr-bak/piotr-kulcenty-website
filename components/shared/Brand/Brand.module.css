@@ -2,10 +2,10 @@
     display: flex;
     justify-content: center;
     width: 60vw;
-    top: 3vh;
+
     margin-top: 23px;
     margin-left: 20vw;
-    right: 20vw;
+
     cursor: pointer;
 }
 

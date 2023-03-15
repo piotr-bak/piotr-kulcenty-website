@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3vh;
+    margin-top: 18vh;
+    margin-bottom: 6.9vh;
+}
+
+.text {
+    color: hsl(0 0% 44%);
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+@media (orientation: portrait) {
+    .container {
+        margin-top: 5vh;
+    }
+}

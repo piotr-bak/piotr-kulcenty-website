@@ -3,6 +3,7 @@ import { GalleryMode } from "@/types";
 import Image from "next/image";
 import { Container } from "@/components/shared/Container/Container";
 import { GalleryContainer } from "@/components/Gallery/GalleryContainer/GalleryContainer";
+import { Footnote } from "@/components/shared/Footnote/Footnote";
 import { parseConfig } from "@/lib/helpers";
 import configFile from "@/data/gallery/about.json";
 import { cormorant } from "@/lib/fonts";
@@ -70,6 +71,7 @@ export default function Page() {
             <div className={style.gallery}>
                 <GalleryContainer configData={galleryItems} mode={mode} />
             </div>
+            <Footnote />
         </Container>
     );
 }
