@@ -15,8 +15,18 @@ export const NavElement = (props: NavElementProps) => {
     const handleMobileMenuClick = () => {
         setToggled(false);
     };
+    const scrollToTop = () => {
+        window.scroll({
+            top: 0,
+            behavior: "smooth",
+        });
+    };
     const element = imgSrc ? (
-        <Link href={destination ? destination : ""} scroll={true} passHref>
+        <Link
+            href={destination ? destination : ""}
+            scroll={true}
+            passHref
+            onClick={scrollToTop}>
             <Image
                 className={`${filter[theme]} ${styles.image}`}
                 src={imgSrc}

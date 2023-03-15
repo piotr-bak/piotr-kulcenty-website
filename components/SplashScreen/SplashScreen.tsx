@@ -17,7 +17,7 @@ export const SplashScreen = () => {
             setTimeout(() => {
                 setShow(false);
                 setAlreadyShowed(true);
-            }, 1000);
+            }, 2000);
         }
     }, [alreadyShowed]);
 

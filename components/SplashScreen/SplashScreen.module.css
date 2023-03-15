@@ -1,5 +1,5 @@
 .fading {
-    animation: fadeout 1.5s forwards;
+    animation: fadeout 2s forwards;
     pointer-events: none;
     opacity: 0;
 }

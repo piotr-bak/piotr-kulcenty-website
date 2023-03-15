@@ -5,8 +5,6 @@ import brandImg from "/public/brand.svg";
 import styles from "./Brand.module.css";
 import filter from "@/styles/themes/filters.module.css";
 
-//Logo musi być wrzucone na stronę galerii (a nie do navbara) - position:sticky
-//jeżeli chodzi o viewporty mobilne, powyżej - niech sobie wędruje do góry ekranu
 export const Brand = () => {
     const { theme } = useThemeContext();
     return (
