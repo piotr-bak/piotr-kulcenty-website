@@ -1,3 +1,4 @@
+"use client";
 import { useEffect } from "react";
 import { useThemeContext } from "@/contexts/ThemeContext";
 import { usePathname } from "next/navigation";

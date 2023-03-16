@@ -1,3 +1,4 @@
+"use client";
 import { createContext, useContext, useState } from "react";
 import { HamburgerMenuContextProps } from "@/types/interfaces/context-interfaces/HamburgerMenuContextProps.interface";
 import { ProviderProps } from "@/types";

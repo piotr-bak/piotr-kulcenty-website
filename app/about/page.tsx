@@ -1,4 +1,3 @@
-"use client";
 import { GalleryMode } from "@/types";
 import Image from "next/image";
 import { Container } from "@/components/shared/Container/Container";

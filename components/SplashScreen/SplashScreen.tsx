@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import logo from "@/public/logo.svg";
@@ -19,7 +20,7 @@ export const SplashScreen = () => {
                 setAlreadyShowed(true);
             }, 2000);
         }
-    }, [alreadyShowed]);
+    }, [alreadyShowed, setAlreadyShowed]);
 
     const onAnimationEnd = () => setIsAnimationCompleted(true);
 

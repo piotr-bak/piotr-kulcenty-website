@@ -1,3 +1,4 @@
+"use client";
 import { useModalImgContext } from "@/contexts/ModalImgContext";
 import { GalleryItemProps } from "@/types/interfaces";
 import { getImageOrientation } from "@/lib/helpers";

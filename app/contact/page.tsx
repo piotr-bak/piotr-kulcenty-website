@@ -1,4 +1,3 @@
-"use client";
 import { Container } from "@/components/shared/Container/Container";
 import { cormorant } from "@/lib/fonts";
 import style from "./style.module.css";

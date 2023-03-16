@@ -1,4 +1,3 @@
-"use client";
 import { Container } from "@/components/shared/Container/Container";
 import { GalleryContainer } from "@/components/Gallery/GalleryContainer/GalleryContainer";
 import { SplashScreen } from "@/components/SplashScreen/SplashScreen";
