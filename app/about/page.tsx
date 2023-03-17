@@ -21,6 +21,7 @@ export default function Page() {
                             className={style.image}
                             src={photo}
                             priority
+                            placeholder='blur'
                             alt="Piotr Kulcenty's portrait"
                         />
                     </figure>

@@ -39,7 +39,7 @@
 
 .hamburger {
     display: inline-block;
-    position: fixed;
+    position: absolute;
     height: 48px;
     width: 48px;
     padding: 0 12px;

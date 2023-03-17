@@ -18,6 +18,7 @@ export const SplashScreen = () => {
             setTimeout(() => {
                 setShow(false);
                 setAlreadyShowed(true);
+                document.body.style.overflow = "auto";
             }, 2000);
         }
     }, [alreadyShowed, setAlreadyShowed]);

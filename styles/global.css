@@ -122,4 +122,8 @@ meter {
 
 body {
     min-width: 320px;
+
+    /*<SplashScreen/> changes the overflow to "auto" after 2000ms ( = after it
+    fades away). Otherwise the scrollbar will pollute the splash screen display*/
+    overflow-y: hidden;
 }
