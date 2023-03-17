@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
-import { Panel } from "../Panel/Panel";
-import { NavElement } from "../NavElement/NavElement";
+import { Panel } from "../shared/Panel/Panel";
+import { NavElement } from "../shared/NavElement/NavElement";
 import { NavElementProps } from "@/types/interfaces";
 import styles from "./Footer.module.css";
 import config from "../../../config/footer.json";

@@ -1,10 +1,11 @@
+"use client";
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
-import { Panel } from "../Panel/Panel";
-import { NavElement } from "../NavElement/NavElement";
+import { Panel } from "../shared/Panel/Panel";
+import { NavElement } from "../shared/NavElement/NavElement";
 import { NavElementProps } from "@/types/interfaces";
-import { HamburgerButton } from "../Mobile/HamburgerButton/HamburgerButton";
-import { HamburgerMenu } from "../Mobile/HamburgerMenu/HamburgerMenu";
+import { HamburgerButton } from "../shared/HamburgerButton/HamburgerButton";
+import { HamburgerMenu } from "../shared/HamburgerMenu/HamburgerMenu";
 import styles from "./Navbar.module.css";
 import mobile from "@/styles/themes/mobilenavi.module.css";
 import config from "@/config/navbar.json";

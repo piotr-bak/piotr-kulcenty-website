@@ -1,15 +1,9 @@
-"use client"; /*use client used here related to Next.js Issue #41940 - https://github.com/vercel/next.js/issues/41940 */
-import {
-    HamburgerMenuContextProvider,
-    ModalImgContextProvider,
-    SplashScreenContextProvider,
-    ThemeContextProvider,
-} from "@/contexts";
+import { ClientContexts } from "@/components/Core/ClientContexts/ClientContexts";
 import { Navbar } from "@/components/Navigation/Navbar/Navbar";
-import { Brand } from "@/components/shared/Brand/Brand";
+import { Brand } from "@/components/UI/shared/Brand/Brand";
 import { Footer } from "@/components/Navigation/Footer/Footer";
 import { Modal } from "@/components/Gallery/Modal/Modal";
-import { Wrapper } from "@/components/shared/Wrapper/Wrapper";
+import { Wrapper } from "@/components/UI/Layout/Wrapper/Wrapper";
 import "@/styles/global.css";
 import styles from "./layout.module.css";
 
@@ -27,27 +21,21 @@ export default function RootLayout({
                 />
             </head>
             <body className={`${styles.body}`}>
-                <ThemeContextProvider>
-                    <SplashScreenContextProvider>
-                        <ModalImgContextProvider>
-                            <HamburgerMenuContextProvider>
-                                <Wrapper>
-                                    <header>
-                                        <Navbar />
-                                    </header>
-                                    <main className={`${styles.layout}`}>
-                                        <Brand />
-                                        {children}
-                                    </main>
-                                    <footer>
-                                        <Footer />
-                                    </footer>
-                                    <Modal />
-                                </Wrapper>
-                            </HamburgerMenuContextProvider>
-                        </ModalImgContextProvider>
-                    </SplashScreenContextProvider>
-                </ThemeContextProvider>
+                <ClientContexts>
+                    <Wrapper>
+                        <header>
+                            <Navbar />
+                        </header>
+                        <main className={`${styles.layout}`}>
+                            <Brand />
+                            {children}
+                        </main>
+                        <footer>
+                            <Footer />
+                        </footer>
+                        <Modal />
+                    </Wrapper>
+                </ClientContexts>
             </body>
         </html>
     );

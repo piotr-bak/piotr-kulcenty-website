@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { useHamburgerMenuContext, useThemeContext } from "@/contexts";
 import { NavElementProps } from "@/types/interfaces";
