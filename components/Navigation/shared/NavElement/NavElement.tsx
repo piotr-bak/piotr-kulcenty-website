@@ -30,11 +30,7 @@ export const NavElement = (props: NavElementProps) => {
     };
 
     const element = imgSrc ? (
-        <Link
-            className={styles.test}
-            href={destination ? destination : ""}
-            scroll={true}
-            passHref>
+        <Link href={destination ? destination : ""} scroll={true} passHref>
             <div onClick={handleClick} className={styles.wrap}>
                 <Image
                     className={`${filter[theme]} ${styles.image}`}

@@ -15,6 +15,7 @@ export default function RootLayout({
     return (
         <html lang='en'>
             <head>
+                <link rel='canonical' href='https://piotrkulcenty.com' />
                 <meta
                     name='description'
                     content='Piotr Kulcenty is a Violin Maker and Restorer based in London, UK, creating widely acclaimed master violins.'
