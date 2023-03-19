@@ -24,7 +24,7 @@
     width: auto;
     max-height: 50vh;
     max-width: 40vw;
-    aspect-ratio: 480/621;
+    aspect-ratio: 3/4;
 }
 
 @media (orientation: portrait) and (min-width: 320px) {
@@ -33,7 +33,7 @@
         width: auto;
         max-height: 50vh;
         max-width: 60vw;
-        aspect-ratio: 480/621;
+        aspect-ratio: 3/4;
     }
     .columnL {
         padding-top: 8vh;
@@ -48,7 +48,7 @@
         width: auto;
         max-height: 40vh;
         max-width: 60vw;
-        aspect-ratio: 480/621;
+        aspect-ratio: 3/4;
     }
     .columnL {
         padding-top: 8vh;
@@ -98,7 +98,7 @@
         width: auto;
         max-height: 45vh;
         max-width: 60vw;
-        aspect-ratio: 480/621;
+        aspect-ratio: 3/4;
     }
     .columnL {
         padding-top: 8vh;
@@ -117,7 +117,7 @@
         width: auto;
         max-height: 40vh;
         max-width: 60vw;
-        aspect-ratio: 480/621;
+        aspect-ratio: 3/4;
     }
     .columnL {
         padding-top: 4vh;
@@ -156,7 +156,7 @@
         width: auto;
         max-height: 65vh;
         max-width: 50vw;
-        aspect-ratio: 480/621;
+        aspect-ratio: 3/4;
     }
 }
 

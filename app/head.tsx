@@ -1,9 +1,7 @@
 export default function Head() {
     return (
         <>
-            <title>
-                Piotr Kulcenty - Violin Maker and Restorer based in London, UK
-            </title>
+            <title>Piotr Kulcenty Violins</title>
             <link
                 rel='icon'
                 href='/favicon.svg'
