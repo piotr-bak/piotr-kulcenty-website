@@ -12,6 +12,8 @@ import style from "./style.module.css";
 export default function Page() {
     const galleryItems = parseConfig(configFile);
     const mode: GalleryMode = "mixed";
+    const galleryID = "ABOUT_GALLERY";
+
     return (
         <Container>
             <div className={`${style.wrap} ${cormorant.className}`}>
@@ -69,7 +71,11 @@ export default function Page() {
                 </section>
             </div>
             <div className={style.gallery}>
-                <GalleryContainer configData={galleryItems} mode={mode} />
+                <GalleryContainer
+                    configData={galleryItems}
+                    mode={mode}
+                    galleryID={galleryID}
+                />
             </div>
             <Footnote />
         </Container>

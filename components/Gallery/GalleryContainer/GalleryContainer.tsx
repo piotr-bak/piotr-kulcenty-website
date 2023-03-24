@@ -1,3 +1,6 @@
+"use client";
+// import { useEffect } from "react";
+// import { useSlideshowContext } from "@/contexts/SlideshowContext";
 import { v4 as uuidv4 } from "uuid";
 import { GalleryContainerProps } from "@/types/interfaces";
 import { GalleryItem } from "../GalleryItem/GalleryItem";
@@ -7,9 +10,19 @@ import styles from "./GalleryContainer.module.css";
 export const GalleryContainer = ({
     configData,
     mode,
+    galleryID,
 }: GalleryContainerProps) => {
+    // const { galleries, addGallery } = useSlideshowContext();
+
     const groups = sliceIntoGroups(configData, mode);
     let groupCount: number = 0;
+
+    // useEffect(() => {
+    //     addGallery(galleryID, configData);
+    //     console.log("Current Gallery ID", galleryID);
+    //     console.log("Galleries: ", JSON.stringify(galleries));
+    // }, []);
+
     return (
         <div>
             {groups.map((group) => {

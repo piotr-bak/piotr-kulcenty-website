@@ -1,6 +1,7 @@
 .wrapper {
     width: 100vw;
-    height: fill-available;
+    height: -webkit-fill-available;
+    height: stretch;
     min-height: 100vh;
     overflow-x: hidden;
     display: flex;

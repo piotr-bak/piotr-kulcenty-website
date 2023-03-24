@@ -1,13 +1,13 @@
 import { GalleryMode } from "@/types";
-import { GalleryItemProps } from "@/types/interfaces";
+import { GalleryItemProps, GallerySingleEntry } from "@/types/interfaces";
 import galleryConfig from "@/config/gallery.json";
 
-const sanitizeConfig = (configFile: any) => {
+const sanitizeConfig = (configFile: GallerySingleEntry[]) => {
     configFile = JSON.parse(JSON.stringify(configFile));
     return configFile;
 };
 
-export const parseConfig = (configFile: any) => {
+export const parseConfig = (configFile: GallerySingleEntry[]) => {
     sanitizeConfig(configFile);
     const result = configFile.map((entry: any) => {
         if (entry.width) {
@@ -25,9 +25,14 @@ export const sliceIntoGroups = (
     array: Array<GalleryItemProps>,
     mode: GalleryMode
 ) => {
-    const fullSize: number = parseInt(galleryConfig.groupSizes.full);
-    const compactSize: number = parseInt(galleryConfig.groupSizes.compact);
-    const groupSize: number = mode === "full" ? fullSize : compactSize;
+    const fullModeGroup: number = parseInt(
+        galleryConfig.numberOfGroupElements.fullMode
+    );
+    const compactModeGroup: number = parseInt(
+        galleryConfig.numberOfGroupElements.compactMode
+    );
+    const groupSize: number =
+        mode === "full" ? fullModeGroup : compactModeGroup;
 
     const result = [];
 

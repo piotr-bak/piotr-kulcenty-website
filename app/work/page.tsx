@@ -8,9 +8,15 @@ import configFile from "@/data/gallery/work.json";
 export default function Page() {
     const galleryItems = parseConfig(configFile);
     const mode: GalleryMode = "compact";
+    const galleryID = "WORK_GALLERY";
+
     return (
         <Container>
-            <GalleryContainer configData={galleryItems} mode={mode} />
+            <GalleryContainer
+                configData={galleryItems}
+                mode={mode}
+                galleryID={galleryID}
+            />
             <Footnote />
         </Container>
     );

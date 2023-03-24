@@ -4,4 +4,5 @@ import { GalleryItemProps } from "./GalleryItemProps.interface";
 export interface GalleryContainerProps {
     configData: Array<GalleryItemProps>;
     mode: GalleryMode;
+    galleryID: string;
 }
