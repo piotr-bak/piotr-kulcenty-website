@@ -3,7 +3,7 @@ import { GalleryContainer } from "@/components/Gallery/GalleryContainer/GalleryC
 import { Footnote } from "@/components/UI/shared/Footnote/Footnote";
 import { GalleryMode } from "@/types";
 import { parseConfig } from "@/lib/helpers";
-import configFile from "@/data/gallery/work.json";
+import configFile from "@/public/gallery/data/work.json";
 
 export default function Page() {
     const galleryItems = parseConfig(configFile);

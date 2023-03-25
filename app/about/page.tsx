@@ -4,7 +4,7 @@ import { Container } from "@/components/UI/Layout/Container/Container";
 import { GalleryContainer } from "@/components/Gallery/GalleryContainer/GalleryContainer";
 import { Footnote } from "@/components/UI/shared/Footnote/Footnote";
 import { parseConfig } from "@/lib/helpers";
-import configFile from "@/data/gallery/about.json";
+import configFile from "@/public/gallery/data/about.json";
 import { cormorant } from "@/lib/fonts";
 import photo from "@/public/portrait.webp";
 import style from "./style.module.css";

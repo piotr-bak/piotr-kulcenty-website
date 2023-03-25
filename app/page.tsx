@@ -4,7 +4,7 @@ import { SplashScreen } from "@/components/SplashScreen/SplashScreen";
 import { Footnote } from "@/components/UI/shared/Footnote/Footnote";
 import { GalleryMode } from "@/types";
 import { parseConfig } from "@/lib/helpers";
-import configFile from "@/data/gallery/home.json";
+import configFile from "@/public/gallery/data/home.json";
 
 export default function Page() {
     const galleryItems = parseConfig(configFile);
