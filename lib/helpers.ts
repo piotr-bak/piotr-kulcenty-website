@@ -1,3 +1,4 @@
+import { thumbHashToDataURL } from "thumbhash";
 import { GalleryMode } from "@/types";
 import { GalleryItemProps, GallerySingleEntry } from "@/types/interfaces";
 import galleryConfig from "@/config/gallery.json";
@@ -49,4 +50,23 @@ export const getImageOrientation = (height: number, width: number) => {
     } else {
         return "landscape";
     }
+};
+
+const hashToBinary = (thumbhash: string): Uint8Array => {
+    const cleanedHash = thumbhash.replace(/[\s,\[\]]/g, "");
+    if (cleanedHash.length % 2 !== 0 || /[^0-9a-fA-F]/.test(cleanedHash)) {
+        throw new Error("Image thumbnail hash data invalid");
+    }
+    const binaryData = new Uint8Array(cleanedHash.length / 2);
+    for (let i = 0; i < cleanedHash.length; i += 2) {
+        const byte = parseInt(cleanedHash.slice(i, i + 2), 16);
+        binaryData[i / 2] = byte;
+    }
+    return binaryData;
+};
+
+export const getBlurDataURL = (thumbhash: string) => {
+    // uses an awesome ThumbHash algorithm by Evan Wallace - https://evanw.github.io/thumbhash/
+    const blurDataURL = thumbHashToDataURL(hashToBinary(thumbhash));
+    return blurDataURL;
 };

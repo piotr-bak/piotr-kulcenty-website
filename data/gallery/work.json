@@ -3,108 +3,126 @@
     "src": "/gallery/work/00_Violin_2021_Stradivari_Front.webp",
     "width": "1393",
     "height": "1857",
+    "thumbnail": "A4 49 16 35 0A F8 87 8A 77 77 87 68 77 79 78 87 08 77 87 60 68",
     "description": ""
   },
   {
     "src": "/gallery/work/01_2021_Stradivari_Corner.webp",
     "width": "1857",
     "height": "1393",
+    "thumbnail": "28 6A 16 5D 92 8F 76 88 86 89 77 77 77 88 77 77 80 89 07 98 77",
     "description": ""
   },
   {
     "src": "/gallery/work/02_2021_Stradivari_Scroll.webp",
     "width": "1036",
     "height": "1381",
+    "thumbnail": "2B 08 06 1D 06 FC 46 95 48 C7 34 AB 86 89 76 68 07 68 74 80 46",
     "description": ""
   },
   {
     "src": "/gallery/work/10_2021_Stradivari_Button.webp",
     "width": "1857",
     "height": "1393",
+    "thumbnail": "A8 49 0E 45 8A CC 97 77 7F 57 87 79 86 68 78 87 34 90 47 03 79",
     "description": ""
   },
   {
     "src": "/gallery/work/11_2021_Stradivari_Back.webp",
     "width": "1456",
     "height": "1941",
+    "thumbnail": "E8 59 12 4D 0C F8 97 8A 78 86 78 78 77 8A 87 87 08 77 87 70 67",
     "description": ""
   },
   {
     "src": "/gallery/work/12_2021_Stradivari_Back_side.webp",
     "width": "1860",
     "height": "1395",
+    "thumbnail": "66 49 0E 45 8C F9 88 67 66 79 86 86 77 79 87 78 07 87 79 80 98",
     "description": ""
   },
   {
     "src": "/gallery/work/20_2022_Guarneri_Del_Gesu_Front.webp",
     "width": "1399",
     "height": "1865",
+    "thumbnail": "E4 59 12 15 08 F7 78 89 77 77 77 78 78 8A 77 88 08 8A 71 70 48",
     "description": ""
   },
   {
     "src": "/gallery/work/21_2022_Guarneri_Del_Gesu_Side.webp",
     "width": "1120",
     "height": "840",
+    "thumbnail": "66 49 12 2D 8A F5 56 68 88 78 87 86 78 78 88 88 07 78 77 80 88",
     "description": ""
   },
   {
     "src": "/gallery/work/22_2022_Guarneri_Del_Gesu_Scroll.webp",
     "width": "934",
     "height": "1245",
+    "thumbnail": "6A 29 0E 15 06 F7 79 9A 57 C6 56 79 76 88 77 88 08 7A 87 80 57",
     "description": ""
   },
   {
     "src": "/gallery/work/30_2022_Guarneri_Del_Gesu_Back.webp",
     "width": "1399",
     "height": "1865",
+    "thumbnail": "66 7A 12 35 0E F7 88 88 78 77 78 77 77 8A 87 87 09 86 87 60 78",
     "description": ""
   },
   {
     "src": "/gallery/work/31_2022_Guarneri_Del_Gesu_Bridge_Profile.webp",
     "width": "1079",
     "height": "809",
+    "thumbnail": "A4 59 0E 3D 8C 76 87 88 7F 87 87 97 88 68 88 79 78 70 8A 07 97",
     "description": ""
   },
   {
     "src": "/gallery/work/32_2022_Guarneri_Del_Gesu_F-hole.webp",
     "width": "1299",
     "height": "1731",
+    "thumbnail": "A3 8A 16 25 0C AF 77 89 67 57 87 79 87 88 77 77 30 86 09 54 97",
     "description": ""
   },
   {
     "src": "/gallery/work/40_2022_Unvarnished_Back.webp",
     "width": "1377",
     "height": "1836",
+    "thumbnail": "62 39 0A 2D 06 B7 77 7F 87 27 78 77 98 78 87 77 09 76 98 60 88",
     "description": ""
   },
   {
     "src": "/gallery/work/41_2022_Unvarnished_Front_side.webp",
     "width": "1377",
     "height": "1836",
+    "thumbnail": "9E 49 06 15 04 0E 74 9B 67 59 66 59 87 77 88 77 2F 95 FE 52 C9",
     "description": ""
   },
   {
     "src": "/gallery/work/42_2022_Unvarnished_Back_side.webp",
     "width": "1104",
     "height": "1472",
+    "thumbnail": "DE 49 06 1D 04 3C 5D 3F 88 45 76 88 57 99 76 88 00 73 1A 40 97",
     "description": ""
   },
   {
     "src": "/gallery/work/50_2022_Unvarnished_Back_corner.webp",
     "width": "1377",
     "height": "1836",
+    "thumbnail": "E0 49 0A 2D 06 9B 79 7F 87 88 67 97 77 78 97 87 50 8B 06 B4 68",
     "description": ""
   },
   {
     "src": "/gallery/work/51_2022_Unvarnished_F-hole.webp",
     "width": "1377",
     "height": "1835",
+    "thumbnail": "63 39 0A 15 02 E0 76 7E 65 58 58 68 67 78 77 77 23 60 5C 00 D6",
     "description": ""
   },
   {
     "src": "/gallery/work/52_2022_Unvarnished_Scroll.webp",
     "width": "1278",
     "height": "1704",
+    "thumbnail": "D9 18 0A 25 06 49 75 70 77 39 97 49 B7 88 97 78 09 73 A5 30 57",
     "description": ""
   }
 ]
