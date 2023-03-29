@@ -1,6 +1,10 @@
 import { SetStateAction } from "react";
 
 export interface ModalImgContextProps {
-    imgSrc: string;
-    setImgSrc: React.Dispatch<SetStateAction<string>>;
+    modalImgSrc: string;
+    setModalImgSrc: React.Dispatch<SetStateAction<string>>;
+    modalImgId: string;
+    setModalImgId: React.Dispatch<SetStateAction<string>>;
+    parentGalleryId: string;
+    setParentGalleryId: React.Dispatch<SetStateAction<string>>;
 }

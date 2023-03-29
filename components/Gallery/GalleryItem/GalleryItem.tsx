@@ -5,19 +5,28 @@ import { getBlurDataURL, getImageOrientation } from "@/lib/helpers";
 import Image from "next/image";
 import styles from "./GalleryItem.module.css";
 
-// const holder =
-//     "data:image/octet-stream;base64,UklGRkAAAABXRUJQVlA4IDQAAACwAQCdASoDAAQAAkA4JZACdAEO9qOAAP5b7gVF+ctpAhvKkZ03wb8CXyYgafvKNlKbAAAA";
-
-// const thumbhash: string =
-//     "28,39,12,3D,8A,88,76,87,7F,78,88,89,98,77,78,87,77,80,7A,07,98";
-
 export const GalleryItem = (props: GallerySingleItem) => {
-    const { src, width, height, thumbnail, description, mode, priority } =
-        props;
+    const {
+        id,
+        galleryId,
+        src,
+        width,
+        height,
+        thumbnail,
+        description,
+        mode,
+        priority,
+    } = props;
+
     const orientation = getImageOrientation(height, width);
-    const { setImgSrc } = useModalImgContext();
+
+    const { setModalImgSrc, setModalImgId, setParentGalleryId } =
+        useModalImgContext();
+
     const handleClick = () => {
-        setImgSrc(src);
+        setModalImgSrc(src);
+        setModalImgId(id);
+        setParentGalleryId(galleryId);
     };
 
     return (

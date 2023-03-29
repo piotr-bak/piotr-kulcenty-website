@@ -70,3 +70,33 @@ export const getBlurDataURL = (thumbhash: string) => {
     const blurDataURL = thumbHashToDataURL(hashToBinary(thumbhash));
     return blurDataURL;
 };
+
+export const findImgInCollection = (
+    modalImgId: string,
+    collection: Array<ParsedGalleryData>,
+    parentGalleryId: string
+) => {
+    const targetGallery = collection.find(
+        (entry) => entry.id === parentGalleryId
+    );
+    if (!targetGallery) {
+        throw new Error(`Parent gallery ${parentGalleryId} not found`);
+    }
+    const targetGroupIndex = targetGallery.groups.findIndex((group) =>
+        group.items.some((item) => item.id === modalImgId)
+    );
+    const targetGroup = targetGallery.groups[targetGroupIndex];
+    if (!targetGroup) {
+        throw new Error(
+            `Parent gallery group of the image ${modalImgId} not found`
+        );
+    }
+    const targetElementIndex = targetGroup.items.findIndex(
+        (el) => el.id === modalImgId
+    );
+    if (targetElementIndex === -1) {
+        throw new Error(`Image ${modalImgId} not found in the gallery`);
+    }
+
+    return [targetGroupIndex, targetElementIndex];
+};

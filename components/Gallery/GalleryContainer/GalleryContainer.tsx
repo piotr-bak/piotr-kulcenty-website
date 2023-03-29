@@ -12,6 +12,11 @@ export const GalleryContainer = ({
 }: GalleryContainerProps) => {
     const { collection, addToCollection } = useSlideshowContext();
     const isMounted = useRef(true);
+
+    //adds the gallery content from currently visited Route to the
+    //SlideshowContext as an object - and makes sure that there will be just one
+    //object per gallery in the Context (hence useRef and checking whteher
+    //the component is mounted);
     useEffect(() => {
         const alreadyExists = collection.some((item) => item.id === galleryID);
         if (!alreadyExists) {
@@ -44,6 +49,7 @@ export const GalleryContainer = ({
                                     {...item}
                                     mode={mode}
                                     priority={groupCount === 1 ? true : false}
+                                    galleryId={galleryID}
                                 />
                             );
                         })}

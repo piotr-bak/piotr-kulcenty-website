@@ -2,6 +2,7 @@ import { GalleryMode } from "../../GalleryMode";
 
 export interface GallerySingleItem {
     id: string;
+    galleryId: string;
     src: string;
     width: number;
     height: number;

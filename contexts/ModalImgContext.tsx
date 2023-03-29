@@ -4,15 +4,29 @@ import { ProviderProps } from "@/types";
 import { ModalImgContextProps } from "@/types/interfaces";
 
 export const ModalImgContext = createContext<ModalImgContextProps>({
-    imgSrc: "",
-    setImgSrc: () => {},
+    modalImgSrc: "",
+    setModalImgSrc: () => {},
+    modalImgId: "",
+    setModalImgId: () => {},
+    parentGalleryId: "",
+    setParentGalleryId: () => {},
 });
 
 export const ModalImgContextProvider = ({ children }: ProviderProps) => {
-    const [imgSrc, setImgSrc] = useState<string>("");
+    const [modalImgSrc, setModalImgSrc] = useState<string>("");
+    const [modalImgId, setModalImgId] = useState<string>("");
+    const [parentGalleryId, setParentGalleryId] = useState<string>("");
 
     return (
-        <ModalImgContext.Provider value={{ imgSrc, setImgSrc }}>
+        <ModalImgContext.Provider
+            value={{
+                modalImgSrc,
+                setModalImgSrc,
+                modalImgId,
+                setModalImgId,
+                parentGalleryId,
+                setParentGalleryId,
+            }}>
             {children}
         </ModalImgContext.Provider>
     );

@@ -1,34 +1,49 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useModalImgContext } from "@/contexts";
+import { useModalImgContext, useSlideshowContext } from "@/contexts";
 import spinner from "@/public/spinner-white.svg";
 import Image from "next/image";
 import style from "./Modal.module.css";
+import { findImgInCollection } from "@/lib/helpers";
 
 export const Modal = () => {
     const [show, setShow] = useState(false);
+    const [slideshowIndexes, setSlideshowIndexes] = useState<Array<number>>([]);
     const [isLoading, setIsLoading] = useState(true);
-    const { imgSrc, setImgSrc } = useModalImgContext();
+    const { modalImgSrc, setModalImgSrc, modalImgId, parentGalleryId } =
+        useModalImgContext();
+    const { collection } = useSlideshowContext();
 
     const handleClick = () => {
-        setImgSrc("");
+        setModalImgSrc("");
         setShow((show) => false);
     };
 
     useEffect(() => {
-        if (imgSrc) {
+        if (modalImgSrc) {
             setIsLoading(true);
             setShow(true);
         }
-    }, [imgSrc]);
+    }, [modalImgSrc]);
 
     const handleImageLoad = () => {
         setIsLoading(false);
+        const [targetGroupIndex, targetElementIndex] = findImgInCollection(
+            modalImgId,
+            collection,
+            parentGalleryId
+        );
+        setSlideshowIndexes([
+            targetGroupIndex as number,
+            targetElementIndex as number,
+        ]);
+        console.log("Slideshow indexes", slideshowIndexes);
     };
 
     if (!show) {
         return null;
     }
+
     return (
         <div className={style.wrapper}>
             <div className={`${style.backdrop}`}></div>
@@ -38,11 +53,11 @@ export const Modal = () => {
                         <Image src={spinner} alt='Loading image...' />
                     </div>
                 )}
-                {imgSrc && (
+                {modalImgSrc && (
                     <figure className={`${style.figure}`} onClick={handleClick}>
                         <Image
                             className={style.image}
-                            src={imgSrc}
+                            src={modalImgSrc}
                             fill
                             priority
                             alt='Detailed view of the instrument built by Piotr Kulcenty'
