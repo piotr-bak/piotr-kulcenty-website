@@ -1,6 +1,6 @@
 "use client";
 import { useModalImgContext } from "@/contexts/ModalImgContext";
-import { GalleryItemProps } from "@/types/interfaces";
+import { GallerySingleItem } from "@/types/interfaces";
 import { getBlurDataURL, getImageOrientation } from "@/lib/helpers";
 import Image from "next/image";
 import styles from "./GalleryItem.module.css";
@@ -11,7 +11,7 @@ import styles from "./GalleryItem.module.css";
 // const thumbhash: string =
 //     "28,39,12,3D,8A,88,76,87,7F,78,88,89,98,77,78,87,77,80,7A,07,98";
 
-export const GalleryItem = (props: GalleryItemProps) => {
+export const GalleryItem = (props: GallerySingleItem) => {
     const { src, width, height, thumbnail, description, mode, priority } =
         props;
     const orientation = getImageOrientation(height, width);

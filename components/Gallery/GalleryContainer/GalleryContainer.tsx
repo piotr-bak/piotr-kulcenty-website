@@ -1,37 +1,43 @@
 "use client";
-// import { useEffect } from "react";
-// import { useSlideshowContext } from "@/contexts/SlideshowContext";
-import { v4 as uuidv4 } from "uuid";
+import { useEffect, useRef } from "react";
+import { useSlideshowContext } from "@/contexts/SlideshowContext";
 import { GalleryContainerProps } from "@/types/interfaces";
 import { GalleryItem } from "../GalleryItem/GalleryItem";
-import { sliceIntoGroups } from "@/lib/helpers";
 import styles from "./GalleryContainer.module.css";
 
 export const GalleryContainer = ({
-    configData,
+    galleryData,
     mode,
     galleryID,
 }: GalleryContainerProps) => {
-    // const { galleries, addGallery } = useSlideshowContext();
+    const { collection, addToCollection } = useSlideshowContext();
+    const isMounted = useRef(true);
+    useEffect(() => {
+        const alreadyExists = collection.some((item) => item.id === galleryID);
+        if (!alreadyExists) {
+            {
+                console.log(galleryID);
+            }
+            addToCollection(galleryData, isMounted.current);
+            console.log(collection);
+        }
 
-    const groups = sliceIntoGroups(configData, mode);
+        return () => {
+            isMounted.current = false;
+        };
+    }, [collection, addToCollection, galleryData, galleryID]);
+
     let groupCount: number = 0;
-
-    // useEffect(() => {
-    //     addGallery(galleryID, configData);
-    //     console.log("Current Gallery ID", galleryID);
-    //     console.log("Galleries: ", JSON.stringify(galleries));
-    // }, []);
 
     return (
         <div>
-            {groups.map((group) => {
+            {galleryData.groups.map((group) => {
                 ++groupCount;
-                let groupId = uuidv4();
+                const groupId = group.id;
                 return (
                     <div key={groupId} className={`${styles[mode]}`}>
-                        {group.map((item) => {
-                            let itemId = uuidv4();
+                        {group.items.map((item) => {
+                            const itemId = item.id;
                             return (
                                 <GalleryItem
                                     key={itemId}

@@ -1,4 +1,4 @@
-import config from "@/config/route-config.json";
+import config from "@/components/config/routes.json";
 import { GalleryConfigTypes } from "@/types/interfaces";
 import { ThemeKey } from "@/types";
 

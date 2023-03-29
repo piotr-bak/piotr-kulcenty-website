@@ -8,7 +8,7 @@ import { HamburgerButton } from "../Mobile/HamburgerButton/HamburgerButton";
 import { HamburgerMenu } from "../Mobile/HamburgerMenu/HamburgerMenu";
 import styles from "./Navbar.module.css";
 import mobile from "@/styles/themes/mobilenavi.module.css";
-import config from "@/config/navbar.json";
+import config from "@/components/config/navbar.json";
 import { useThemeContext } from "@/contexts";
 
 export const Navbar = () => {

@@ -3,7 +3,7 @@ import { Panel } from "../shared/Panel/Panel";
 import { NavElement } from "../shared/NavElement/NavElement";
 import { NavElementProps } from "@/types/interfaces";
 import styles from "./Footer.module.css";
-import config from "@/config/footer.json";
+import config from "@/components/config/footer.json";
 
 export const Footer = () => {
     //quick config sanitization

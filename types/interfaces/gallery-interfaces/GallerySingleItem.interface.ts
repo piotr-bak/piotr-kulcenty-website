@@ -1,6 +1,7 @@
 import { GalleryMode } from "../../GalleryMode";
 
-export interface GalleryItemProps {
+export interface GallerySingleItem {
+    id: string;
     src: string;
     width: number;
     height: number;

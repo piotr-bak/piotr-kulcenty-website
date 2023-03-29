@@ -1,46 +1,46 @@
 import { thumbHashToDataURL } from "thumbhash";
-import { GalleryMode } from "@/types";
-import { GalleryItemProps, GallerySingleEntry } from "@/types/interfaces";
-import galleryConfig from "@/config/gallery.json";
+import {
+    GallerySingleItem,
+    UnparsedGalleryData,
+    UnparesdGalleryGroup,
+    UnparsedGallerySingleItem,
+    ParsedGalleryData,
+} from "@/types/interfaces";
 
-const sanitizeConfig = (configFile: GallerySingleEntry[]) => {
-    configFile = JSON.parse(JSON.stringify(configFile));
-    return configFile;
+const sanitizeData = (dataFile: UnparsedGalleryData) => {
+    dataFile = JSON.parse(JSON.stringify(dataFile));
+    return dataFile;
 };
 
-export const parseConfig = (configFile: GallerySingleEntry[]) => {
-    sanitizeConfig(configFile);
-    const result = configFile.map((entry: any) => {
-        if (entry.width) {
-            entry.width = parseInt(entry.width, 10);
-        }
-        if (entry.height) {
-            entry.height = parseInt(entry.height, 10);
-        }
-        return entry;
-    });
+//Check whether the type conversion is correct
+const parseGalleryGroup = (group: UnparesdGalleryGroup) => {
+    const result = {
+        ...group,
+        items: group.items.map(
+            (item: UnparsedGallerySingleItem | GallerySingleItem) => {
+                if (item.width) {
+                    item.width = parseInt(item.width as string, 10);
+                }
+                if (item.height) {
+                    item.height = parseInt(item.height as string, 10);
+                }
+                return item as GallerySingleItem;
+            }
+        ),
+    };
     return result;
 };
 
-export const sliceIntoGroups = (
-    array: Array<GalleryItemProps>,
-    mode: GalleryMode
-) => {
-    const fullModeGroup: number = parseInt(
-        galleryConfig.numberOfGroupElements.fullMode
-    );
-    const compactModeGroup: number = parseInt(
-        galleryConfig.numberOfGroupElements.compactMode
-    );
-    const groupSize: number =
-        mode === "full" ? fullModeGroup : compactModeGroup;
-
-    const result = [];
-
-    for (let i = 0; i < array.length; i += groupSize) {
-        result.push(array.slice(i, i + groupSize));
-    }
-
+export const parseGalleryData = (
+    dataFile: UnparsedGalleryData
+): ParsedGalleryData => {
+    sanitizeData(dataFile);
+    const result = {
+        ...dataFile,
+        groups: dataFile.groups.map((group: UnparesdGalleryGroup) => {
+            return parseGalleryGroup(group);
+        }),
+    };
     return result;
 };
 

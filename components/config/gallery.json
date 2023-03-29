@@ -1,6 +1,7 @@
 {
   "numberOfGroupElements": {
     "fullMode": "3",
-    "compactMode": "6"
+    "compactMode": "6",
+    "name": "sizeOfGalleryGroups"
   }
 }

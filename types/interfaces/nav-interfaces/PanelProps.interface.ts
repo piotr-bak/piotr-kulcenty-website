@@ -1,5 +1,5 @@
 export interface PanelProps {
-    items: React.ReactNode[];
+    items: Array<React.ReactNode>;
     layout: "navbarStyle" | "footerStyle";
     children?: React.ReactNode;
 }

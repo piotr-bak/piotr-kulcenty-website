@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useHamburgerMenuContext } from "@/contexts/HamburgerMenuContext";
 import { useThemeContext } from "@/contexts";
 import { cormorant } from "@/lib/fonts";
-import config from "@/config/route-config.json";
+import config from "@/components/config/routes.json";
 import style from "./HamburgerMenu.module.css";
 import colors from "styles/themes/mobilenavi.module.css";
 

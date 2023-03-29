@@ -3,17 +3,20 @@ import Image from "next/image";
 import { Container } from "@/components/UI/Layout/Container/Container";
 import { GalleryContainer } from "@/components/Gallery/GalleryContainer/GalleryContainer";
 import { Footnote } from "@/components/UI/shared/Footnote/Footnote";
-import { parseConfig } from "@/lib/helpers";
-import configFile from "@/public/gallery/data/about.json";
+import { parseGalleryData } from "@/lib/helpers";
+import dataFile from "@/public/gallery/data/about.json";
 import { cormorant } from "@/lib/fonts";
-import photo from "@/public/portrait.webp";
+import photo from "@/public/piotr-kulcenty.webp";
 import style from "./style.module.css";
+import { getBlurDataURL } from "@/lib/helpers";
+import { ParsedGalleryData } from "@/types/interfaces";
 
 export default function Page() {
-    const galleryItems = parseConfig(configFile);
+    const galleryData: ParsedGalleryData = parseGalleryData(dataFile);
     const mode: GalleryMode = "mixed";
-    const galleryID = "ABOUT_GALLERY";
-
+    const galleryID = galleryData.id;
+    const PORTRAIT_THUMB =
+        "14 08 0A 05 00 AF 8A 97 77 68 66 67 75 76 87 77 F0 87 00 7F 08";
     return (
         <Container>
             <div className={`${style.wrap} ${cormorant.className}`}>
@@ -24,6 +27,7 @@ export default function Page() {
                             src={photo}
                             priority
                             placeholder='blur'
+                            blurDataURL={getBlurDataURL(PORTRAIT_THUMB)}
                             alt="Piotr Kulcenty's portrait"
                         />
                     </figure>
@@ -72,7 +76,7 @@ export default function Page() {
             </div>
             <div className={style.gallery}>
                 <GalleryContainer
-                    configData={galleryItems}
+                    galleryData={galleryData}
                     mode={mode}
                     galleryID={galleryID}
                 />

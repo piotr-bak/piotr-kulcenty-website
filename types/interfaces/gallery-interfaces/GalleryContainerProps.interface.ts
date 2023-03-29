@@ -1,8 +1,8 @@
 import { GalleryMode } from "../../GalleryMode";
-import { GalleryItemProps } from "./GalleryItemProps.interface";
+import { ParsedGalleryData } from "./ParsedGalleryTypes.interface";
 
 export interface GalleryContainerProps {
-    configData: Array<GalleryItemProps>;
+    galleryData: ParsedGalleryData;
     mode: GalleryMode;
     galleryID: string;
 }
