@@ -3,12 +3,12 @@ import Image from "next/image";
 import { Container } from "@/components/UI/Layout/Container/Container";
 import { GalleryContainer } from "@/components/Gallery/GalleryContainer/GalleryContainer";
 import { Footnote } from "@/components/UI/shared/Footnote/Footnote";
-import { parseGalleryData } from "@/lib/helpers";
+import { parseGalleryData } from "@/lib/helpers/gallery";
 import dataFile from "@/public/gallery/data/about.json";
 import { cormorant } from "@/lib/fonts";
 import photo from "@/public/piotr-kulcenty.webp";
 import style from "./style.module.css";
-import { getBlurDataURL } from "@/lib/helpers";
+import { getBlurDataURL } from "@/lib/helpers/gallery";
 import { ParsedGalleryData } from "@/types/interfaces";
 
 export default function Page() {

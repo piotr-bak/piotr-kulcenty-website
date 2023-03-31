@@ -3,7 +3,7 @@ import { GalleryContainer } from "@/components/Gallery/GalleryContainer/GalleryC
 import { SplashScreen } from "@/components/SplashScreen/SplashScreen";
 import { Footnote } from "@/components/UI/shared/Footnote/Footnote";
 import { GalleryMode } from "@/types";
-import { parseGalleryData } from "@/lib/helpers";
+import { parseGalleryData } from "@/lib/helpers/gallery";
 import dataFile from "@/public/gallery/data/home.json";
 import { ParsedGalleryData } from "@/types/interfaces";
 

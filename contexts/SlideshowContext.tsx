@@ -1,17 +1,9 @@
 "use client";
 import { createContext, useContext, useState } from "react";
 import { ProviderProps } from "@/types";
-import { ParsedGalleryData } from "@/types/interfaces";
+import { ParsedGalleryData, SlideshowContextType } from "@/types/interfaces";
 
-interface SlideshowGalleryContextType {
-    collection: Array<ParsedGalleryData>;
-    addToCollection: (
-        galleryData: ParsedGalleryData,
-        isMounted: boolean
-    ) => void;
-}
-
-const SlideshowContext = createContext<SlideshowGalleryContextType>({
+const SlideshowContext = createContext<SlideshowContextType>({
     collection: [],
     addToCollection: () => {},
 });

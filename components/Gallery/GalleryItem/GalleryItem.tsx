@@ -1,7 +1,7 @@
 "use client";
 import { useModalImgContext } from "@/contexts/ModalImgContext";
 import { GallerySingleItem } from "@/types/interfaces";
-import { getBlurDataURL, getImageOrientation } from "@/lib/helpers";
+import { getBlurDataURL, getImageOrientation } from "@/lib/helpers/gallery";
 import Image from "next/image";
 import styles from "./GalleryItem.module.css";
 
@@ -20,12 +20,10 @@ export const GalleryItem = (props: GallerySingleItem) => {
 
     const orientation = getImageOrientation(height, width);
 
-    const { setModalImgSrc, setModalImgId, setParentGalleryId } =
-        useModalImgContext();
+    const { modalImg, setModalImg, setParentGalleryId } = useModalImgContext();
 
     const handleClick = () => {
-        setModalImgSrc(src);
-        setModalImgId(id);
+        setModalImg({ ...modalImg, id: id, src: src });
         setParentGalleryId(galleryId);
     };
 
