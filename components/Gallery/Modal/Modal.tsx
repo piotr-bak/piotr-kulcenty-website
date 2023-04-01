@@ -1,13 +1,14 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useModalImgContext, useSlideshowContext } from "@/contexts";
+import { findImgInCollection, getNextGroupIndex } from "@/lib/helpers/modal";
+import { SlideshowDirection } from "@/types";
+import { FindModalImgResult } from "@/types/interfaces";
 import spinner from "@/public/spinner-white.svg";
 import arrow from "@/public/arrow.svg";
 import Image from "next/image";
 import style from "./Modal.module.css";
-import { findImgInCollection, getNextGroupIndex } from "@/lib/helpers/modal";
-import { SlideshowDirection } from "@/types";
-import { FindModalImgResult } from "@/types/interfaces";
+import config from "@/components/config/modal.json";
 
 export const Modal = () => {
     const [show, setShow] = useState(false);
@@ -17,6 +18,11 @@ export const Modal = () => {
         elementIndex: 0,
     });
     const [isLoading, setIsLoading] = useState(true);
+    const [touch, setTouch] = useState<{ start: number; end: number }>({
+        start: 0,
+        end: 0,
+    });
+
     const { modalImg, setModalImg, parentGalleryId } = useModalImgContext();
     const { collection } = useSlideshowContext();
 
@@ -25,6 +31,7 @@ export const Modal = () => {
         setShow(false);
     };
 
+    //The below handles spinner displaying on image load:
     useEffect(() => {
         if (modalImg.src) {
             setIsLoading(true);
@@ -43,6 +50,7 @@ export const Modal = () => {
         return null;
     }
 
+    //The below handles Modal's slideshow functionality:
     const changeModalImage = (direction: SlideshowDirection) => {
         const gallery = collection[currentImg?.galleryIndex];
         let groupIndex = currentImg?.groupIndex;
@@ -69,6 +77,26 @@ export const Modal = () => {
         });
     };
 
+    //The below handles Modal's touch events
+    const handleTouchStart = (e: React.TouchEvent) => {
+        setTouch({ ...touch, start: e.touches[0].clientX });
+    };
+
+    const handleTouchMove = (e: React.TouchEvent) => {
+        setTouch({ ...touch, end: e.touches[0].clientX });
+    };
+
+    const handleTouchEnd = () => {
+        const swipeLength = config.sensitivity;
+        const delta = touch.end - touch.start;
+        if (delta > swipeLength) {
+            changeModalImage("forward");
+        }
+        if (delta < -swipeLength) {
+            changeModalImage("backward");
+        }
+    };
+
     return (
         <div className={style.wrapper}>
             <div className={`${style.backdrop}`}></div>
@@ -79,7 +107,12 @@ export const Modal = () => {
                     </div>
                 )}
                 {modalImg.src && (
-                    <figure className={`${style.figure}`} onClick={handleClick}>
+                    <figure
+                        className={`${style.figure}`}
+                        onClick={handleClick}
+                        onTouchStart={(e) => handleTouchStart(e)}
+                        onTouchMove={(e) => handleTouchMove(e)}
+                        onTouchEnd={handleTouchEnd}>
                         <button
                             type='button'
                             title='Previous image'

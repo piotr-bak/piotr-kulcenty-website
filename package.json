@@ -1,6 +1,6 @@
 {
   "name": "piotr-kulcenty-website",
-  "version": "0.1.0",
+  "version": "0.9.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -20,7 +20,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "thumbhash": "^0.1.1",
-    "typescript": "5.0.2",
+    "typescript": "5.0.3",
     "uuid": "^9.0.0"
   }
 }

@@ -8,6 +8,7 @@ export default function Head() {
                 sizes='any'
                 type='image/svg+xml'
             />
+            <meta name='theme-color' content='#efebe7' />
         </>
     );
 }

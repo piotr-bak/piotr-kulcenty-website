@@ -12,6 +12,7 @@ export const GalleryContainer = ({
 }: GalleryContainerProps) => {
     const { collection, addToCollection } = useSlideshowContext();
     const isMounted = useRef(true);
+    const containerRef = useRef(null);
 
     //adds the gallery content from currently visited Route to the
     //SlideshowContext as an object - and makes sure that there will be just one
@@ -40,7 +41,10 @@ export const GalleryContainer = ({
                 ++groupCount;
                 const groupId = group.id;
                 return (
-                    <div key={groupId} className={`${styles[mode]}`}>
+                    <div
+                        key={groupId}
+                        className={`${styles[mode]}`}
+                        ref={containerRef}>
                         {group.items.map((item) => {
                             const itemId = item.id;
                             return (
