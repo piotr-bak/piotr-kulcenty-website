@@ -1,7 +1,9 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { useModalImgContext, useSlideshowContext } from "@/contexts";
 import { findImgInCollection, getNextGroupIndex } from "@/lib/helpers/modal";
+import { touchReducer } from "@/lib/touchReducer";
+import { initialTouchState } from "@/types";
 import { SlideshowDirection } from "@/types";
 import { FindModalImgResult } from "@/types/interfaces";
 import spinner from "@/public/spinner-white.svg";
@@ -18,10 +20,14 @@ export const Modal = () => {
         elementIndex: 0,
     });
     const [isLoading, setIsLoading] = useState(true);
-    const [touch, setTouch] = useState<{ start: number; end: number }>({
-        start: 0,
-        end: 0,
-    });
+    //const [touch, setTouch] = useState<{ start: number; end: number }>({
+    //     start: 0,
+    //     end: 0,
+    // });
+    const [touchState, dispatchTouch] = useReducer(
+        touchReducer,
+        initialTouchState
+    );
 
     const { modalImg, setModalImg, parentGalleryId } = useModalImgContext();
     const { collection } = useSlideshowContext();
@@ -77,18 +83,18 @@ export const Modal = () => {
         });
     };
 
-    //The below handles Modal's touch events
     const handleTouchStart = (e: React.TouchEvent) => {
-        setTouch({ ...touch, start: e.touches[0].clientX });
+        const touch = e.touches[0];
+        dispatchTouch({ type: "start", value: touch.clientX });
     };
 
-    const handleTouchMove = (e: React.TouchEvent) => {
-        setTouch({ ...touch, end: e.touches[0].clientX });
-    };
+    const handleTouchEnd = (e: React.TouchEvent) => {
+        const touch = e.changedTouches[0];
+        dispatchTouch({ type: "end", value: touch.clientX });
 
-    const handleTouchEnd = () => {
+        const delta = touchState.end - touchState.start;
         const swipeLength = config.sensitivity;
-        const delta = touch.end - touch.start;
+
         if (delta > swipeLength) {
             changeModalImage("forward");
         }
@@ -111,7 +117,6 @@ export const Modal = () => {
                         className={`${style.figure}`}
                         onClick={handleClick}
                         onTouchStart={(e) => handleTouchStart(e)}
-                        onTouchMove={(e) => handleTouchMove(e)}
                         onTouchEnd={handleTouchEnd}>
                         <button
                             type='button'
