@@ -1,13 +1,72 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34.729" height="17.674" viewBox="0 0 34.729 17.674">
-  <defs>
-    <clipPath id="clip-path">
-      <rect id="Rectangle_35" data-name="Rectangle 35" width="34.729" height="17.674" fill="none" stroke="#efebe7" stroke-width="1"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="34.729"
+   height="17.674"
+   viewBox="0 0 34.729 17.674"
+   version="1.1"
+   id="svg10"
+   sodipodi:docname="725048c9ef6b5675d4f044dea91657be.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview12"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0" />
+  <defs
+     id="defs4">
+    <clipPath
+       id="clip-path">
+      <rect
+         id="Rectangle_35"
+         data-name="Rectangle 35"
+         width="34.729"
+         height="17.674"
+         fill="none"
+         stroke="#efebe7"
+         stroke-width="1"
+         x="0"
+         y="0" />
     </clipPath>
   </defs>
-  <g id="Group_8" data-name="Group 8" transform="translate(34.729 17.673) rotate(180)" style="isolation: isolate">
-    <g id="Group_7" data-name="Group 7" transform="translate(0 0)" clip-path="url(#clip-path)">
-      <line id="Line_5" data-name="Line 5" y1="17.369" x2="17.369" transform="translate(0.153 0.153)" fill="none" stroke="#efebe7" stroke-miterlimit="10" stroke-width="1"/>
-      <line id="Line_6" data-name="Line 6" x1="17.369" y1="17.369" transform="translate(17.208 0.153)" fill="none" stroke="#efebe7" stroke-miterlimit="10" stroke-width="1"/>
+  <g
+     id="Group_8"
+     data-name="Group 8"
+     transform="rotate(180,17.3645,8.8369999)"
+     style="isolation:isolate">
+    <g
+       id="Group_7"
+       data-name="Group 7"
+       clip-path="url(#clip-path)">
+      <line
+         id="Line_5"
+         data-name="Line 5"
+         y1="17.368999"
+         x2="17.368999"
+         transform="translate(0.153,0.153)"
+         fill="none"
+         stroke="#efebe7"
+         stroke-miterlimit="10"
+         stroke-width="1"
+         x1="0"
+         y2="0" />
+      <line
+         id="Line_6"
+         data-name="Line 6"
+         x1="17.368999"
+         y1="17.368999"
+         transform="translate(17.208,0.153)"
+         fill="none"
+         stroke="#efebe7"
+         stroke-miterlimit="10"
+         stroke-width="1"
+         x2="0"
+         y2="0" />
     </g>
   </g>
 </svg>

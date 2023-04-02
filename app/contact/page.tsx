@@ -1,4 +1,4 @@
-import { Container } from "@/components/UI/Layout/Container/Container";
+import { Container } from "@/components/Layout/Container/Container";
 import { cormorant } from "@/lib/fonts";
 import style from "./style.module.css";
 

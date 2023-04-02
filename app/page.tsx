@@ -1,7 +1,7 @@
-import { Container } from "@/components/UI/Layout/Container/Container";
+import { Container } from "@/components/Layout/Container/Container";
 import { GalleryContainer } from "@/components/Gallery/GalleryContainer/GalleryContainer";
 import { SplashScreen } from "@/components/SplashScreen/SplashScreen";
-import { Footnote } from "@/components/UI/shared/Footnote/Footnote";
+import { Footnote } from "@/components/Layout/shared/Footnote/Footnote";
 import { GalleryMode } from "@/types";
 import { parseGalleryData } from "@/lib/helpers/gallery";
 import dataFile from "@/public/gallery/data/home.json";

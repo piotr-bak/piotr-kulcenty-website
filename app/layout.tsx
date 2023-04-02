@@ -1,9 +1,9 @@
 import { ClientContexts } from "@/components/Core/ClientContexts/ClientContexts";
 import { Navbar } from "@/components/Navigation/Navbar/Navbar";
-import { Brand } from "@/components/UI/shared/Brand/Brand";
+import { Brand } from "@/components/Layout/shared/Brand/Brand";
 import { Footer } from "@/components/Navigation/Footer/Footer";
 import { Modal } from "@/components/Gallery/Modal/Modal";
-import { Wrapper } from "@/components/UI/Layout/Wrapper/Wrapper";
+import { Wrapper } from "@/components/Layout/Wrapper/Wrapper";
 import "@/styles/global.css";
 import styles from "./layout.module.css";
 

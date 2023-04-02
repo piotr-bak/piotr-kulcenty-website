@@ -36,6 +36,16 @@
     position: relative;
 }
 
+.linkarea a:visited,
+.linkarea a:active {
+    color: hsl(0, 0%, 0%);
+}
+
+.linkarea div a:visited,
+.linkarea div a:active {
+    color: hsl(0, 0%, 0%);
+}
+
 .linkarea a:hover {
     text-decoration: underline;
 }
