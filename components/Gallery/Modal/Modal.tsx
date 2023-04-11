@@ -83,6 +83,9 @@ export const Modal = () => {
         });
     };
 
+  //trzeba dodać dispachFunction jako drugi argument i potem ją odpalać na
+  //zasadzie:
+  //onClick={(e) => handleTouchStart(e, dispatchTouch)}???
     const handleTouchStart = (e: React.TouchEvent) => {
         const touch = e.touches[0];
         dispatchTouch({ type: "start", value: touch.clientX });

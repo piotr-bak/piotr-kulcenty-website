@@ -2,6 +2,7 @@
 import React from "react";
 import { useHamburgerMenuContext, useThemeContext } from "@/contexts";
 import { NavElementProps } from "@/types/interfaces";
+import { scrollToTop } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./NavElement.module.css";
@@ -15,13 +16,6 @@ export const NavElement = (props: NavElementProps) => {
     const { setToggled } = useHamburgerMenuContext();
     const handleMobileMenuClick = () => {
         setToggled(false);
-    };
-
-    const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
     };
 
     const handleClick = () => {
