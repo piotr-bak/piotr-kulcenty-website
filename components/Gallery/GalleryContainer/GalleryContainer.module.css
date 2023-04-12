@@ -1,19 +1,49 @@
 .arrowDown {
     position: fixed;
-    bottom: 12vh;
-    z-index: 100;
+    bottom: 11vh;
+
     left: 50vw;
     cursor: pointer;
     transform: translate(-50%, 0) rotate(0deg);
+    opacity: 0.25;
+    transition: opacity 0.3s ease-in-out;
+    animation: 0.5s rotateDown;
 }
 
 .arrowUp {
     position: fixed;
-    bottom: 12vh;
-    z-index: 100;
+    bottom: 11vh;
+
     left: 50vw;
     cursor: pointer;
     transform: translate(-50%, 0) rotate(180deg);
+    opacity: 0.25;
+    transition: opacity 0.3s ease-in-out;
+    animation: 0.5s rotateUp;
+}
+
+.arrowDown:hover,
+.arrowUp:hover {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+@keyframes rotateUp {
+    from {
+        transform: translate(-50%, 0) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, 0) rotate(180deg);
+    }
+}
+
+@keyframes rotateDown {
+    from {
+        transform: translate(-50%, 0) rotate(180deg);
+    }
+    to {
+        transform: translate(-50%, 0) rotate(0deg);
+    }
 }
 
 /* Gallery full-mode styling ------------------------------------------------*/

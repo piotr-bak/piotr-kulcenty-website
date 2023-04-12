@@ -114,7 +114,7 @@ export const GalleryContainer = ({
                 title={
                     !pastLastGroup
                         ? `${"Scroll to the next instrument"}`
-                        : `${"Scroll to top"}`
+                        : `${"Scroll to the top of the page"}`
                 }
                 className={
                     !pastLastGroup ? `${styles.arrowDown}` : `${styles.arrowUp}`
