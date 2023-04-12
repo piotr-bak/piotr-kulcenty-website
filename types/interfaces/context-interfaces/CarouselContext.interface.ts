@@ -6,7 +6,7 @@ export type FindModalImgResult = {
     elementIndex: number;
 };
 
-export interface SlideshowContextType {
+export interface CarouselContextType {
     collection: Array<ParsedGalleryData>;
     addToCollection: (
         galleryData: ParsedGalleryData,

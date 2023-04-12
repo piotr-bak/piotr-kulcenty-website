@@ -1,16 +1,16 @@
 "use client";
 import { createContext, useContext, useState } from "react";
 import { ProviderProps } from "@/types";
-import { ParsedGalleryData, SlideshowContextType } from "@/types/interfaces";
+import { ParsedGalleryData, CarouselContextType } from "@/types/interfaces";
 
-const SlideshowContext = createContext<SlideshowContextType>({
+const CarouselContext = createContext<CarouselContextType>({
     collection: [],
     addToCollection: () => {},
 });
 
-export const useSlideshowContext = () => useContext(SlideshowContext);
+export const useCarouselContext = () => useContext(CarouselContext);
 
-export const SlideshowContextProvider = ({ children }: ProviderProps) => {
+export const CarouselContextProvider = ({ children }: ProviderProps) => {
     const [collection, setCollection] = useState<Array<ParsedGalleryData>>([]);
 
     const addToCollection = (
@@ -23,8 +23,8 @@ export const SlideshowContextProvider = ({ children }: ProviderProps) => {
     };
 
     return (
-        <SlideshowContext.Provider value={{ collection, addToCollection }}>
+        <CarouselContext.Provider value={{ collection, addToCollection }}>
             {children}
-        </SlideshowContext.Provider>
+        </CarouselContext.Provider>
     );
 };

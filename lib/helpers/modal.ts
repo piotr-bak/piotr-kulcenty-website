@@ -1,4 +1,8 @@
-import { ParsedGalleryData, FindModalImgResult } from "@/types/interfaces";
+import {
+    ParsedGalleryData,
+    ParsedGalleryGroupItem,
+    FindModalImgResult,
+} from "@/types/interfaces";
 
 export const findImgInCollection = (
     modalImgId: string,
@@ -41,4 +45,14 @@ export const getNextGroupIndex = (
         nextGroupIndex = gallerySize - 1;
     }
     return nextGroupIndex;
+};
+
+export const preloadImage = (preloadedItem: ParsedGalleryGroupItem) => {
+    let img = new Image();
+    img.src = preloadedItem.src;
+
+    if (img.complete) {
+        //if image is already in the cache, no need to preload it
+        return;
+    }
 };

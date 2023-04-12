@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { useSlideshowContext } from "@/contexts/SlideshowContext";
+import { useCarouselContext } from "@/contexts/CarouselContext";
 import { GalleryContainerProps } from "@/types/interfaces";
 import { GalleryItem } from "../GalleryItem/GalleryItem";
 import { scrollToTop } from "@/lib/utils";
@@ -13,7 +13,7 @@ export const GalleryContainer = ({
     mode,
     galleryID,
 }: GalleryContainerProps) => {
-    const { collection, addToCollection } = useSlideshowContext();
+    const { collection, addToCollection } = useCarouselContext();
     const isMounted = useRef(true);
     const groupRefs = useRef<(HTMLDivElement | null)[]>([]);
     const lastGroupRef = useRef<HTMLDivElement | null>(null);
@@ -21,7 +21,7 @@ export const GalleryContainer = ({
     const [pastLastGroup, setPastLastGroup] = useState(false);
 
     //adds content of the currently visited gallery to the
-    //SlideshowContext as an object - and makes sure that there will be just one
+    //CarouselContext as an object - and makes sure that there will be just one
     //object per gallery in the Context (hence useRef and checking whteher
     //the component is mounted);
     useEffect(() => {
@@ -109,22 +109,26 @@ export const GalleryContainer = ({
                     </div>
                 );
             })}
-            <button
-                type='button'
-                title={
-                    !pastLastGroup
-                        ? `${"Scroll to the next instrument"}`
-                        : `${"Scroll to the top of the page"}`
-                }
-                className={
-                    !pastLastGroup ? `${styles.arrowDown}` : `${styles.arrowUp}`
-                }
-                onClick={(event) => {
-                    event.stopPropagation();
-                    scrollToNextGroup();
-                }}>
-                <Image src={arrow} alt='Previous image' />
-            </button>
+            {galleryData.groups.length > 1 && (
+                <button
+                    type='button'
+                    title={
+                        !pastLastGroup
+                            ? `${"Scroll to the next instrument"}`
+                            : `${"Scroll to the top of the page"}`
+                    }
+                    className={
+                        !pastLastGroup
+                            ? `${styles.arrowDown}`
+                            : `${styles.arrowUp}`
+                    }
+                    onClick={(event) => {
+                        event.stopPropagation();
+                        scrollToNextGroup();
+                    }}>
+                    <Image src={arrow} alt='Previous image' />
+                </button>
+            )}
         </div>
     );
 };

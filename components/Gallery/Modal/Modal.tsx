@@ -1,10 +1,14 @@
 "use client";
 import { useEffect, useReducer, useState } from "react";
-import { useModalImgContext, useSlideshowContext } from "@/contexts";
-import { findImgInCollection, getNextGroupIndex } from "@/lib/helpers/modal";
+import { useModalImgContext, useCarouselContext } from "@/contexts";
+import {
+    findImgInCollection,
+    getNextGroupIndex,
+    preloadImage,
+} from "@/lib/helpers/modal";
 import { touchReducer } from "@/lib/touchReducer";
 import { initialTouchState } from "@/types";
-import { SlideshowDirection } from "@/types";
+import { CarouselDirection } from "@/types";
 import { FindModalImgResult } from "@/types/interfaces";
 import spinner from "@/public/spinner-white.svg";
 import arrow from "@/public/arrow.svg";
@@ -20,24 +24,20 @@ export const Modal = () => {
         elementIndex: 0,
     });
     const [isLoading, setIsLoading] = useState(true);
-    //const [touch, setTouch] = useState<{ start: number; end: number }>({
-    //     start: 0,
-    //     end: 0,
-    // });
     const [touchState, dispatchTouch] = useReducer(
         touchReducer,
         initialTouchState
     );
 
     const { modalImg, setModalImg, parentGalleryId } = useModalImgContext();
-    const { collection } = useSlideshowContext();
+    const { collection } = useCarouselContext();
 
     const handleClick = () => {
         setModalImg({ ...modalImg, src: "" });
         setShow(false);
     };
 
-    //The below handles spinner displaying on image load:
+    //The below handles spinner displaying on image load and the next image preload
     useEffect(() => {
         if (modalImg.src) {
             setIsLoading(true);
@@ -56,36 +56,7 @@ export const Modal = () => {
         return null;
     }
 
-    //The below handles Modal's slideshow functionality:
-    const changeModalImage = (direction: SlideshowDirection) => {
-        const gallery = collection[currentImg?.galleryIndex];
-        let groupIndex = currentImg?.groupIndex;
-        let group = gallery.groups[groupIndex];
-        const elementIndex = currentImg.elementIndex;
-
-        const offset: number = direction === "forward" ? +1 : -1;
-        const gallerySize = gallery.groups.length;
-        let newElementIndex = elementIndex + offset;
-
-        if (newElementIndex >= group.items.length) {
-            groupIndex = getNextGroupIndex(gallerySize, groupIndex, offset);
-            newElementIndex = 0;
-        } else if (newElementIndex < 0) {
-            groupIndex = getNextGroupIndex(gallerySize, groupIndex, offset);
-            newElementIndex = gallery.groups[groupIndex].items.length - 1;
-        }
-
-        let nextElement = gallery.groups[groupIndex].items[newElementIndex];
-        setModalImg({
-            ...modalImg,
-            src: nextElement.src,
-            id: nextElement.id,
-        });
-    };
-
-  //trzeba dodać dispachFunction jako drugi argument i potem ją odpalać na
-  //zasadzie:
-  //onClick={(e) => handleTouchStart(e, dispatchTouch)}???
+    //The below handles the touch events for sliding the carousel left/right
     const handleTouchStart = (e: React.TouchEvent) => {
         const touch = e.touches[0];
         dispatchTouch({ type: "start", value: touch.clientX });
@@ -104,6 +75,52 @@ export const Modal = () => {
         if (delta < -swipeLength) {
             changeModalImage("backward");
         }
+    };
+
+    //The below handles Modal's carousel functionality:
+    const changeModalImage = (direction: CarouselDirection) => {
+        const gallery = collection[currentImg?.galleryIndex];
+        if (!gallery) return;
+
+        const { groups } = gallery;
+        let { groupIndex = 0, elementIndex = 0 } = currentImg ?? {};
+        let group = groups[groupIndex];
+        const offset = direction === "forward" ? 1 : -1;
+        const gallerySize = groups.length;
+        const NEXT_GROUP = getNextGroupIndex(gallerySize, groupIndex, offset);
+        const PREV_GROUP = getNextGroupIndex(gallerySize, groupIndex, -offset);
+        const LAST_ELEMENT_INDEX = group.items.length - 1;
+
+        let nextElementIndex = elementIndex + offset;
+        if (nextElementIndex < 0 || nextElementIndex > LAST_ELEMENT_INDEX) {
+            groupIndex = offset > 0 ? NEXT_GROUP : PREV_GROUP;
+            group = groups[groupIndex];
+            nextElementIndex = offset > 0 ? 0 : LAST_ELEMENT_INDEX;
+        }
+
+        let nextPreloadElementIndex = nextElementIndex + offset;
+        if (
+            nextPreloadElementIndex < 0 ||
+            nextPreloadElementIndex > LAST_ELEMENT_INDEX
+        ) {
+            nextPreloadElementIndex = offset > 0 ? 0 : LAST_ELEMENT_INDEX;
+            groupIndex = offset > 0 ? NEXT_GROUP : PREV_GROUP;
+        }
+
+        const preloadGroupIndex =
+            nextPreloadElementIndex === 0 ||
+            nextPreloadElementIndex === LAST_ELEMENT_INDEX
+                ? offset > 0
+                    ? NEXT_GROUP
+                    : PREV_GROUP
+                : groupIndex;
+
+        const nextElement = group.items[nextElementIndex];
+        const preloadElement =
+            groups[preloadGroupIndex].items[nextPreloadElementIndex];
+
+        setModalImg({ ...modalImg, src: nextElement.src, id: nextElement.id });
+        preloadImage(preloadElement);
     };
 
     return (

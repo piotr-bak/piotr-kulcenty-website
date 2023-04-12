@@ -1,8 +1,8 @@
-import { SlideshowDirection } from "../Slideshow";
+import { CarouselDirection } from "../Carousel";
 
 export interface TouchHandlerProps {
     setTouchStartX: React.Dispatch<React.SetStateAction<number>>;
     touchStartX: number;
     setTouchMoveX: React.Dispatch<React.SetStateAction<number>>;
-    changeModalImage: (direction: SlideshowDirection) => void;
+    changeModalImage: (direction: CarouselDirection) => void;
 }

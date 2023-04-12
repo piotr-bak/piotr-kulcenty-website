@@ -2,7 +2,7 @@ export * from "./TouchHandlerProps.interface";
 export * from "./nav-interfaces/NavElementProps.interface";
 export * from "./nav-interfaces/PanelProps.interface";
 export * from "./context-interfaces/ModalContext.interface";
-export * from "./context-interfaces/SlideshowContext.interface";
+export * from "./context-interfaces/CarouselContext.interface";
 export * from "./context-interfaces/ThemeContextProps.interface";
 export * from "./gallery-interfaces/GalleryConfigTypes.interface";
 export * from "./gallery-interfaces/GalleryContainerProps.interface";

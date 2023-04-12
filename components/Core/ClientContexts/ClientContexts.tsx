@@ -2,7 +2,7 @@
 import {
     HamburgerMenuContextProvider,
     ModalImgContextProvider,
-    SlideshowContextProvider,
+    CarouselContextProvider,
     SplashScreenContextProvider,
     ThemeContextProvider,
 } from "@/contexts";
@@ -13,13 +13,13 @@ export const ClientContexts = ({ children }: ProviderProps) => {
         <>
             <ThemeContextProvider>
                 <SplashScreenContextProvider>
-                    <SlideshowContextProvider>
+                    <CarouselContextProvider>
                         <ModalImgContextProvider>
                             <HamburgerMenuContextProvider>
                                 {children}
                             </HamburgerMenuContextProvider>
                         </ModalImgContextProvider>
-                    </SlideshowContextProvider>
+                    </CarouselContextProvider>
                 </SplashScreenContextProvider>
             </ThemeContextProvider>
         </>
