@@ -34,7 +34,7 @@ export const GalleryItem = (props: GallerySingleItem) => {
                 src={src}
                 width={width}
                 height={height}
-                quality={70}
+                quality={95}
                 alt={description || "Violin made by Piotr Kulcenty"}
                 onClick={handleClick}
                 priority={priority}
