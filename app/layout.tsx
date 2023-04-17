@@ -10,6 +10,8 @@ import "@/styles/global.css";
 import styles from "./layout.module.css";
 
 export const metadata = {
+    description:
+        "Piotr Kulcenty is a Violin Maker and Restorer based in London, UK, creating widely acclaimed master violins.",
     icons: {
         icon: "/icon.svg",
     },
