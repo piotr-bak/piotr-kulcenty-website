@@ -80,47 +80,56 @@ export const Modal = () => {
     //The below handles Modal's carousel functionality:
     const changeModalImage = (direction: CarouselDirection) => {
         const gallery = collection[currentImg?.galleryIndex];
-        if (!gallery) return;
+        let groupIndex = currentImg?.groupIndex;
+        let group = gallery.groups[groupIndex];
+        const elementIndex = currentImg.elementIndex;
+        const offset: number = direction === "forward" ? +1 : -1;
+        const gallerySize = gallery.groups.length;
+        let newElementIndex = elementIndex + offset;
+        let preloadElementIndex = newElementIndex + offset;
+        let preloadGroupIndex: number | null = null;
 
-        const { groups } = gallery;
-        let { groupIndex = 0, elementIndex = 0 } = currentImg ?? {};
-        let group = groups[groupIndex];
-        const offset = direction === "forward" ? 1 : -1;
-        const gallerySize = groups.length;
-        const NEXT_GROUP = getNextGroupIndex(gallerySize, groupIndex, offset);
-        const PREV_GROUP = getNextGroupIndex(gallerySize, groupIndex, -offset);
-        const LAST_ELEMENT_INDEX = group.items.length - 1;
-
-        let nextElementIndex = elementIndex + offset;
-        if (nextElementIndex < 0 || nextElementIndex > LAST_ELEMENT_INDEX) {
-            groupIndex = offset > 0 ? NEXT_GROUP : PREV_GROUP;
-            group = groups[groupIndex];
-            nextElementIndex = offset > 0 ? 0 : LAST_ELEMENT_INDEX;
+        if (newElementIndex >= group.items.length) {
+            groupIndex = getNextGroupIndex(gallerySize, groupIndex, offset);
+            newElementIndex = 0;
+            preloadElementIndex = newElementIndex + offset;
+        } else if (newElementIndex < 0) {
+            groupIndex = getNextGroupIndex(gallerySize, groupIndex, offset);
+            newElementIndex = gallery.groups[groupIndex].items.length - 1;
+            preloadElementIndex = newElementIndex + offset;
         }
 
-        let nextPreloadElementIndex = nextElementIndex + offset;
-        if (
-            nextPreloadElementIndex < 0 ||
-            nextPreloadElementIndex > LAST_ELEMENT_INDEX
-        ) {
-            nextPreloadElementIndex = offset > 0 ? 0 : LAST_ELEMENT_INDEX;
-            groupIndex = offset > 0 ? NEXT_GROUP : PREV_GROUP;
+        if (preloadElementIndex >= group.items.length) {
+            preloadGroupIndex = getNextGroupIndex(
+                gallerySize,
+                groupIndex,
+                offset
+            );
+            preloadElementIndex = 0;
+        } else if (preloadElementIndex < 0) {
+            preloadGroupIndex = getNextGroupIndex(
+                gallerySize,
+                groupIndex,
+                offset
+            );
+            preloadElementIndex =
+                gallery.groups[preloadGroupIndex].items.length - 1;
+        } else {
+            preloadGroupIndex = groupIndex;
         }
 
-        const preloadGroupIndex =
-            nextPreloadElementIndex === 0 ||
-            nextPreloadElementIndex === LAST_ELEMENT_INDEX
-                ? offset > 0
-                    ? NEXT_GROUP
-                    : PREV_GROUP
-                : groupIndex;
+        let nextElement = gallery.groups[groupIndex].items[newElementIndex];
+        let preloadElement =
+            gallery.groups[preloadGroupIndex as number].items[
+                preloadElementIndex as number
+            ];
 
-        const nextElement = group.items[nextElementIndex];
-        const preloadElement =
-            groups[preloadGroupIndex].items[nextPreloadElementIndex];
-
-        setModalImg({ ...modalImg, src: nextElement.src, id: nextElement.id });
         preloadImage(preloadElement);
+        setModalImg({
+            ...modalImg,
+            src: nextElement.src,
+            id: nextElement.id,
+        });
     };
 
     return (
