@@ -175,7 +175,7 @@ export const Modal = () => {
                     <Image
                         className={style.image}
                         src={modalImg.src}
-                        quality='100'
+                        quality='90'
                         fill
                         priority
                         alt='Detailed view of the instrument built by Piotr Kulcenty'
