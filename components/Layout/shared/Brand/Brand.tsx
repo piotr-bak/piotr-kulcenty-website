@@ -11,7 +11,7 @@ export const Brand = () => {
     return (
         <h1>
             <Link href='/'>
-                <figure className={`${styles.wrap}`}>
+                <div className={`${styles.wrap}`}>
                     <Image
                         className={`${filter[theme]} ${styles.logo}`}
                         src={brandImg}
@@ -20,7 +20,7 @@ export const Brand = () => {
                         alt='Piotr Kulcenty Violins'
                         priority
                     />
-                </figure>
+                </div>
             </Link>
         </h1>
     );

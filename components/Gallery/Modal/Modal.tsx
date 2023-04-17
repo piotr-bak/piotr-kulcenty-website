@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useReducer, useState } from "react";
+import { useCallback, useEffect, useReducer, useState } from "react";
 import { useModalImgContext, useCarouselContext } from "@/contexts";
 import {
     findImgInCollection,
@@ -14,7 +14,7 @@ import spinner from "@/public/spinner-white.svg";
 import arrow from "@/public/arrow.svg";
 import Image from "next/image";
 import style from "./Modal.module.css";
-import config from "@/components/config/modal.json";
+import config from "@/config/components/modal.json";
 
 export const Modal = () => {
     const [show, setShow] = useState(false);
@@ -36,6 +36,22 @@ export const Modal = () => {
         setModalImg({ ...modalImg, src: "" });
         setShow(false);
     };
+    const handleClose = useCallback(() => {
+        handleClick();
+    }, []);
+
+    useEffect(() => {
+        const handleEsc = (event: KeyboardEvent) => {
+            if (event.key === "Escape") {
+                handleClose();
+            }
+        };
+        window.addEventListener("keydown", handleEsc);
+
+        return () => {
+            window.removeEventListener("keydown", handleEsc);
+        };
+    }, [handleClose]);
 
     //The below handles spinner displaying on image load and the next image preload
     useEffect(() => {
@@ -141,43 +157,41 @@ export const Modal = () => {
                         <Image src={spinner} alt='Loading image...' />
                     </div>
                 )}
-                {modalImg.src && (
-                    <figure
-                        className={`${style.figure}`}
-                        onClick={handleClick}
-                        onTouchStart={(e) => handleTouchStart(e)}
-                        onTouchEnd={handleTouchEnd}>
-                        <button
-                            type='button'
-                            title='Previous image'
-                            className={style.button}
-                            onClick={(event) => {
-                                event.stopPropagation();
-                                changeModalImage("backward");
-                            }}>
-                            <Image src={arrow} alt='Previous image' />
-                        </button>
-                        <Image
-                            className={style.image}
-                            src={modalImg.src}
-                            quality='100'
-                            fill
-                            priority
-                            alt='Detailed view of the instrument built by Piotr Kulcenty'
-                            onLoad={handleImageLoad}
-                        />
-                        <button
-                            type='button'
-                            title='Next image'
-                            className={style.button}
-                            onClick={(event) => {
-                                event.stopPropagation();
-                                changeModalImage("forward");
-                            }}>
-                            <Image src={arrow} alt='Next image' />
-                        </button>
-                    </figure>
-                )}
+                <figure
+                    className={`${style.figure}`}
+                    onClick={handleClick}
+                    onTouchStart={(e) => handleTouchStart(e)}
+                    onTouchEnd={handleTouchEnd}>
+                    <button
+                        type='button'
+                        title='Previous image'
+                        className={style.button}
+                        onClick={(event) => {
+                            event.stopPropagation();
+                            changeModalImage("backward");
+                        }}>
+                        <Image src={arrow} alt='Previous image' />
+                    </button>
+                    <Image
+                        className={style.image}
+                        src={modalImg.src}
+                        quality='100'
+                        fill
+                        priority
+                        alt='Detailed view of the instrument built by Piotr Kulcenty'
+                        onLoad={handleImageLoad}
+                    />
+                    <button
+                        type='button'
+                        title='Next image'
+                        className={style.button}
+                        onClick={(event) => {
+                            event.stopPropagation();
+                            changeModalImage("forward");
+                        }}>
+                        <Image src={arrow} alt='Next image' />
+                    </button>
+                </figure>
             </div>
         </div>
     );
