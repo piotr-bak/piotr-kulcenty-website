@@ -7,6 +7,11 @@ import { parseGalleryData } from "@/lib/helpers/gallery";
 import dataFile from "@/public/gallery/data/home.json";
 import { ParsedGalleryData } from "@/types/interfaces";
 
+export const metadata = {
+    title: "Piotr Kulcenty Violins",
+    themeColor: "#000000",
+};
+
 export default function Page() {
     const galleryData: ParsedGalleryData = parseGalleryData(dataFile);
     const mode: GalleryMode = "full";

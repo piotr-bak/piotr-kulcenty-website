@@ -6,6 +6,11 @@ import { parseGalleryData } from "@/lib/helpers/gallery";
 import dataFile from "@/public/gallery/data/work.json";
 import { ParsedGalleryData } from "@/types/interfaces";
 
+export const metadata = {
+    title: "Piotr Kulcenty - Portfolio",
+    themeColor: "#000000",
+};
+
 export default function Page() {
     const galleryData: ParsedGalleryData = parseGalleryData(dataFile);
     const mode: GalleryMode = "compact";

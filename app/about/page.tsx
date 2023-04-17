@@ -11,6 +11,11 @@ import style from "./style.module.css";
 import { getBlurDataURL } from "@/lib/helpers/gallery";
 import { ParsedGalleryData } from "@/types/interfaces";
 
+export const metadata = {
+    title: "Piotr Kulcenty - Bio",
+    themeColor: "#efebe7",
+};
+
 export default function Page() {
     const galleryData: ParsedGalleryData = parseGalleryData(dataFile);
     const mode: GalleryMode = "mixed";

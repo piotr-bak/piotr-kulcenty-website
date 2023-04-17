@@ -2,6 +2,11 @@ import { Container } from "@/components/Layout/Container/Container";
 import { cormorant } from "@/lib/fonts";
 import style from "./style.module.css";
 
+export const metadata = {
+    title: "Piotr Kulcenty - get in touch",
+    themeColor: "#e3e3e3",
+};
+
 export default function Page() {
     return (
         <Container>
