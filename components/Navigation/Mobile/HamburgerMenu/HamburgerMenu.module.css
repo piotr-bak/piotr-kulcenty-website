@@ -17,7 +17,7 @@
     margin-bottom: 1.5rem;
     padding: 6vh 0;
     left: 0;
-    font-size: clamp(2rem, 2vw, 3rem);
+    font-size: 1.5rem;
     text-transform: capitalize;
     display: flex; /* Use flexbox to center the text */
     justify-content: center;

@@ -1,11 +1,8 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useCarouselContext } from "@/contexts/CarouselContext";
 import { GalleryContainerProps } from "@/types/interfaces";
 import { GalleryItem } from "../GalleryItem/GalleryItem";
-import { scrollToTop } from "@/lib/utils";
-import Image from "next/image";
-import arrow from "@/public/arrow.svg";
 import styles from "./GalleryContainer.module.css";
 
 export const GalleryContainer = ({
@@ -15,10 +12,6 @@ export const GalleryContainer = ({
 }: GalleryContainerProps) => {
     const { collection, addToCollection } = useCarouselContext();
     const isMounted = useRef(true);
-    const groupRefs = useRef<(HTMLDivElement | null)[]>([]);
-    const lastGroupRef = useRef<HTMLDivElement | null>(null);
-    const [currentGroupIndex, setCurrentGroupIndex] = useState(0);
-    const [pastLastGroup, setPastLastGroup] = useState(false);
 
     //adds content of the currently visited gallery to the
     //CarouselContext as an object - and makes sure that there will be just one
@@ -34,66 +27,12 @@ export const GalleryContainer = ({
         };
     }, [collection, addToCollection, galleryData, galleryID]);
 
-    //the below makes sure that the currentGroupIndex is set to the galleryGroup that the
-    //user looks at - so the scroll button works correctly. Correctly = it
-    //scrolls just to the next instrument in the gallery - or to the very top of
-    //the page, if the last instrument has been looked upon
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setCurrentGroupIndex(
-                            parseInt(
-                                (entry.target as HTMLElement).dataset
-                                    .index as string
-                            )
-                        );
-                        entry.target === lastGroupRef.current
-                            ? setPastLastGroup(true)
-                            : setPastLastGroup(false);
-                    }
-                });
-            },
-            { threshold: 0.5 }
-        );
-        groupRefs.current.forEach((groupRef) => {
-            observer.observe(groupRef!);
-        });
-        return () => {
-            observer.disconnect();
-        };
-    }, [groupRefs]);
-
-    const scrollToNextGroup = () => {
-        let scrollPadding = window.innerHeight * 0.1;
-        if (currentGroupIndex < groupRefs.current.length - 1) {
-            window.scrollTo({
-                top:
-                    groupRefs.current[currentGroupIndex + 1]!.offsetTop -
-                    scrollPadding,
-                behavior: "smooth",
-            });
-        } else if (currentGroupIndex === groupRefs.current.length - 1) {
-            scrollToTop();
-        }
-    };
-
     return (
         <div className={styles.container}>
             {galleryData.groups.map((group, index) => {
                 const groupId = group.id;
                 return (
-                    <div
-                        key={groupId}
-                        className={`${styles[mode]}`}
-                        ref={(ref) => {
-                            groupRefs.current[index] = ref;
-                            if (index === galleryData.groups.length - 1) {
-                                lastGroupRef.current = ref;
-                            }
-                        }}
-                        data-index={index}>
+                    <div key={groupId} className={`${styles[mode]}`}>
                         {group.items.map((item) => {
                             const itemId = item.id;
                             return (
@@ -109,26 +48,6 @@ export const GalleryContainer = ({
                     </div>
                 );
             })}
-            {galleryData.groups.length > 1 && (
-                <button
-                    type='button'
-                    title={
-                        !pastLastGroup
-                            ? `${"Scroll to the next instrument"}`
-                            : `${"Scroll to the top of the page"}`
-                    }
-                    className={
-                        !pastLastGroup
-                            ? `${styles.arrowDown}`
-                            : `${styles.arrowUp}`
-                    }
-                    onClick={(event) => {
-                        event.stopPropagation();
-                        scrollToNextGroup();
-                    }}>
-                    <Image src={arrow} alt='Previous image' />
-                </button>
-            )}
         </div>
     );
 };
