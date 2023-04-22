@@ -47,10 +47,13 @@ export const getNextGroupIndex = (
     return nextGroupIndex;
 };
 
-export const preloadImage = (preloadedItem: ParsedGalleryGroupItem) => {
+export const preloadImage = (
+    preloadedItem: ParsedGalleryGroupItem,
+    callback: () => void
+) => {
     let img = new Image();
     img.src = preloadedItem.src;
-
+    img.onload = callback;
     if (img.complete) {
         //if image is already in the cache, no need to preload it
         return;

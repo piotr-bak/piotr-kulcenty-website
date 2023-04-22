@@ -8,6 +8,7 @@ import Script from "next/script";
 import schema from "@/config/schema.json";
 import "@/styles/global.css";
 import styles from "./layout.module.css";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
     description:
@@ -45,6 +46,7 @@ export default function RootLayout({
                         <Modal />
                     </Wrapper>
                 </ClientContexts>
+                <Analytics />
             </body>
         </html>
     );

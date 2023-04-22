@@ -32,6 +32,73 @@ export const Modal = () => {
     const { modalImg, setModalImg, parentGalleryId } = useModalImgContext();
     const { collection } = useCarouselContext();
 
+    //The below handles Modal's carousel functionality:
+    const changeModalImage = useCallback(
+        (direction: CarouselDirection) => {
+            const gallery = collection[currentImg?.galleryIndex];
+            let groupIndex = currentImg?.groupIndex;
+            let group = gallery.groups[groupIndex];
+            const elementIndex = currentImg.elementIndex;
+            const offset: number = direction === "forward" ? +1 : -1;
+            const gallerySize = gallery.groups.length;
+            let newElementIndex = elementIndex + offset;
+            let preloadElementIndex = newElementIndex + offset;
+            let preloadGroupIndex: number | null = null;
+
+            if (newElementIndex >= group.items.length) {
+                groupIndex = getNextGroupIndex(gallerySize, groupIndex, offset);
+                newElementIndex = 0;
+                preloadElementIndex = newElementIndex + offset;
+            } else if (newElementIndex < 0) {
+                groupIndex = getNextGroupIndex(gallerySize, groupIndex, offset);
+                newElementIndex = gallery.groups[groupIndex].items.length - 1;
+                preloadElementIndex = newElementIndex + offset;
+            }
+
+            if (preloadElementIndex >= group.items.length) {
+                preloadGroupIndex = getNextGroupIndex(
+                    gallerySize,
+                    groupIndex,
+                    offset
+                );
+                preloadElementIndex = 0;
+            } else if (preloadElementIndex < 0) {
+                preloadGroupIndex = getNextGroupIndex(
+                    gallerySize,
+                    groupIndex,
+                    offset
+                );
+                preloadElementIndex =
+                    gallery.groups[preloadGroupIndex].items.length - 1;
+            } else {
+                preloadGroupIndex = groupIndex;
+            }
+
+            let nextElement = gallery.groups[groupIndex].items[newElementIndex];
+            let preloadElement =
+                gallery.groups[preloadGroupIndex as number].items[
+                    preloadElementIndex as number
+                ];
+
+            preloadImage(preloadElement, () => {
+                //image is preloaded
+            });
+            setModalImg({
+                ...modalImg,
+                src: nextElement.src,
+                id: nextElement.id,
+            });
+        },
+        [
+            modalImg,
+            setModalImg,
+            collection,
+            currentImg.elementIndex,
+            currentImg?.galleryIndex,
+            currentImg?.groupIndex,
+        ]
+    );
+
     const handleClick = () => {
         setModalImg({ ...modalImg, src: "" });
         setShow(false);
@@ -41,17 +108,23 @@ export const Modal = () => {
     }, []);
 
     useEffect(() => {
-        const handleEsc = (event: KeyboardEvent) => {
+        const handleKeys = (event: KeyboardEvent) => {
             if (event.key === "Escape") {
                 handleClose();
             }
+            if (event.key === "ArrowRight") {
+                changeModalImage("forward");
+            }
+            if (event.key === "ArrowLeft") {
+                changeModalImage("backward");
+            }
         };
-        window.addEventListener("keydown", handleEsc);
+        window.addEventListener("keydown", handleKeys);
 
         return () => {
-            window.removeEventListener("keydown", handleEsc);
+            window.removeEventListener("keydown", handleKeys);
         };
-    }, [handleClose]);
+    }, [handleClose, changeModalImage]);
 
     //The below handles spinner displaying on image load and the next image preload
     useEffect(() => {
@@ -78,6 +151,11 @@ export const Modal = () => {
         dispatchTouch({ type: "start", value: touch.clientX });
     };
 
+    const handleTouchMove = (e: React.TouchEvent) => {
+        const touch = e.touches[0];
+        dispatchTouch({ type: "move", value: touch.clientX });
+    };
+
     const handleTouchEnd = (e: React.TouchEvent) => {
         const touch = e.changedTouches[0];
         dispatchTouch({ type: "end", value: touch.clientX });
@@ -93,61 +171,6 @@ export const Modal = () => {
         }
     };
 
-    //The below handles Modal's carousel functionality:
-    const changeModalImage = (direction: CarouselDirection) => {
-        const gallery = collection[currentImg?.galleryIndex];
-        let groupIndex = currentImg?.groupIndex;
-        let group = gallery.groups[groupIndex];
-        const elementIndex = currentImg.elementIndex;
-        const offset: number = direction === "forward" ? +1 : -1;
-        const gallerySize = gallery.groups.length;
-        let newElementIndex = elementIndex + offset;
-        let preloadElementIndex = newElementIndex + offset;
-        let preloadGroupIndex: number | null = null;
-
-        if (newElementIndex >= group.items.length) {
-            groupIndex = getNextGroupIndex(gallerySize, groupIndex, offset);
-            newElementIndex = 0;
-            preloadElementIndex = newElementIndex + offset;
-        } else if (newElementIndex < 0) {
-            groupIndex = getNextGroupIndex(gallerySize, groupIndex, offset);
-            newElementIndex = gallery.groups[groupIndex].items.length - 1;
-            preloadElementIndex = newElementIndex + offset;
-        }
-
-        if (preloadElementIndex >= group.items.length) {
-            preloadGroupIndex = getNextGroupIndex(
-                gallerySize,
-                groupIndex,
-                offset
-            );
-            preloadElementIndex = 0;
-        } else if (preloadElementIndex < 0) {
-            preloadGroupIndex = getNextGroupIndex(
-                gallerySize,
-                groupIndex,
-                offset
-            );
-            preloadElementIndex =
-                gallery.groups[preloadGroupIndex].items.length - 1;
-        } else {
-            preloadGroupIndex = groupIndex;
-        }
-
-        let nextElement = gallery.groups[groupIndex].items[newElementIndex];
-        let preloadElement =
-            gallery.groups[preloadGroupIndex as number].items[
-                preloadElementIndex as number
-            ];
-
-        preloadImage(preloadElement);
-        setModalImg({
-            ...modalImg,
-            src: nextElement.src,
-            id: nextElement.id,
-        });
-    };
-
     return (
         <div className={style.wrapper}>
             <div className={`${style.backdrop}`}></div>
@@ -160,7 +183,8 @@ export const Modal = () => {
                 <figure
                     className={`${style.figure}`}
                     onClick={handleClick}
-                    onTouchStart={(e) => handleTouchStart(e)}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
                     onTouchEnd={handleTouchEnd}>
                     <button
                         type='button'
