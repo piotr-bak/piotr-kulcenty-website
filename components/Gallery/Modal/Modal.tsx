@@ -165,9 +165,9 @@ export const Modal = () => {
         const swipeLength = config.sensitivity;
 
         if (delta > swipeLength) {
-            changeModalImage("forward");
-        } else if (delta < -swipeLength) {
             changeModalImage("backward");
+        } else if (delta < -swipeLength) {
+            changeModalImage("forward");
         }
     };
 
