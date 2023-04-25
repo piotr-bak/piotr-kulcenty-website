@@ -101,6 +101,7 @@ export const Modal = () => {
 
     const handleClick = () => {
         setModalImg({ ...modalImg, src: "" });
+        dispatchTouch({ type: "reset" });
         setShow(false);
     };
     const handleClose = useCallback(() => {
@@ -165,8 +166,7 @@ export const Modal = () => {
 
         if (delta > swipeLength) {
             changeModalImage("forward");
-        }
-        if (delta < -swipeLength) {
+        } else if (delta < -swipeLength) {
             changeModalImage("backward");
         }
     };
