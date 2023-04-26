@@ -2,7 +2,7 @@
     position: fixed;
     width: 100vw;
     z-index: 20;
-    min-height: min(23px, 4.3vh);
+    height: 7.5vh;
 }
 
 @media screen and (min-width: 992px) {

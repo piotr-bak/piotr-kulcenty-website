@@ -9,6 +9,7 @@
     z-index: 20;
     display: none;
     z-index: 20;
+    top: calc(7.5vh);
 }
 
 .menu li {
@@ -34,7 +35,7 @@
 }
 
 .active {
-    display: block;
+    display: grid;
     opacity: 1; /* Show the menu when active */
     pointer-events: auto; /* Enable mouse clicks on the menu when active */
 }

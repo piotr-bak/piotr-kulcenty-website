@@ -1,9 +1,8 @@
 .panel {
     display: flex;
     justify-content: space-between;
-    padding-top: 3.2vh;
+    padding-top: 3vh;
     width: 100vw;
-    min-height: min(23px, 4.3vh);
 }
 
 .navbarStyle {

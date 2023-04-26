@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import Link from "next/link";
 import { useHamburgerMenuContext } from "@/contexts/HamburgerMenuContext";
 import { useThemeContext } from "@/contexts";
+import { scrollToTop } from "@/lib/utils";
 import { cormorant } from "@/lib/fonts";
 import config from "@/config/components/routes.json";
 import style from "./HamburgerMenu.module.css";
@@ -12,6 +13,7 @@ export const HamburgerMenu = () => {
     const { theme } = useThemeContext();
     const { toggled, setToggled } = useHamburgerMenuContext();
     const handleClick = () => {
+        scrollToTop();
         setToggled(false);
     };
     return (

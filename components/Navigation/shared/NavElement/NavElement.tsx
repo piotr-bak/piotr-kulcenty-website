@@ -42,6 +42,7 @@ export const NavElement = (props: NavElementProps) => {
             className={`${styles.button} ${cormorant.className} ${typography[theme]}`}
             scroll={true}
             href={destination ? destination : ""}
+            onClick={handleClick}
             passHref>
             <div className={styles.wrap} title={label} aria-label={label}>
                 {label}

@@ -1,9 +1,11 @@
 .wrapper {
     width: 100vw;
-    height: -webkit-fill-available;
-    height: stretch;
     min-height: 100vh;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
+
+    /*needed to display custom scrollbar*/
+    height: -webkit-fill-available;
+    height: stretch;
 }
