@@ -4,8 +4,4 @@
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-
-    /*needed to display custom scrollbar*/
-    height: -webkit-fill-available;
-    height: stretch;
 }
