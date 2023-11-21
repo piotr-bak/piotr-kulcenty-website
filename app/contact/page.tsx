@@ -33,7 +33,7 @@ export default function Page() {
                             linkedin
                         </a>
                         <a
-                            href='https://www.instagram.com/qulcenty_p/'
+                            href='https://www.instagram.com/qulcenty_violins/'
                             target='blank'
                             rel='noopener noreferrer'>
                             instagram
