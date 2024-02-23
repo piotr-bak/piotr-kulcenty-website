@@ -12,10 +12,6 @@ export const metadata = {
 };
 
 export default function Page() {
-    const galleryData: ParsedGalleryData = parseGalleryData(dataFile);
-    const mode: GalleryMode = "full";
-    const galleryID = galleryData.id;
-
     return (
         <Container>
             <SplashScreen />
