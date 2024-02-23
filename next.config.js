@@ -4,9 +4,6 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
-  experimental: {
-    appDir: true,
-  },
   images: {
     deviceSizes: [600, 768, 1200]
   }
