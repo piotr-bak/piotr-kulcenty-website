@@ -7,10 +7,10 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/effect-fade";
 import style from "./HomeSlider.module.css";
-import bridge from "/slider/01.jpg";
-import neck from "/slider/03.jpg";
-import fhole from "/slider/02.jpg";
-import head from "/slider/04.jpg";
+import bridge from "../../public/slider/01.jpg";
+import neck from "../../public/slider/03.jpg";
+import fhole from "../../public/slider/02.jpg";
+import head from "../../public/slider/04.jpg";
 
 export function HomeSlider() {
     return (
