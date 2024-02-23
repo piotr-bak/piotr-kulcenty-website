@@ -10,7 +10,7 @@ export const Footnote = () => {
         <div className={styles.container}>
             <p
                 className={`${styles.text} ${cormorant.className} ${typography[theme]}`}>
-                All rights reserved. © Piotr Kulcenty, 2023
+                All rights reserved. © Piotr Kulcenty, 2024
             </p>
         </div>
     );
