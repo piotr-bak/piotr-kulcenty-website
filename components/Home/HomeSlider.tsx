@@ -7,6 +7,10 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/effect-fade";
 import style from "./HomeSlider.module.css";
+import bridge from "public/slider/01.jpg";
+import neck from "public/slider/03.jpg";
+import fhole from "public/slider/02.jpg";
+import head from "public/slider/04.jpg";
 
 export function HomeSlider() {
     return (
@@ -25,7 +29,7 @@ export function HomeSlider() {
             }}>
             <SwiperSlide className={style.slide}>
                 <Image
-                    src='/slider/01.jpg'
+                    src={bridge}
                     quality={95}
                     fill={true}
                     alt="violin's bridge"
@@ -33,7 +37,7 @@ export function HomeSlider() {
             </SwiperSlide>
             <SwiperSlide className={style.slide}>
                 <Image
-                    src='/slider/03.jpg'
+                    src={neck}
                     quality={95}
                     fill={true}
                     alt="violin's neck"
@@ -41,7 +45,7 @@ export function HomeSlider() {
             </SwiperSlide>
             <SwiperSlide className={style.slide}>
                 <Image
-                    src='/slider/02.jpg'
+                    src={fhole}
                     quality={95}
                     fill={true}
                     alt="violin's f-hole"
@@ -49,7 +53,7 @@ export function HomeSlider() {
             </SwiperSlide>
             <SwiperSlide className={style.slide}>
                 <Image
-                    src='/slider/04.jpg'
+                    src={head}
                     quality={95}
                     fill={true}
                     alt="violin's head"
