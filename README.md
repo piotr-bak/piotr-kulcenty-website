@@ -1,7 +1,7 @@
 # Piotr Kulcenty Portfolio Website
 
 This is a portfolio website showcasing works of Piotr Kulcenty, violin maker and instrument restorer based in London.
-The design was created by [Mariana Alcobia](https://marianaalcobia.com/) from Construct London design studio.
+The design was created by [Mariana Alcobia](https://marianaalcobia.com/) from Construct London design studio (shared with Client's permission).
 
 ## Why is it here?
 Because "there's more to it than meets the eye". 
