@@ -10,15 +10,18 @@ All of it - pre-loads, lazy-loads, user action predicting, some clever image has
 The design is also modular and crafted with a possibility of a future extension in mind. 
 Despite looking deceptively simple, almost every element of the interface can be customized, and new elements (such as new instruments in the gallery) can be added with very little effort. 
 
-This website is also a [Next.js](https://nextjs.org/) project bootstrapped with
-[`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## How to check it out on your own machine?
 
-First, run the development server:
+Nothing fancy really, just pick up your favorite package manager (in my case it is pnpm) and fire "as usuall":
 
 ```bash
+pnpm install
 pnpm run dev
 ```
+If you prefer other methods: 
+```bash
+npm ci
+npm start
+```
+will work just fine too.
 
-Then, open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
